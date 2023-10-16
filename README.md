@@ -41,4 +41,3 @@ This command will start the back-end at the port `3000`.
 ```bash
 npx json-server --watch db.json
 ```
-teste teste teste teste
