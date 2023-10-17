@@ -4,7 +4,7 @@ import './style.css'
 
 function App() {
   useEffect(() => {
-    axios.get('http://localhost:3000/products').then((response)=>{
+    axios.get('http://localhost:3000/products').then((response) => {
       console.log(response)
     })
   }, [])
