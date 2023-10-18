@@ -14,15 +14,17 @@ function App() {
   }, [])
 
   return (
-    <div className="container-home">{products.map(product => {
-      return <div key={product.key} >
-        <span className=""> title: {product.title}</span>
-        <span className="">quantify: {product.quantify}</span>
-        <span className="">measure in: {product.measurein}</span>
-        <span className="">purchase price:  {product.purchasePrice}</span>
-        <span className="">sale price:  {product.salePrice}</span>
-      </div>
-    })}
+
+    <div className="container-home">
+      {products.map(product => {
+        return <div key={product.key} >
+          <span className=""> title: {product.title}</span>
+          <span className="">quantify: {product.quantify}</span>
+          <span className="">measure in: {product.measurein}</span>
+          <span className="">purchase price:  {product.purchasePrice}</span>
+          <span className="">sale price:  {product.salePrice}</span>
+        </div>
+      })}
     </div>
 
   )
