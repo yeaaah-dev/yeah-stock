@@ -64,7 +64,7 @@ function Modal(
                 </div>
 
                 <div className={styles['product_image']}>
-                    <img src={FOTO} alt="" />
+                    <img src={FOTO} alt="product-image" />
                 </div>
 
                 <div className={styles['subtitle']}>
@@ -77,11 +77,11 @@ function Modal(
 
                 <div className={styles['buttons_div']}>
                     <button className={styles['edit_button']}>
-                        <img src={EDITICON} alt="" /> Editar
+                        <img src={EDITICON} alt="edition-icon" /> Editar
                     </button>
 
                     <button className={styles['delete_button']}>
-                        <img src={TRASHICON} alt="" /> Excluir
+                        <img src={TRASHICON} alt="deletion-icon" /> Excluir
                     </button>
                 </div>
             </div>
