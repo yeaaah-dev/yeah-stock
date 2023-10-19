@@ -5,10 +5,16 @@ import FOTO from '../../assets/FOTO.png';
 import EDITICON from '../../assets/Edit.svg';
 import TRASHICON from '../../assets/Trash.svg'
 
-function Modal(props) {
-    const { name, quantity, measureUnity, purchasePrice, salePrice, currency, provider, active} = props
-
-
+function Modal(
+    {name, 
+    quantity, 
+    measureUnity, 
+    purchasePrice, 
+    salePrice, 
+    currency, 
+    provider, 
+    active}
+    ) {
 
     return(
         <section className={styles['modal_section']}>
@@ -25,35 +31,35 @@ function Modal(props) {
 
                 <div className={styles['product_info']}>
                     <span>
-                        Name: <span className={styles['info_value']}>{name ? 'name' : 'Calabresa de Tubarão Leitoa'}</span>
+                        Name: <span className={styles['info_value']}>{name ? name : 'Calabresa de Tubarão Leitoa'}</span>
                     </span>
 
                     <span>
-                        Quantity: <span className={styles['info_value']}>{quantity ? 'quantity' : 106}</span>
+                        Quantity: <span className={styles['info_value']}>{quantity ? quantity : 106}</span>
                     </span>
 
                     <span>
-                        Measure unity: <span className={styles['info_value']}>{measureUnity ? 'measureUnity' : 106}</span>
+                        Measure unity: <span className={styles['info_value']}>{measureUnity ? measureUnity : 106}</span>
                     </span>
 
                     <span>
-                        Purchase price: <span className={styles['info_value']}>{purchasePrice ? 'purchasePrice' : 535}</span>
+                        Purchase price: <span className={styles['info_value']}>{purchasePrice ? purchasePrice : 535}</span>
                     </span>
 
                     <span>
-                        Sale Price: <span className={styles['info_value']}>{salePrice ? 'salePrice' : 512}</span>
+                        Sale Price: <span className={styles['info_value']}>{salePrice ? salePrice : 512}</span>
                     </span>
 
                     <span>
-                        Currency: <span className={styles['info_value']}>{currency ? 'currency' : 'Unity'}</span>
+                        Currency: <span className={styles['info_value']}>{currency ? currency : 'Unity'}</span>
                     </span>
 
                     <span>
-                        Fornecedor: <span className={styles['info_value']}>{provider ? 'provider' : 'Hugostoso'}</span>
+                        Fornecedor: <span className={styles['info_value']}>{provider ? provider : 'Hugostoso'}</span>
                     </span>
 
                     <span>
-                        Active: <span className={styles['info_value']}>{active ? 'value' : 'yes or no'}</span>
+                        Active: <span className={styles['info_value']}>{active ? active : 'yes or no'}</span>
                     </span>
                 </div>
 
