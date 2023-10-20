@@ -1,0 +1,90 @@
+.container{
+    width: 14.3rem;
+    height: 100vh;
+    background: #1B1B1B;
+   
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    padding-top: 2.9rem;
+}
+
+.line{
+    width: 5.8rem;
+    height: .09375rem;
+    background: #323232;
+}
+
+.div-line{
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+    gap: 1.6rem;
+}
+
+button{
+    width: 6.0625rem;
+    height: 1.75rem;
+    color: #525252;
+  
+}
+
+.home{
+    border-radius: 0.4375rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    
+    background: #242424;
+    border: none;
+    margin-left: 3.2rem;
+    margin-top: 2.5rem;
+
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Outfit;
+    font-size: 0.875rem;                                                                   
+    font-style: normal;
+    font-weight: 400;
+}
+
+.others{
+    background: none;
+    border: none;
+    display: flex;
+    gap: 0.8rem;
+    font-family: Outfit;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.div-line-two{
+    display: flex;
+    justify-content: center;
+    padding-top: 8.7rem;
+}
+
+.othersRed{
+    background: none;
+    border: none;
+    display: flex;
+    gap: 0.8rem;
+    color: #C0293D;
+
+    font-family: Outfit;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+}
