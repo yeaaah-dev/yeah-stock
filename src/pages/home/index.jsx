@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import './style.css'
-
+import styles from '../../components/Card/style.module.css';
+import PencilEdit from '../../assets/images/pencilEdit.svg'
+import Icon_image from '../../assets/images/icon_image.svg'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -14,18 +15,40 @@ function App() {
   }, [])
 
   return (
+    <div>
+      {
+        products.map(product => {
+          return (
+            <>
+              <div className={styles['container_card']}>
 
-    <div className="container-home">
-      {products.map(product => {
-        return <div key={product.key} >
-          <span className=""> title: {product.title}</span>
-          <span className="">quantify: {product.quantify}</span>
-          <span className="">measure in: {product.measurein}</span>
-          <span className="">purchase price:  {product.purchasePrice}</span>
-          <span className="">sale price:  {product.salePrice}</span>
-        </div>
-      })}
+                <div className={styles['content_card']}>
+                  <img src={Icon_image} alt="Imagem do produto" />
+                  <span>JPG</span>
+                </div>
+
+                <div className={styles['product_name']}>
+                  <span>{product.title}</span>
+                  <button><img src={PencilEdit} alt="Editar" /></button>
+                </div>
+
+                <div className={styles['description_product']}>
+                  <div>
+                    Quantily: <span>{product.quantify}</span>
+                  </div>
+                  <div>
+                    Mesure un.: <span>{product.measurein}</span>
+                  </div>
+                </div>
+
+              </div>
+            </>
+          )
+        })
+      }
     </div>
+
+
 
   )
 }
