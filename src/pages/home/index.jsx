@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import './style.css'
+import { Header } from "../header/header"
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
           <span className="">purchase price:  {product.purchasePrice}</span>
           <span className="">sale price:  {product.salePrice}</span>
         </div>
+        
       })}
+    <Header></Header>
     </div>
 
   )
