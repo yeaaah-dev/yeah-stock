@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import './style.css'
+import Modal from "../../components/ModalComponent/Modal"
+import { Tab } from "../../components/Input"
+
 
 
 function App() {
@@ -25,7 +27,12 @@ function App() {
           <span className="">sale price:  {product.salePrice}</span>
         </div>
       })}
-    </div>
+
+      <Tab></Tab>
+      <Modal
+        name="Yan Cesar"
+      ></Modal>
+    </div >
 
   )
 }
