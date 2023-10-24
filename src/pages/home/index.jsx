@@ -3,6 +3,7 @@ import axios from "axios"
 import styles from '../../components/Card/style.module.css';
 import PencilEdit from '../../assets/images/pencilEdit.svg'
 import Icon_image from '../../assets/images/icon_image.svg'
+import ButtonToggle from "../../components/func";
 
 function App() {
   const [products, setProducts] = useState([])
@@ -16,6 +17,9 @@ function App() {
 
   return (
     <div>
+      <div>
+        <ButtonToggle />
+      </div>
       {
         products.map(product => {
           return (
@@ -47,9 +51,6 @@ function App() {
         })
       }
     </div>
-
-
-
   )
 }
 
