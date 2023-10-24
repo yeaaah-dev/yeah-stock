@@ -36,6 +36,7 @@ button{
     width: 6.0625rem;
     height: 1.75rem;
     color: #525252;
+    cursor: pointer;
   
 }
 
