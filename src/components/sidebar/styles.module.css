@@ -45,8 +45,6 @@ button{
     
     background: #242424;
     border: none;
-    margin-left: 3.2rem;
-    margin-top: 2.5rem;
 
     display: flex;
     gap: 0.8rem;
@@ -87,4 +85,18 @@ button{
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
+}
+
+.button-selected{
+    border-radius: 0.4375rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    background: #242424;
+}
+
+.button-not-selected{
+  background: none;
+  border: none;
+  display: flex;
+  gap: 0.81rem;
 }
