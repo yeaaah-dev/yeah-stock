@@ -36,7 +36,7 @@ export function Sidebar() {
           <img src={home} alt="Home" />
           Inicio
         </button>
-        <button  
+        <button   
         className={buttonSelected === buttonName.TRASH ? styles['button-selected'] : styles['button-not-selected']}
         onClick={() => setButtonSelected(buttonName.TRASH)}
         >
