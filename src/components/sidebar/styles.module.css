@@ -92,6 +92,11 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.04);
 
     background: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: -2rem;
 }
 
 .button-not-selected{
