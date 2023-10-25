@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "../../components/ModalComponent/Modal";
 import { Tab } from "../../components/Tab/Tab";
-import { Header } from "../../components/header/header";
 import { Input } from "../../components/Input";
 
 const tabs = [
@@ -53,7 +52,15 @@ function App() {
             </div>
           );
         })}
+
       </div>
+
+      <Tab
+        tabs={tabs}
+        currentTab={currentTab}
+        onChange={(layout) => setCurrentTab(layout)}
+      />
+
 
       <Modal name="Yan Cesar" />
     </div>
