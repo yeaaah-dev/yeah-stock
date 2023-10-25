@@ -32,21 +32,3 @@
     font-style: normal;
     font-weight: 400;
 }
-
-.nav-list {
-    margin-left: 54rem;
-    background-color: rgba(35, 35, 35, 1);
-}
-
-.icon-active {
-    color: #FFF;
-    background-color: rgba(50, 50, 50, 1);
-    border-radius: 5px;
-    cursor: pointer;
-
-}
-
-.icon-not-active {
-    color: rgba(50, 50, 50, 1);
-    cursor: pointer;
-}

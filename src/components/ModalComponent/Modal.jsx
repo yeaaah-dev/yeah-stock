@@ -17,7 +17,6 @@ function Modal(
         active
     }
 ) {
-    console.log(name, quantity, measureUnity, salePrice)
     return (
         <section className={styles['modal_section']}>
             <div className={styles['modal_content']}>
