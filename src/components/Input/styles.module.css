@@ -1,0 +1,45 @@
+.input-header {
+  width: 25rem;
+  height: 2rem;
+  background: #242424;
+  border: none;
+  border-radius: 0.5rem;
+
+  align-items: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #242424;
+  max-width: 24rem;
+  height: 0.5rem;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.4375rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.input-wrapper input {
+  outline: none;
+  color: white;
+}
+
+.input::placeholder {
+  outline: none;
+  color: #323232;
+}
+
+.button-search {
+  border: none;
+  background: none;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 0.56rem;
+  padding-bottom: 0.56rem;
+  padding-left: 0.5rem;
+}
