@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import './style.css'
+import styles from './style.module.css'
+import { Button } from "../../components/Button"
+import { X } from "@phosphor-icons/react"
+import { Card, layoutType } from "../../components/Card"
+import { Toggle } from "../../components/Toggle"
 
+
+function Icon() {
+  return <X size={19} color="#FFFFFF" />
+}
 
 function App() {
   const [products, setProducts] = useState([])
+  const [layout, setLayout] = useState(layoutType.CARD)
 
   useEffect(() => {
     axios.get('http://localhost:3000/products')
@@ -13,20 +22,28 @@ function App() {
       })
   }, [])
 
+  function changeLayoutCard(layoutToChange) {
+    setLayout(layoutToChange)
+  }
+
   return (
+    <div>
+      <Toggle
+        onChange={changeLayoutCard}
+      />
 
-    <div className="container-home">
       {products.map(product => {
-        return <div key={product.key} >
-          <span className=""> title: {product.title}</span>
-          <span className="">quantify: {product.quantify}</span>
-          <span className="">measure in: {product.measurein}</span>
-          <span className="">purchase price:  {product.purchasePrice}</span>
-          <span className="">sale price:  {product.salePrice}</span>
-        </div>
+        return (
+          <Card key={product.key} name={product.title} layout={layout} />
+        )
       })}
-    </div>
 
+      <div className={styles['button']}>
+        <Button
+          icon={Icon}
+        />
+      </div>
+    </div>
   )
 }
 

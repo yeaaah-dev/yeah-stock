@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  gap: 3rem;
+}
+
+.container button {
+  width: 10rem;
+  height: 2rem;
+
+  background: black;
+  color: white;
+}
