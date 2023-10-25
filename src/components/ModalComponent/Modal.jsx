@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import styles from './Modal.module.css';
 import { X } from "@phosphor-icons/react";
 import FOTO from '../../assets/FOTO.png';
@@ -6,17 +6,18 @@ import EDITICON from '../../assets/Edit.svg';
 import TRASHICON from '../../assets/Trash.svg'
 
 function Modal(
-    {name, 
-    quantity, 
-    measureUnity, 
-    purchasePrice, 
-    salePrice, 
-    currency, 
-    provider, 
-    active}
-    ) {
-
-    return(
+    {
+        name,
+        quantity,
+        measureUnity,
+        purchasePrice,
+        salePrice,
+        currency,
+        provider,
+        active
+    }
+) {
+    return (
         <section className={styles['modal_section']}>
             <div className={styles['modal_content']}>
                 <div className={styles['modal_header']}>
