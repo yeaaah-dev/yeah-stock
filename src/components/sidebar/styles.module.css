@@ -106,3 +106,7 @@ button{
   display: flex;
   gap: 0.81rem;
 }
+
+.red{
+    color: red;
+}

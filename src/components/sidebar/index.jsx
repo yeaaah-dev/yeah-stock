@@ -65,7 +65,8 @@ export function Sidebar() {
           Configuração
         </button>
         <button
-        className={buttonSelected === buttonName.EXIT ? styles['button-selected'] : styles['button-not-selected']}
+        
+        className={`${buttonSelected === buttonName.EXIT ? styles['button-selected'] : styles['button-not-selected']} red`}
         onClick={() => setButtonSelected(buttonName.EXIT)}
         >
           <img src={out} alt="Sair" />
