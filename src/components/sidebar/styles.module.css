@@ -40,57 +40,17 @@ button{
   
 }
 
-.home{
-    border-radius: 0.4375rem;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    
-    background: #242424;
-    border: none;
-
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    align-items: center;
-
-    font-family: Outfit;
-    font-size: 0.875rem;                                                                   
-    font-style: normal;
-    font-weight: 400;
-}
-
-.others{
-    background: none;
-    border: none;
-    display: flex;
-    gap: 0.8rem;
-    font-family: Outfit;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-}
-
 .div-line-two{
     display: flex;
     justify-content: center;
     padding-top: 8.7rem;
 }
 
-.othersRed{
-    background: none;
-    border: none;
-    display: flex;
-    gap: 0.8rem;
-    color: #C0293D;
-
-    font-family: Outfit;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-}
-
 .button-selected{
     border-radius: 0.4375rem;
     border: 1px solid rgba(255, 255, 255, 0.04);
+    color: #fff ;
+    border: none;
 
     background: #242424;
     display: flex;
@@ -107,6 +67,24 @@ button{
   gap: 0.81rem;
 }
 
-.red{
-    color: red;
+.button-exit-selected{
+    border-radius: 0.4375rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: #C0293D ;
+    border: none;
+
+    background: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: -2rem;
+}
+
+.button-exit-not-selected{
+    background: none;
+    border: none;
+    display: flex;
+    gap: 0.81rem;
+    color: #C0293D;
 }

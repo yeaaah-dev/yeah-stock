@@ -5,7 +5,7 @@ import home from '../../assets/imgs/home.svg';
 import trash from '../../assets/imgs/trash.svg';
 import perfil from '../../assets/imgs/perfil.svg';
 import config from '../../assets/imgs/config.svg';
-import out from '../../assets/imgs/out.svg';
+import { SignOut } from 'phosphor-icons'
 
 const buttonName = {
   START: 'start',
@@ -66,10 +66,10 @@ export function Sidebar() {
         </button>
         <button
         
-        className={`${buttonSelected === buttonName.EXIT ? styles['button-selected'] : styles['button-not-selected']} red`}
+        className={buttonSelected === buttonName.EXIT ? styles['button-exit-selected'] : styles['button-exit-not-selected']}
         onClick={() => setButtonSelected(buttonName.EXIT)}
         >
-          <img src={out} alt="Sair" />
+          <SignOut size={32} />
           Sair
         </button>
       </div>
