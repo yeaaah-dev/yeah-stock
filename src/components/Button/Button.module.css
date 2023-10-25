@@ -1,0 +1,28 @@
+button {
+    cursor: pointer;
+}
+
+.normal_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.3125rem 1.25rem;
+    width: 100%;
+
+    gap: .8rem;
+    border: none;
+    border-radius: .4375rem;
+
+    color: #FFF;
+
+    background-color: #1F7CFB;
+    font-family: 'Outfit', sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.background_off {
+    background: transparent;
+    color: #C0293D;
+}
