@@ -2,6 +2,7 @@
 import styles from './Tab.module.css'
 
 export function Tab({ tabs, currentTab, onChange }) { // 2
+
     return (
         <div className={styles['conteiner']}>
             <div className={styles['tabs']}>
