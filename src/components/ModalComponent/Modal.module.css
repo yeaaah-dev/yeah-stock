@@ -1,149 +1,161 @@
 button {
-    cursor: pointer;
-    background: transparent;
-    border: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
-.modal_section {
-    display: flex;
-    flex-direction: column;
+.modal-section {
+  display: flex;
+  flex-direction: column;
 
-    height: 100vh !important;
-    max-width: 18.125rem;
-    margin-left: 70rem;
+  height: 100vh !important;
+  max-width: 18.125rem;
 
-    background-color: #323232;
-    font-family: 'Outfit', sans-serif;
+  background-color: #323232;
+  font-family: "Outfit", sans-serif;
 }
 
-.modal_content {
-    padding-top: 1.5rem;
-    padding-right: 3.12rem;
-    padding-left: 1.19rem;
+.modal-content {
+  padding-top: 1.5rem;
+  padding-right: 3.12rem;
+  padding-left: 1.19rem;
 
-    height: 100%;
+  height: 100%;
 }
 
-.modal_header {
-    display: flex;
-    justify-content: end;
-    width: 100%;
+.modal-header {
+  display: flex;
+  justify-content: end;
+  width: 100%;
 }
 
-.modal_title {
-    margin-top: 1.19rem;
+.modal-title {
+  margin-top: 1.19rem;
 }
 
-.modal_title h1 {
-    color: #FFF;
-    font-size: 1.5rem;
-    font-weight: 600;
+.modal-title h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.product_info {
-    display: flex;
-    flex-direction: column;
-    gap: .2rem;
-    width: 12rem;
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 12rem;
 
-    margin-top: .56rem;
+  margin-top: 0.56rem;
 
-    font-size: .75rem;
-    font-weight: 400;
-    color: #8A8A8A;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #8a8a8a;
 }
 
-.info_value {
-    color: #FFF;
+.info-value {
+  color: #fff;
 }
 
-.product_image {
-    max-width: 13.8125rem;
-    height: 9.1875rem;
+.product-image {
+  max-width: 13.8125rem;
+  height: 9.1875rem;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin-top: .56rem;
+  margin-top: 0.56rem;
 
-    background-color: #4A4A4A;
-    border-radius: .4375rem;
+  background-color: #4a4a4a;
+  border-radius: 0.4375rem;
 }
 
 .subtitle {
-    margin-top: .63rem;
+  margin-top: 0.63rem;
 }
 
 .subtitle h2 {
-    color: #FFF;
-    font-size: .875rem;
-    font-weight: 400;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 400;
 
-    margin-left: .44rem;
+  margin-left: 0.44rem;
 }
 
-.product_description {
-    width: 13.8125rem;
-    height: 3.625rem;
+.product-description {
+  width: 13.8125rem;
+  height: 3.625rem;
 
-    margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
-.product_description textarea {
-    padding: .31rem 0 0 .44rem;
+.product-description textarea {
+  padding: 0.31rem 0 0 0.44rem;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background: #1C1C1C;
+  background: #1c1c1c;
 
-    color: #8A8A8A;
-    font-family: 'Outfit', sans-serif;
-    font-size: .75rem;
-    font-weight: 400;
+  color: #8a8a8a;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
 
-    border: none;
-    border-radius: .4375rem;
-    resize: none;
+  border: none;
+  border-radius: 0.4375rem;
+  resize: none;
 }
 
-.buttons_div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .87rem;
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.87rem;
 
-    max-width: 13.8125rem;
+  max-width: 13.8125rem;
 
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-.edit_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
+.edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
-    background-color: #1F7CFB;
-    color: #FFF;
+  background-color: #1f7cfb;
+  color: #fff;
 
-    font-size: .875rem;
-    font-weight: 400;
+  font-size: 0.875rem;
+  font-weight: 400;
 
-    border-radius: .4375rem;
+  border-radius: 0.4375rem;
 
-    width: 100%;
-    height: 1.75rem;
+  width: 100%;
+  height: 1.75rem;
 }
 
-.delete_button {
-    display: flex;
-    gap: .5rem;
-    margin-right: .4rem;
+.edit-button img {
+  width: 0.7rem;
+}
 
-    max-width: 3.25rem;
+.delete-button {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 0.4rem;
+  align-items: center;
 
-    color: #C0293D;
-    font-size: .875rem;
-    font-weight: 400;
+  max-width: 3.25rem;
+
+  color: #c0293d;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.delete-button img {
+  width: 0.7rem;
+}
+
+.edition-icon {
+  width: 10px;
 }
