@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div className="container-home">
+
       <div>  {products.map(product => {
         return (
           <div key={product.key} >
@@ -42,7 +43,8 @@ function App() {
             <span className="">sale price:  {product.salePrice}</span>
           </div>
         )
-      })}</div>
+      })}
+      </div>
 
       <Tab
         tabs={tabs}
