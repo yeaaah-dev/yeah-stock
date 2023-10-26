@@ -1,5 +1,3 @@
-
-import './style.css'
 import { Sidebar } from "../../components/sidebar"
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
@@ -56,40 +54,41 @@ function App() {
 
   return (
 
-   < div>
-    <Sidebar></Sidebar>
-    <div>
-      <Toggle onChange={(layout) => setLayout(layout)}></Toggle>
+    < div>
+      <Sidebar></Sidebar>
 
-    <div className="container-home">
-      <Input
-        onChange={(event) => {
-          setSearch(event.currentTarget.value);
-        }}
-      />
-      <div className={style['div-Button']}>
-        <Button
-          label={"Adicionar produto"}
-          icon={<Icon />}
-          buttonBackgroundOff={'not'}
-        />
-      </div>
-      </div>
+      <div>
+        <Toggle onChange={(layout) => setLayout(layout)}></Toggle>
 
-      {products.map((product) => {
-        return <Card key={product.key} product={product} layout={layout} />;
-      })}
+        <div className="container-home">
+          <Input
+            onChange={(event) => {
+              setSearch(event.currentTarget.value);
+            }}
+          />
+          <div className={style['div-Button']}>
+            <Button
+              label={"Adicionar produto"}
+              icon={<Icon />}
+              buttonBackgroundOff={'not'}
+            />
+          </div>
+        </div>
 
-  )
+        {products.map((product) => {
+          return <Card key={product.key} product={product} layout={layout} />;
+        })}
+
+
         <Tab
           tabs={tabs}
           currentTab={currentTab}
           onChange={(layout) => setCurrentTab(layout)}
         />
         <Modal name="Yan Cesar" />
-    </div >
-  );
-
+      </div >
+    </div>
+  )
 }
 
 export default App;

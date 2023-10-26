@@ -135,26 +135,19 @@ button {
   height: 1.75rem;
 }
 
-.edit-button img {
-  width: 0.7rem;
-}
-
 .delete-button {
   display: flex;
   gap: 0.5rem;
   margin-right: 0.4rem;
   align-items: center;
 
-  max-width: 3.25rem;
+  max-width: 4rem;
 
   color: #c0293d;
   font-size: 0.875rem;
   font-weight: 400;
 }
 
-.delete-button img {
-  width: 0.7rem;
-}
 
 .edition-icon {
   width: 10px;

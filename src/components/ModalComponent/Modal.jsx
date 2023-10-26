@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import styles from "./Modal.module.css";
-import { X } from "@phosphor-icons/react";
 import FOTO from "../../assets/FOTO.png";
-import EDITICON from "../../assets/Edit.svg";
-import TRASHICON from "../../assets/Trash.svg";
+import { Trash, NotePencil, X } from "@phosphor-icons/react";
+
 
 export function Modal({
   name,
@@ -103,11 +102,13 @@ export function Modal({
 
         <div className={styles["buttons-div"]}>
           <button className={styles["edit-button"]}>
-            <img src={EDITICON} alt="edition-icon" /> Editar
+            <NotePencil size={17} />
+            Editar
           </button>
 
           <button className={styles["delete-button"]}>
-            <img src={TRASHICON} alt="deletion-icon" /> Excluir
+            <Trash size={32}></Trash>
+            Excluir
           </button>
         </div>
       </div>
