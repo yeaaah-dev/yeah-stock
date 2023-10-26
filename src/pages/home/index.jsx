@@ -1,4 +1,4 @@
-import { Sidebar } from "../../components/sidebar"
+import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
 // import { Modal } from "../../components/ModalComponent/Modal";
@@ -6,12 +6,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Toggle, iconType } from "../../components/Toggle/Toggle";
 import { Card } from "../../components/Card";
-import { Button } from "../../components/Button/Button"
-import { Bell, Plus } from "@phosphor-icons/react"
-import style from "../home/app.module.css"
-import Rick from '../../assets/images/RickAndMory.png'
-
-
+import { Button } from "../../components/Button/Button";
+import { Bell, Plus } from "@phosphor-icons/react";
+import style from "../home/app.module.css";
+import Rick from "../../assets/images/RickAndMory.png";
 
 const tabs = [
   {
@@ -29,7 +27,7 @@ const tabs = [
 ];
 
 function Icon() {
-  return <Plus size={15} />
+  return <Plus size={15} />;
 }
 
 function App() {
@@ -51,86 +49,75 @@ function App() {
       });
   }, [search]);
 
-
-
   return (
-    < div className={style['home-page']}>
+    <div className={style["home-page"]}>
       <aside>
         <Sidebar />
-
       </aside>
 
       <main>
-
-        <nav className={style['nav-bar']}>
+        <nav className={style["nav-bar"]}>
           <div>
             <Input
               onChange={(event) => {
                 setSearch(event.currentTarget.value);
               }}
             />
-
           </div>
 
-          <div className={style['div-Button']}>
+          <div className={style["div-Button"]}>
             <Button
               label={"Adicionar produto"}
               icon={<Icon />}
-              buttonBackgroundOff={'not'}
+              buttonBackgroundOff={"not"}
             />
-
           </div>
 
-          <div className={style['icon-photo']}>
-            <Bell
-              size={20}
-              className={style['icon-bell']}
-            />
-
+          <div className={style["icon-photo"]}>
+            <Bell size={20} className={style["icon-bell"]} />
           </div>
-          <div >
-            <img src={Rick} className={style['logo']} />
+          <div>
+            <img src={Rick} className={style["logo"]} />
           </div>
-
         </nav>
 
         <section>
-          <p className={style['title']}>ìnicio</p>
+          <p className={style["title"]}>ìnicio</p>
 
-          <div className={style['tab-toggle']}>
+          <div className={style["tab-toggle"]}>
             <div>
               <Tab
                 tabs={tabs}
                 currentTab={currentTab}
                 onChange={(layout) => setCurrentTab(layout)}
               />
-
             </div>
 
             <div>
               <Toggle onChange={(layout) => setLayout(layout)} />
-
             </div>
-
           </div>
-          <div className={style['testando']}>
+          <div
+            className={
+              layout === iconType.COLUMNS
+                ? style["grid-layout-column"]
+                : style["grid-layout-list"]
+            }
+          >
             {products.map((product) => {
-              return <Card key={product.key} product={product} layout={layout} />;
+              return (
+                <Card key={product.key} product={product} layout={layout} />
+              );
             })}
           </div>
         </section>
-
       </main>
 
       <section>
-        <div>
-          {/* <Modal name="Yan Cesar" /> */}
-        </div>
-
+        <div>{/* <Modal name="Yan Cesar" /> */}</div>
       </section>
-
     </div>
-  )
+  );
 }
 
 export default App;

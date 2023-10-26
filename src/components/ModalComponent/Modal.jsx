@@ -3,7 +3,6 @@ import styles from "./Modal.module.css";
 import FOTO from "../../assets/FOTO.png";
 import { Trash, NotePencil, X } from "@phosphor-icons/react";
 
-
 export function Modal({
   name,
   quantity,
@@ -115,4 +114,3 @@ export function Modal({
     </section>
   );
 }
-
