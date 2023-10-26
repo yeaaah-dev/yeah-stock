@@ -1,11 +1,14 @@
+import { Input } from "../../components/Input/index";
+import { Tab } from "../../components/Tab/Tab";
+import { Modal } from "../../components/ModalComponent/Modal";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Modal } from "../../components/ModalComponent/Modal";
-import { Tab } from "../../components/Tab/Tab";
-import { Input } from "../../components/Input/index";
+import { Toggle, iconType } from "../../components/Toggle/Toggle";
+import { Card } from "../../components/Card";
 import { Button } from "../../components/Button/Button"
 import { Plus } from "@phosphor-icons/react"
 import style from "../home/app.module.css"
+
 
 const tabs = [
   {
@@ -27,21 +30,31 @@ function Icon() {
 }
 
 function App() {
-  const [products, setProducts] = useState([]);
   const [currentTab, setCurrentTab] = useState(1);
   const [search, setSearch] = useState("");
+  const [products, setProducts] = useState([]);
+  const [layout, setLayout] = useState(iconType.COLUMNS);
 
   useEffect(() => {
     const query = search.length ? `?title_like=${search}` : "";
 
-    axios.get(`http://localhost:3000/products${query}`).then((response) => {
-      setProducts(response.data);
-    });
+    axios
+      .get(`http://localhost:3004/products${query}`, {
+        "Cache-Control": "no-cache",
+        "Content-Type": "application/x-www-form-urlencoded",
+      })
+      .then((response) => {
+        setProducts(response.data);
+      });
   }, [search]);
 
 
 
   return (
+
+    <div>
+      <Toggle onChange={(layout) => setLayout(layout)}></Toggle>
+
     <div className="container-home">
       <Input
         onChange={(event) => {
@@ -55,30 +68,19 @@ function App() {
           buttonBackgroundOff={'not'}
         />
       </div>
-      <div>
-        {products.map((product) => {
-          return (
-            <div key={product.key}>
-              <span className=""> title: {product.title}</span>
-              <span className="">quantify: {product.quantify}</span>
-              <span className="">measure in: {product.measurein}</span>
-              <span className="">purchase price: {product.purchasePrice}</span>
-              <span className="">sale price: {product.salePrice}</span>
-            </div>
-          );
-        })}
-
       </div>
 
-      <Tab
-        tabs={tabs}
-        currentTab={currentTab}
-        onChange={(layout) => setCurrentTab(layout)}
-      />
+      {products.map((product) => {
+        return <Card key={product.key} product={product} layout={layout} />;
+      })}
 
-
-      <Modal name="Yan Cesar" />
-    </div>
+        <Tab
+          tabs={tabs}
+          currentTab={currentTab}
+          onChange={(layout) => setCurrentTab(layout)}
+        />
+        <Modal name="Yan Cesar" />
+    </div >
   );
 }
 
