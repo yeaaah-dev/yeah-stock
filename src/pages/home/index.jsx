@@ -38,7 +38,7 @@ function App() {
   }, [search]);
 
   return (
-    <div>
+    <div >
       <Toggle
         onChange={(layout) => setLayout(layout)}>
       </Toggle>
@@ -46,7 +46,7 @@ function App() {
       {layout === 'list' ? (
         <div> </div>
       ) : (
-        <div> {products.map(product => {
+        <div className={styles['container_list_card_column']}> {products.map(product => {
           return (
             <div key={product.key}>
               <div className={styles['container_list_card']}>
@@ -96,34 +96,37 @@ function App() {
       {layout === 'card' ? (
         <div> </div>
       ) : (
-        <div> {products.map(product => {
-          return (
-            <div key={product.key}>
-              <div className={styles['container_card']}>
+        <div className={styles['all_cards_grid']}>
+          <div className={styles['container_card_grid']}> {products.map(product => {
+            return (
+              <div key={product.key}>
+                <div className={styles['container_card']}>
 
-                <div className={styles['content_card']}>
-                  <Image size={40} color="#8A8A8A" />
-                  <span>JPG</span>
-                </div>
-
-                <div className={styles['product_name']}>
-                  <span>{product.title}</span>
-                  <button><NotePencil size={14} color=" #1F7CFB" /></button>
-                </div>
-
-                <div className={styles['description_product']}>
-                  <div>
-                    Quantily: <span>{product.quantify}</span>
+                  <div className={styles['content_card']}>
+                    <Image size={40} color="#8A8A8A" />
+                    <span>JPG</span>
                   </div>
-                  <div>
-                    Mesure un.: <span>{product.measurein}</span>
+
+                  <div className={styles['product_name']}>
+                    <span>{product.title}</span>
+                    <button><NotePencil size={14} color=" #1F7CFB" /></button>
+                  </div>
+
+                  <div className={styles['description_product']}>
+                    <div>
+                      Quantily: <span>{product.quantify}</span>
+                    </div>
+                    <div>
+                      Mesure un.: <span>{product.measurein}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )
-        })} </div>
-      )}
+            )
+          })} </div>
+        </div>
+      )
+      }
       < div className="container-home" >
         <Input
           onChange={(event) => {
@@ -137,7 +140,7 @@ function App() {
         />
         <Modal name="Yan Cesar" />
       </div >
-    </div>
+    </div >
   );
 }
 
