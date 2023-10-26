@@ -1,9 +1,7 @@
 .tabs {
     display: flex;
-    width: 70rem;
+    width: 11.3rem;
     background-color: #1B1B1B;
-    gap: 1.75rem;
-
 }
 
 .btn-not-active-style {
@@ -13,10 +11,6 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 400;
 }
 
 .btn-active-style {
@@ -28,6 +22,11 @@
     border: none;
     cursor: pointer;
 
+
+}
+
+button {
+    font-family: "Outfit", sans-serif;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
