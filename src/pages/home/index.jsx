@@ -1,7 +1,6 @@
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
-// import { Modal } from "../../components/ModalComponent/Modal";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Toggle, iconType } from "../../components/Toggle/Toggle";
