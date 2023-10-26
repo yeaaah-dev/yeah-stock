@@ -1,3 +1,6 @@
+
+import './style.css'
+import { Sidebar } from "../../components/sidebar"
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
 import { Modal } from "../../components/ModalComponent/Modal";
@@ -8,6 +11,7 @@ import { Card } from "../../components/Card";
 import { Button } from "../../components/Button/Button"
 import { Plus } from "@phosphor-icons/react"
 import style from "../home/app.module.css"
+
 
 
 const tabs = [
@@ -52,6 +56,8 @@ function App() {
 
   return (
 
+   < div>
+    <Sidebar></Sidebar>
     <div>
       <Toggle onChange={(layout) => setLayout(layout)}></Toggle>
 
@@ -74,6 +80,7 @@ function App() {
         return <Card key={product.key} product={product} layout={layout} />;
       })}
 
+  )
         <Tab
           tabs={tabs}
           currentTab={currentTab}
@@ -82,6 +89,7 @@ function App() {
         <Modal name="Yan Cesar" />
     </div >
   );
+
 }
 
 export default App;
