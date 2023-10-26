@@ -1,7 +1,7 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import styles from "./styles.module.css";
 
-function Input({ ...rest }) {
+export function Input({ ...rest }) {
   return (
     <div className={styles["input-wrapper"]}>
       <button className={styles["button-search"]}>
@@ -17,4 +17,4 @@ function Input({ ...rest }) {
     </div>
   );
 }
-export default Input
+export default Input;
