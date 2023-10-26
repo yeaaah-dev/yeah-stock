@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../sidebar/styles.module.css';
 import logo from '../../assets/imgs/LOGO.svg';
-import home from '../../assets/imgs/home.svg';
-import trash from '../../assets/imgs/trash.svg';
-import perfil from '../../assets/imgs/perfil.svg';
-import config from '../../assets/imgs/config.svg';
-import { SignOut } from 'phosphor-icons'
+import out from '../../assets/imgs/out.svg';
+import { Trash, User, GearSix, HouseLine } from '@phosphor-icons/react'
 
 const buttonName = {
   START: 'start',
@@ -20,6 +17,7 @@ export function Sidebar() {
 
   return (
     <div className={styles['container']}>
+      
       <div className={styles['logo']}>
         <img src={logo} alt="Logo" />
       </div>
@@ -29,48 +27,51 @@ export function Sidebar() {
       </div>
 
       <div className={styles['buttons']}>
+
         <button
           className={buttonSelected === buttonName.START ? styles['button-selected'] : styles['button-not-selected']}
           onClick={() => setButtonSelected(buttonName.START)}
-        >
-          <img src={home} alt="Home" />
-          Inicio
+          >
+            <HouseLine size={17} />
+            Inicio
         </button>
+
         <button   
-        className={buttonSelected === buttonName.TRASH ? styles['button-selected'] : styles['button-not-selected']}
-        onClick={() => setButtonSelected(buttonName.TRASH)}
+           className={buttonSelected === buttonName.TRASH ? styles['button-selected'] : styles['button-not-selected']}
+           onClick={() => setButtonSelected(buttonName.TRASH)}
         >
-          <img src={trash} alt="Lixeira" />
-          Lixeira
+            <Trash size={17} />
+            Lixeira
         </button>
-        <button
-        className={buttonSelected === buttonName.PROFILE ? styles['button-selected'] : styles['button-not-selected']}
-        onClick={() => setButtonSelected(buttonName.PROFILE)}
-        >
-          <img src={perfil} alt="Perfil" />
-          Perfil
-        </button>
-      </div>
 
-      <div className={styles['div-line-two']}>
-        <div className={styles['line']}></div>
-      </div>
-
-      <div className={styles['buttons']}>
         <button
-        className={buttonSelected === buttonName.SETTINGS ? styles['button-selected'] : styles['button-not-selected']}
-        onClick={() => setButtonSelected(buttonName.SETTINGS)}
-        >
-          <img src={config} alt="Configuração" />
-          Configuração
+          className={buttonSelected === buttonName.PROFILE ? styles['button-selected'] : styles['button-not-selected']}
+          onClick={() => setButtonSelected(buttonName.PROFILE)}
+          >
+            <User size={17} />
+            Perfil
         </button>
+   
+
+        <div className={styles['div-line-two']}>
+          <div className={styles['line']}></div>
+        </div>
+
         <button
-        
-        className={buttonSelected === buttonName.EXIT ? styles['button-exit-selected'] : styles['button-exit-not-selected']}
-        onClick={() => setButtonSelected(buttonName.EXIT)}
-        >
-          <SignOut size={32} />
-          Sair
+          className={buttonSelected === buttonName.SETTINGS ? styles['button-selected'] : styles['button-not-selected']}
+          onClick={() => setButtonSelected(buttonName.SETTINGS)}
+          >
+            <GearSix size={17} />
+            Configuração
+        </button>
+
+
+        <button
+          className={buttonSelected === buttonName.EXIT ? styles ['button-exit-selected'] : styles['button-exit-not-selected']}
+          onClick={() => setButtonSelected(buttonName.EXIT)}
+          >
+            <img src={out} alt="Logo" />
+            Sair
         </button>
       </div>
     </div>

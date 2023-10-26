@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import './style.css'
+import { Sidebar } from "../../components/sidebar"
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
   }, [])
 
   return (
-
+   < div>
+    <Sidebar></Sidebar>
     <div className="container-home">
       {products.map(product => {
         return <div key={product.key} >
@@ -26,7 +28,7 @@ function App() {
         </div>
       })}
     </div>
-
+    </div>
   )
 }
 
