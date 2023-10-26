@@ -22,7 +22,9 @@ const tabs = [
   },
 ];
 
-
+function Icon() {
+  return <Plus size={15} />
+}
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,9 +39,7 @@ function App() {
     });
   }, [search]);
 
-  function icon() {
-    return <Plus size={32} />
-  }
+
 
   return (
     <div className="container-home">
@@ -50,9 +50,9 @@ function App() {
       />
       <div className={style['div-Button']}>
         <Button
-        label={"Adicionar produto"}
-        Icon={icon}
-        buttonBackgroundOff={"Yes"}
+          label={"Adicionar produto"}
+          icon={<Icon />}
+          buttonBackgroundOff={'not'}
         />
       </div>
       <div>
