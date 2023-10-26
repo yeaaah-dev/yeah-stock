@@ -47,6 +47,7 @@ function App() {
       {products.map((product) => {
         return <Card key={product.key} product={product} layout={layout} />;
       })}
+
       <div className="container-home">
         <Input
           onChange={(event) => {
@@ -59,8 +60,8 @@ function App() {
           onChange={(layout) => setCurrentTab(layout)}
         />
         <Modal name="Yan Cesar" />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 
