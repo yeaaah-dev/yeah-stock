@@ -36,8 +36,8 @@ Our back-end in the file `db.json`, where you can put data on the array. We are 
 
 #### 4 - Run the back-end
 
-This command will start the back-end at the port `3000`.
+This command will start the back-end at the port `3004`.
 
 ```bash
-npx json-server --watch db.json
+npx json-server --watch db.json --port 3004
 ```
