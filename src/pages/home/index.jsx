@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Toggle, iconType } from "../../components/Toggle/Toggle";
 import { Card } from "../../components/Card";
+import { Button } from "../../components/Button/Button"
+import { Plus } from "@phosphor-icons/react"
+import style from "../home/app.module.css"
+
 
 const tabs = [
   {
@@ -20,6 +24,10 @@ const tabs = [
     key: 2,
   },
 ];
+
+function Icon() {
+  return <Plus size={15} />
+}
 
 function App() {
   const [currentTab, setCurrentTab] = useState(1);
@@ -40,27 +48,38 @@ function App() {
       });
   }, [search]);
 
+
+
   return (
+
     <div>
       <Toggle onChange={(layout) => setLayout(layout)}></Toggle>
+
+    <div className="container-home">
+      <Input
+        onChange={(event) => {
+          setSearch(event.currentTarget.value);
+        }}
+      />
+      <div className={style['div-Button']}>
+        <Button
+          label={"Adicionar produto"}
+          icon={<Icon />}
+          buttonBackgroundOff={'not'}
+        />
+      </div>
+      </div>
 
       {products.map((product) => {
         return <Card key={product.key} product={product} layout={layout} />;
       })}
 
-      <div className="container-home">
-        <Input
-          onChange={(event) => {
-            setSearch(event.currentTarget.value);
-          }}
-        />
         <Tab
           tabs={tabs}
           currentTab={currentTab}
           onChange={(layout) => setCurrentTab(layout)}
         />
         <Modal name="Yan Cesar" />
-      </div >
     </div >
   );
 }
