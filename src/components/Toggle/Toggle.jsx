@@ -19,24 +19,28 @@ export function Toggle({ onChange }) {
             ? styles["icon-active"]
             : styles["icon-not-active"]
         }
+
         onClick={() => {
           setDisplaySelected(iconType.COLUMNS);
           onChange(() => iconType.COLUMNS);
         }}
-        size={28}
+
+        size={25}
       />
+
       <List
         className={
-          displaySelected === iconType.LIST
-            ? styles["icon-active"]
-            : styles["icon-not-active"]
+          displaySelected === iconType.LIST ? styles["icon-active"] : styles["icon-not-active"]
         }
+
         onClick={() => {
           setDisplaySelected(iconType.LIST);
           onChange(() => iconType.LIST);
         }}
-        size={28}
+
+        size={25}
       />
+
     </div>
   );
 }
