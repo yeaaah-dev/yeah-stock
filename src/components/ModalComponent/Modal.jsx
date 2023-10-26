@@ -5,7 +5,7 @@ import FOTO from "../../assets/FOTO.png";
 import EDITICON from "../../assets/Edit.svg";
 import TRASHICON from "../../assets/Trash.svg";
 
-function Modal({
+export function Modal({
   name,
   quantity,
   measureUnity,
@@ -115,4 +115,3 @@ function Modal({
   );
 }
 
-export default Modal;

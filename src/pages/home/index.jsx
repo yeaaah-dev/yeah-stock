@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Modal from "../../components/ModalComponent/Modal";
+import { Modal } from "../../components/ModalComponent/Modal";
 import { Tab } from "../../components/Tab/Tab";
-import { Input } from "../../components/Input";
+import { Input } from "../../components/Input/index";
+import { Button } from "../../components/Button/Button"
+import { Plus } from "@phosphor-icons/react"
+import style from "../home/app.module.css"
 
 const tabs = [
   {
@@ -19,6 +22,8 @@ const tabs = [
   },
 ];
 
+
+
 function App() {
   const [products, setProducts] = useState([]);
   const [currentTab, setCurrentTab] = useState(1);
@@ -32,6 +37,10 @@ function App() {
     });
   }, [search]);
 
+  function icon() {
+    return <Plus size={32} />
+  }
+
   return (
     <div className="container-home">
       <Input
@@ -39,7 +48,13 @@ function App() {
           setSearch(event.currentTarget.value);
         }}
       />
-
+      <div className={style['div-Button']}>
+        <Button
+        label={"Adicionar produto"}
+        Icon={icon}
+        buttonBackgroundOff={"Yes"}
+        />
+      </div>
       <div>
         {products.map((product) => {
           return (
