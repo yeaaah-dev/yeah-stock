@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Bell, Plus } from "@phosphor-icons/react";
-
+// import {Modal} from '../../components/ModalComponent/Modal'
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
@@ -76,6 +76,9 @@ function App() {
           <div className={style["icon-photo"]}>
             <Bell size={20} className={style["icon-bell"]} />
           </div>
+          <div className={style["notification"]}>
+            <span className={style["number-notification"]}>13</span>
+          </div>
           <div>
             <img src={Rick} className={style["logo"]} />
           </div>
@@ -113,9 +116,7 @@ function App() {
         </section>
       </main>
 
-      <section>
-        <div>{/* <Modal name="Yan Cesar" /> */}</div>
-      </section>
+      <section>{/* <div><Modal name="Yan Cesar" /> </div> */}</section>
     </div>
   );
 }
