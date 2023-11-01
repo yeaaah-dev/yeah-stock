@@ -26,6 +26,5 @@ export function CardLayout({ product }) {
         </div>
       </div>
     </div>
-
   );
 }

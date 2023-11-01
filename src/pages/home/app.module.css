@@ -67,3 +67,12 @@ nav {
   margin-left: 1rem;
   width: 1rem;
 }
+
+.open {
+  background-color: red;
+  width: 100rem;
+}
+
+.close {
+  background-color: aqua;
+}

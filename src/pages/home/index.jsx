@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Bell, Plus } from "@phosphor-icons/react";
-
+import { Modal } from "../../components/ModalComponent/Modal";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
@@ -10,6 +10,7 @@ import { Card } from "../../components/Card";
 import { Button } from "../../components/Button/Button";
 import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
+import { modalStatus } from "../../components/ModalComponent/Modal";
 
 const tabs = [
   {
@@ -35,6 +36,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
+  const [modalModel, setModalModel] = useState(modalStatus.OPEN);
 
   useEffect(() => {
     const query = search.length ? `?title_like=${search}` : "";
@@ -54,7 +56,6 @@ function App() {
       <aside>
         <Sidebar />
       </aside>
-
       <main>
         <nav className={style["nav-bar"]}>
           <div>
@@ -114,7 +115,18 @@ function App() {
       </main>
 
       <section>
-        <div>{/* <Modal name="Yan Cesar" /> */}</div>
+        <div
+          className={
+            modalModel === modalStatus.OPEN ? style["open"] : style["close"]
+          }
+        >
+          {
+            <Modal
+              name="Yan Cesar"
+              onChange={(modalModel) => setModalModel(modalModel)}
+            />
+          }
+        </div>
       </section>
     </div>
   );
