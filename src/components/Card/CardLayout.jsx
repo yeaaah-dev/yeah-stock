@@ -12,7 +12,7 @@ export function CardLayout({ product }) {
 
       <div className={styles["product_name"]}>
         <span>{product.title}</span>
-        <button>
+        <button className={styles["button-pencil"]}>
           <NotePencil size={14} color=" #1F7CFB" />
         </button>
       </div>
@@ -26,6 +26,5 @@ export function CardLayout({ product }) {
         </div>
       </div>
     </div>
-
   );
 }
