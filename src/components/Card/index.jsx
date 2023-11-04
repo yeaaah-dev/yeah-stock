@@ -3,13 +3,17 @@ import { iconType } from "../Toggle/Toggle";
 import { CardLayout } from "./CardLayout";
 import { ListLayout } from "./ListLayout";
 import style from "../Card/listStyles.module.css";
+// import { modalStatus } from "../ModalComponent/Modal";
 
-export function Card({ layout, product }) {
+export function Card({ layout, product, onChangeModalStatusOpen }) {
   return (
     <div>
       {layout === iconType.COLUMNS ? (
         <div className={style["teste02"]}>
-          <CardLayout product={product} />
+          <CardLayout
+            product={product}
+            onChangeModalStatusOpen={onChangeModalStatusOpen}
+          />
         </div>
       ) : (
         <div className={style["list-product-container"]}>

@@ -17,13 +17,13 @@ export function Modal({
   currency,
   provider,
   active,
-  onChange,
+  onChangeModalStatusClose,
 }) {
   return (
     <section className={styles["modal-section"]}>
       <div className={styles["modal-content"]}>
         <div className={styles["modal-header"]}>
-          <button onClick={onChange(modalStatus.CLOSE)}>
+          <button onClick={onChangeModalStatusClose}>
             <X size={19} color="#FFFFFF" />
           </button>
         </div>

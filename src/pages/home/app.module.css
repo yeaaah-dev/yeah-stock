@@ -1,6 +1,5 @@
-.div-Button {
+.Button {
   width: 10.08213rem;
-  gap: 0.31rem;
 }
 
 .home-page {
@@ -9,23 +8,41 @@
 
 .nav-bar {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   margin-top: 3.37rem;
+
+  width: 100%;
+}
+
+.main-width-open-modal {
+  width: 45rem;
+}
+
+.main-width-close-modal {
+  width: 62rem;
 }
 
 .tab-toggle {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin-top: 1.19rem;
-  width: 60rem;
   margin-bottom: 1rem;
 }
 
 .grid-layout-column {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  width: 100%;
   gap: 1.7rem;
-  width: 60rem;
+  margin-left: -3.1rem;
+}
+
+.grid-layout-column-open-modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.7rem;
+  width: 100%;
   margin-left: -3.1rem;
 }
 
@@ -59,20 +76,29 @@ nav {
   background: #242424;
   border-radius: 50%;
   border: 0.673px solid rgba(255, 255, 255, 0.04);
-  margin-left: 1.29rem;
+}
+
+.button-icons {
+  display: flex;
+  gap: 2rem;
 }
 
 .logo {
   border-radius: 50%;
-  margin-left: 1rem;
   width: 1rem;
 }
 
-.open {
-  background-color: red;
-  width: 100rem;
+.modal-close {
+  visibility: hidden;
 }
 
-.close {
-  background-color: aqua;
+.modal-section {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh !important;
+  max-width: 18.125rem;
+
+  background-color: #323232;
+  font-family: "Outfit", sans-serif;
 }

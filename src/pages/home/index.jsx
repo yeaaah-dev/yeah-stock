@@ -36,7 +36,15 @@ function App() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
-  const [modalModel, setModalModel] = useState(modalStatus.OPEN);
+  const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
+
+  function onChangeModalStatusClose() {
+    setModalModel(modalStatus.CLOSE);
+  }
+
+  function onChangeModalStatusOpen() {
+    setModalModel(modalStatus.OPEN);
+  }
 
   useEffect(() => {
     const query = search.length ? `?title_like=${search}` : "";
@@ -56,28 +64,32 @@ function App() {
       <aside>
         <Sidebar />
       </aside>
-      <main>
-        <nav className={style["nav-bar"]}>
-          <div>
-            <Input
-              onChange={(event) => {
-                setSearch(event.currentTarget.value);
-              }}
-            />
-          </div>
 
-          <div className={style["div-Button"]}>
+      <main
+        className={
+          modalModel === modalStatus.OPEN
+            ? style["main-width-open-modal"]
+            : style["main-width-close-modal"]
+        }
+      >
+        <nav className={style["nav-bar"]}>
+          <Input
+            onChange={(event) => {
+              setSearch(event.currentTarget.value);
+            }}
+          />
+          <div className={style["button-icons"]}>
             <Button
               label={"Adicionar produto"}
               icon={<Icon />}
               buttonBackgroundOff={"not"}
+              className={style["Button"]}
             />
-          </div>
 
-          <div className={style["icon-photo"]}>
-            <Bell size={20} className={style["icon-bell"]} />
-          </div>
-          <div>
+            <div className={style["icon-photo"]}>
+              <Bell size={20} className={style["icon-bell"]} />
+            </div>
+
             <img src={Rick} className={style["logo"]} />
           </div>
         </nav>
@@ -105,28 +117,39 @@ function App() {
                 : style["grid-layout-list"]
             }
           >
-            {products.map((product) => {
-              return (
-                <Card key={product.key} product={product} layout={layout} />
-              );
-            })}
+            <div
+              className={
+                modalModel === modalStatus.OPEN
+                  ? style["grid-layout-column-open-modal"]
+                  : style["grid-layout-column"]
+              }
+            >
+              {products.map((product) => {
+                return (
+                  <Card
+                    key={product.key}
+                    product={product}
+                    layout={layout}
+                    onChangeModalStatusOpen={onChangeModalStatusOpen}
+                  />
+                );
+              })}
+            </div>
           </div>
         </section>
       </main>
 
-      <section>
-        <div
-          className={
-            modalModel === modalStatus.OPEN ? style["open"] : style["close"]
-          }
-        >
-          {
-            <Modal
-              name="Yan Cesar"
-              onChange={(modalModel) => setModalModel(modalModel)}
-            />
-          }
-        </div>
+      <section
+        className={
+          modalModel === modalStatus.CLOSE
+            ? style["modal-close"]
+            : style["modal-section"]
+        }
+      >
+        <Modal
+          name="Yan Cesar"
+          onChangeModalStatusClose={onChangeModalStatusClose}
+        />
       </section>
     </div>
   );
