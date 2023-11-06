@@ -90,14 +90,3 @@ nav {
 .modal-close {
   visibility: hidden;
 }
-
-.modal-section {
-  display: flex;
-  flex-direction: column;
-
-  height: 100vh !important;
-  max-width: 18.125rem;
-
-  background-color: #323232;
-  font-family: "Outfit", sans-serif;
-}

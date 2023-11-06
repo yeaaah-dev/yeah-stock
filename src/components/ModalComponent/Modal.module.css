@@ -10,7 +10,7 @@ button {
   margin-left: 1rem;
 
   max-width: 18.125rem;
-
+  height: 100%;
   background-color: #323232;
   font-family: "Outfit", sans-serif;
 }
