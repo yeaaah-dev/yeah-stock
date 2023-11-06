@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Image, NotePencil } from "@phosphor-icons/react";
 import styles from "./cardStyle.module.css";
-// import { modalStatus } from "../ModalComponent/Modal";
 
 export function CardLayout({ product, onChangeModalStatusOpen }) {
   return (
@@ -13,6 +12,7 @@ export function CardLayout({ product, onChangeModalStatusOpen }) {
 
       <div className={styles["product_name"]}>
         <span>{product.title}</span>
+
         <button>
           <NotePencil
             size={14}
