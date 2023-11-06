@@ -111,7 +111,11 @@ function App() {
             </div>
 
             <div>
-              <img src={Rick} className={style["logo"]} />
+              <img
+                src={Rick}
+                className={style["logo"]}
+                alt="imagem Rick e Morty"
+              />
             </div>
           </div>
         </nav>
