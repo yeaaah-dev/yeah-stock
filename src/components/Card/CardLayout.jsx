@@ -2,7 +2,7 @@
 import { Image, NotePencil } from "@phosphor-icons/react";
 import styles from "./cardStyle.module.css";
 
-export function CardLayout({ product }) {
+export function CardLayout({ product, onChangeModalStatusOpen }) {
   return (
     <div className={styles["container_card"]}>
       <div className={styles["content_card"]}>
@@ -12,8 +12,13 @@ export function CardLayout({ product }) {
 
       <div className={styles["product_name"]}>
         <span>{product.title}</span>
-        <button className={styles["button-pencil"]}>
-          <NotePencil size={14} color=" #1F7CFB" />
+
+        <button>
+          <NotePencil
+            size={14}
+            color=" #1F7CFB"
+            onClick={onChangeModalStatusOpen}
+          />
         </button>
       </div>
 

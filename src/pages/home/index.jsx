@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Bell, Plus } from "@phosphor-icons/react";
+import { Modal } from "../../components/ModalComponent/Modal";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
 import { Tab } from "../../components/Tab/Tab";
@@ -9,6 +10,7 @@ import { Card } from "../../components/Card";
 import { Button } from "../../components/Button/Button";
 import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
+import { modalStatus } from "../../components/ModalComponent/Modal";
 
 const tabs = [
   {
@@ -34,6 +36,37 @@ function App() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
+  const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
+
+  function onChangeModalStatusClose() {
+    setModalModel(modalStatus.CLOSE);
+  }
+
+  function onChangeModalStatusOpen() {
+    setModalModel(modalStatus.OPEN);
+  }
+
+  function changeLayoutCards() {
+    if (layout === iconType.LIST) {
+      return style["grid-layout-list"];
+    }
+    if (modalModel === modalStatus.OPEN) {
+      return style["grid-layout-column-open-modal"];
+    } else if (modalModel === modalStatus.CLOSE) {
+      return style["grid-layout-column-close-modal"];
+    }
+  }
+
+  function changeLayoutAllScreen() {
+    if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
+      return style["main-width-close-modal"];
+    }
+    if (modalModel === modalStatus.OPEN) {
+      return style["main-width-open-modal"];
+    } else {
+      return style["main-width-close-modal"];
+    }
+  }
 
   useEffect(() => {
     const query = search.length ? `?title_like=${search}` : "";
@@ -54,23 +87,21 @@ function App() {
         <Sidebar />
       </aside>
 
-      <main>
+      <main className={changeLayoutAllScreen()}>
         <nav className={style["nav-bar"]}>
-          <div>
-            <Input
-              onChange={(event) => {
-                setSearch(event.currentTarget.value);
-              }}
-            />
-          </div>
-
-          <div className={style["div-Button"]}>
+          <Input
+            onChange={(event) => {
+              setSearch(event.currentTarget.value);
+            }}
+          />
+          <div className={style["button-icons"]}>
             <Button
               label={"Adicionar produto"}
               icon={<Icon />}
               buttonBackgroundOff={"not"}
+              className={style["Button"]}
             />
-          </div>
+
 
           <div className={style["icon-photo"]}>
             <Bell size={20} className={style["icon-bell"]} />
@@ -81,6 +112,7 @@ function App() {
           </div>
 
           <div>
+
             <img src={Rick} className={style["logo"]} />
           </div>
         </nav>
@@ -101,23 +133,34 @@ function App() {
               <Toggle onChange={(layout) => setLayout(layout)} />
             </div>
           </div>
-          <div
-            className={
-              layout === iconType.COLUMNS
-                ? style["grid-layout-column"]
-                : style["grid-layout-list"]
-            }
-          >
+
+          <div className={changeLayoutCards()}>
             {products.map((product) => {
               return (
-                <Card key={product.key} product={product} layout={layout} />
+                <Card
+                  key={product.key}
+                  product={product}
+                  layout={layout}
+                  onChangeModalStatusOpen={onChangeModalStatusOpen}
+                />
               );
             })}
           </div>
         </section>
       </main>
 
-      <section></section>
+      <section
+        className={
+          modalModel === modalStatus.CLOSE
+            ? style["modal-close"]
+            : style["modal-section"]
+        }
+      >
+        <Modal
+          name="Yan Cesar"
+          onChangeModalStatusClose={onChangeModalStatusClose}
+        />
+      </section>
     </div>
   );
 }

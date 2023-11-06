@@ -3,6 +3,11 @@ import styles from "./Modal.module.css";
 import FOTO from "../../assets/FOTO.png";
 import { Trash, NotePencil, X } from "@phosphor-icons/react";
 
+export const modalStatus = {
+  OPEN: "open",
+  CLOSE: "close",
+};
+
 export function Modal({
   name,
   quantity,
@@ -12,12 +17,13 @@ export function Modal({
   currency,
   provider,
   active,
+  onChangeModalStatusClose,
 }) {
   return (
     <section className={styles["modal-section"]}>
       <div className={styles["modal-content"]}>
         <div className={styles["modal-header"]}>
-          <button>
+          <button onClick={onChangeModalStatusClose}>
             <X size={19} color="#FFFFFF" />
           </button>
         </div>

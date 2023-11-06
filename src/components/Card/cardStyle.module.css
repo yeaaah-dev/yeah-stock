@@ -1,5 +1,4 @@
 .container_card {
-  margin-left: 3rem;
   display: flex;
   flex-direction: column;
   width: 13.95519rem;
@@ -71,7 +70,3 @@
   line-height: normal;
 }
 
-.button-pencil {
-  width: 0.6rem;
-  height: 0.6rem;
-}
