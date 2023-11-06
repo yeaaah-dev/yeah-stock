@@ -13,7 +13,7 @@ export function CardLayout({ product, onChangeModalStatusOpen }) {
       <div className={styles["product_name"]}>
         <span>{product.title}</span>
 
-        <button>
+        <button className={styles["button-icon-pencil"]}>
           <NotePencil
             size={14}
             color=" #1F7CFB"
