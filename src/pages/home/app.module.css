@@ -71,6 +71,7 @@ nav {
 }
 
 .icon-photo {
+  margin-left: -1rem;
   padding: 5px;
   background: #242424;
   border-radius: 50%;
@@ -80,6 +81,7 @@ nav {
 .button-icons {
   display: flex;
   gap: 2rem;
+  margin-right: 2rem;
 }
 
 .notification {
@@ -93,7 +95,7 @@ nav {
   border: 0.5px solid rgba(255, 255, 255, 0.04);
   background: #c0293d;
   margin-bottom: 1rem;
-  margin-left: -0.5rem;
+  margin-left: -2.5rem;
 }
 
 .number-notification {
@@ -111,7 +113,9 @@ nav {
 
 .logo {
   border-radius: 50%;
-  width: 1rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -1rem;
 }
 
 .modal-close {

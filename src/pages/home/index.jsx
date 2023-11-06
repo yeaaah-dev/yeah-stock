@@ -102,18 +102,17 @@ function App() {
               className={style["Button"]}
             />
 
+            <div className={style["icon-photo"]}>
+              <Bell size={20} className={style["icon-bell"]} />
+            </div>
 
-          <div className={style["icon-photo"]}>
-            <Bell size={20} className={style["icon-bell"]} />
-          </div>
+            <div className={style["notification"]}>
+              <span className={style["number-notification"]}>13</span>
+            </div>
 
-          <div className={style["notification"]}>
-            <span className={style["number-notification"]}>13</span>
-          </div>
-
-          <div>
-
-            <img src={Rick} className={style["logo"]} />
+            <div>
+              <img src={Rick} className={style["logo"]} />
+            </div>
           </div>
         </nav>
 
