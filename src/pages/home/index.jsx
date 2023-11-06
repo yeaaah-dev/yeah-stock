@@ -46,7 +46,7 @@ function App() {
     setModalModel(modalStatus.OPEN);
   }
 
-  function changeLayout() {
+  function changeLayoutCards() {
     if (layout === iconType.LIST) {
       return style["grid-layout-list"];
     }
@@ -54,6 +54,17 @@ function App() {
       return style["grid-layout-column-open-modal"];
     } else if (modalModel === modalStatus.CLOSE) {
       return style["grid-layout-column-close-modal"];
+    }
+  }
+
+  function changeLayoutAllScreen() {
+    if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
+      return style["main-width-close-modal"];
+    }
+    if (modalModel === modalStatus.OPEN) {
+      return style["main-width-open-modal"];
+    } else {
+      return style["main-width-close-modal"];
     }
   }
 
@@ -76,13 +87,7 @@ function App() {
         <Sidebar />
       </aside>
 
-      <main
-        className={
-          modalModel === modalStatus.OPEN
-            ? style["main-width-open-modal"]
-            : style["main-width-close-modal"]
-        }
-      >
+      <main className={changeLayoutAllScreen()}>
         <nav className={style["nav-bar"]}>
           <Input
             onChange={(event) => {
@@ -122,7 +127,7 @@ function App() {
             </div>
           </div>
 
-          <div className={changeLayout()}>
+          <div className={changeLayoutCards()}>
             {products.map((product) => {
               return (
                 <Card
