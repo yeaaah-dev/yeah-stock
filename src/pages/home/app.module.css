@@ -15,11 +15,12 @@
 }
 
 .main-width-open-modal {
-  width: 45rem;
+  max-width: 45rem;
+  margin-right: 1.7rem;
 }
 
 .main-width-close-modal {
-  width: 62rem;
+  max-width: 62rem;
 }
 
 .tab-toggle {
@@ -30,20 +31,18 @@
   margin-bottom: 1rem;
 }
 
-.grid-layout-column {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  gap: 1.7rem;
-  margin-left: -3.1rem;
-}
-
 .grid-layout-column-open-modal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.7rem;
   width: 100%;
-  margin-left: -3.1rem;
+}
+
+.grid-layout-column-close-modal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.7rem;
+  width: 100%;
 }
 
 .grid-layout-list {

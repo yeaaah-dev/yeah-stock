@@ -46,6 +46,17 @@ function App() {
     setModalModel(modalStatus.OPEN);
   }
 
+  function changeLayout() {
+    if (layout === iconType.LIST) {
+      return style["grid-layout-list"];
+    }
+    if (modalModel === modalStatus.OPEN) {
+      return style["grid-layout-column-open-modal"];
+    } else if (modalModel === modalStatus.CLOSE) {
+      return style["grid-layout-column-close-modal"];
+    }
+  }
+
   useEffect(() => {
     const query = search.length ? `?title_like=${search}` : "";
 
@@ -110,31 +121,18 @@ function App() {
               <Toggle onChange={(layout) => setLayout(layout)} />
             </div>
           </div>
-          <div
-            className={
-              layout === iconType.COLUMNS
-                ? style["grid-layout-column"]
-                : style["grid-layout-list"]
-            }
-          >
-            <div
-              className={
-                modalModel === modalStatus.OPEN
-                  ? style["grid-layout-column-open-modal"]
-                  : style["grid-layout-column"]
-              }
-            >
-              {products.map((product) => {
-                return (
-                  <Card
-                    key={product.key}
-                    product={product}
-                    layout={layout}
-                    onChangeModalStatusOpen={onChangeModalStatusOpen}
-                  />
-                );
-              })}
-            </div>
+
+          <div className={changeLayout()}>
+            {products.map((product) => {
+              return (
+                <Card
+                  key={product.key}
+                  product={product}
+                  layout={layout}
+                  onChangeModalStatusOpen={onChangeModalStatusOpen}
+                />
+              );
+            })}
           </div>
         </section>
       </main>

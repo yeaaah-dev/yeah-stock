@@ -9,12 +9,10 @@ export function Card({ layout, product, onChangeModalStatusOpen }) {
   return (
     <div>
       {layout === iconType.COLUMNS ? (
-        <div className={style["teste02"]}>
-          <CardLayout
-            product={product}
-            onChangeModalStatusOpen={onChangeModalStatusOpen}
-          />
-        </div>
+        <CardLayout
+          product={product}
+          onChangeModalStatusOpen={onChangeModalStatusOpen}
+        />
       ) : (
         <div className={style["list-product-container"]}>
           <ListLayout product={product} />
