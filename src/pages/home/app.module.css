@@ -121,3 +121,7 @@ nav {
 .modal-close {
   visibility: hidden;
 }
+
+.error-page {
+  color: #fff;
+}
