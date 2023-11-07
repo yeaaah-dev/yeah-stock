@@ -96,7 +96,7 @@ export function App() {
             }}
           />
           <div className={style["button-icons"]}>
-            <Link to={`RegistrationScreen`}>
+            <Link to="RegistrationScreen">
               <Button
                 label={"Adicionar produto"}
                 icon={<Icon />}

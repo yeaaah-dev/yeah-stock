@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styles from "../Button/Button.module.css";
 
-export function Button({ label, buttonBackgroundOff, icon: icon }) {
+export function Button({ label, buttonBackgroundOff, icon }) {
   return (
     <div>
       <button
