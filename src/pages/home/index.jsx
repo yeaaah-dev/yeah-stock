@@ -11,6 +11,7 @@ import { Button } from "../../components/Button/Button";
 import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
 import { modalStatus } from "../../components/ModalComponent/Modal";
+import { Link } from "react-router-dom";
 
 const tabs = [
   {
@@ -31,7 +32,7 @@ function Icon() {
   return <Plus size={15} />;
 }
 
-function App() {
+export function App() {
   const [currentTab, setCurrentTab] = useState(1);
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
@@ -95,12 +96,14 @@ function App() {
             }}
           />
           <div className={style["button-icons"]}>
-            <Button
-              label={"Adicionar produto"}
-              icon={<Icon />}
-              buttonBackgroundOff={"not"}
-              className={style["Button"]}
-            />
+            <Link to={`RegistrationScreen`}>
+              <Button
+                label={"Adicionar produto"}
+                icon={<Icon />}
+                buttonBackgroundOff={"not"}
+                className={style["Button"]}
+              />
+            </Link>
 
             <div className={style["icon-photo"]}>
               <Bell size={20} className={style["icon-bell"]} />
