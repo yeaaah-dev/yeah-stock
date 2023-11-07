@@ -11,7 +11,7 @@ import { Button } from "../../components/Button/Button";
 import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
 import { modalStatus } from "../../components/ModalComponent/Modal";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const tabs = [
   {
@@ -38,6 +38,11 @@ export function App() {
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
   const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
+  const navigate = useNavigate();
+
+  function goToRegistration() {
+    navigate("/registration");
+  }
 
   function onChangeModalStatusClose() {
     setModalModel(modalStatus.CLOSE);
@@ -96,14 +101,13 @@ export function App() {
             }}
           />
           <div className={style["button-icons"]}>
-            <Link to="RegistrationScreen">
-              <Button
-                label={"Adicionar produto"}
-                icon={<Icon />}
-                buttonBackgroundOff={"not"}
-                className={style["Button"]}
-              />
-            </Link>
+            <Button
+              label={"Adicionar produto"}
+              icon={<Icon />}
+              buttonBackgroundOff={"not"}
+              className={style["Button"]}
+              onClick={goToRegistration}
+            />
 
             <div className={style["icon-photo"]}>
               <Bell size={20} className={style["icon-bell"]} />
