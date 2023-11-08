@@ -169,6 +169,7 @@ export function App() {
         <Modal
           name="Yan Cesar"
           onChangeModalStatusClose={onChangeModalStatusClose}
+          goToRegistration={goToRegistration}
         />
       </section>
     </div>
