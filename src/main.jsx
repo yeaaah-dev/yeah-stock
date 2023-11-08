@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/RegistrationScreen",
+    path: "/registration",
     element: <RegistrationScreen />,
   },
 ]);
