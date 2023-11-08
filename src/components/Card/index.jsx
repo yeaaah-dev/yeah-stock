@@ -14,7 +14,10 @@ export function Card({ layout, product, onChangeModalStatusOpen }) {
         />
       ) : (
         <div className={style["list-product-container"]}>
-          <ListLayout product={product} />
+          <ListLayout
+            product={product}
+            onChangeModalStatusOpen={onChangeModalStatusOpen}
+          />
         </div>
       )}
     </div>
