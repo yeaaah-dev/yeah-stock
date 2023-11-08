@@ -2,7 +2,7 @@
 import { Image, NotePencil } from "@phosphor-icons/react";
 import styles from "./listStyles.module.css";
 
-export function ListLayout({ product }) {
+export function ListLayout({ product, onChangeModalStatusOpen }) {
   return (
     <div className={styles["container_list_card"]}>
       <div className={styles["content_card_list"]}>
@@ -38,7 +38,7 @@ export function ListLayout({ product }) {
       </div>
 
       <div className={styles["pencil_edit"]}>
-        <button>
+        <button onClick={onChangeModalStatusOpen}>
           <NotePencil size={14} color=" #1F7CFB" />
         </button>
       </div>

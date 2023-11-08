@@ -1,4 +1,4 @@
-import styles from "../../pages/home/RegistrationScreen.module.css";
+import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 
 export function RegistrationScreen() {
   return (
