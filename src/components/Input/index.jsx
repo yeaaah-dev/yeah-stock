@@ -1,19 +1,15 @@
-import { MagnifyingGlass } from "@phosphor-icons/react";
+/* eslint-disable react/prop-types */
+
 import styles from "./styles.module.css";
 
-export function Input({ ...rest }) {
+export function Input({ borderNone, isNumber, ...rest }) {
   return (
-    <div className={styles["input-wrapper"]}>
-      <button className={styles["button-search"]}>
-        <MagnifyingGlass size={16} />
-      </button>
-
-      <input
-        {...rest}
-        type="text"
-        className={styles["input-header"]}
-        placeholder="Pesquisar produto"
-      />
-    </div>
+    <input
+      {...rest}
+      type={isNumber === "yes" ? "number" : "text"}
+      className={borderNone === "yes" ? `${styles["input-header_border-none"]}` : `${styles["input-header"]}`}
+      placeholder={isNumber === "yes" || isNumber === "not" ? "" : "Pesquisar produto"}
+    />
   );
 }
+

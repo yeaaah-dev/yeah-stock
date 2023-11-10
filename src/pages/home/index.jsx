@@ -12,6 +12,7 @@ import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
 import { modalStatus } from "../../components/ModalComponent/Modal";
 import { Link } from "react-router-dom";
+import { MagnifyingGlass } from "@phosphor-icons/react"
 
 const tabs = [
   {
@@ -90,11 +91,19 @@ export function App() {
 
       <main className={changeLayoutAllScreen()}>
         <nav className={style["nav-bar"]}>
-          <Input
-            onChange={(event) => {
-              setSearch(event.currentTarget.value);
-            }}
-          />
+          <div className={style["content-input"]}>
+            <div className={style["input-wrapper"]}>
+              <button className={style["button-search"]}>
+                <MagnifyingGlass size={16} />
+              </button>
+              <Input
+                borderNone={"yes"}
+                onChange={(event) => {
+                  setSearch(event.currentTarget.value);
+                }}
+              />
+            </div>
+          </div>
           <div className={style["button-icons"]}>
             <Link to="RegistrationScreen">
               <Button
