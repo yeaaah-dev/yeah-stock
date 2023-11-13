@@ -3,7 +3,6 @@
 import styles from "./styles.module.css";
 
 export function Input({ borderNone, ...rest }) {
-  console.log({ ...rest });
   return (
     <input
       {...rest}
