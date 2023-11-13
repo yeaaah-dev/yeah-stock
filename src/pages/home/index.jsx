@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Bell, Plus } from "@phosphor-icons/react";
+import { Bell, MagnifyingGlass, Plus } from "@phosphor-icons/react";
 import { Modal } from "../../components/ModalComponent/Modal";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
@@ -11,8 +11,7 @@ import { Button } from "../../components/Button/Button";
 import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
 import { modalStatus } from "../../components/ModalComponent/Modal";
-import { Link } from "react-router-dom";
-import { MagnifyingGlass } from "@phosphor-icons/react"
+import { useNavigate } from "react-router-dom";
 
 const tabs = [
   {
@@ -39,6 +38,11 @@ export function App() {
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
   const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
+  const navigate = useNavigate();
+
+  function goToRegistration() {
+    navigate("/registration");
+  }
 
   function onChangeModalStatusClose() {
     setModalModel(modalStatus.CLOSE);
@@ -93,7 +97,10 @@ export function App() {
         <nav className={style["nav-bar"]}>
           <div className={style["content-input"]}>
             <div className={style["input-wrapper"]}>
-              <button className={style["button-search"]}>
+              <button
+                className={style["button-search"]}
+                onClick={goToRegistration}
+              >
                 <MagnifyingGlass size={16} />
               </button>
               <Input
@@ -105,14 +112,13 @@ export function App() {
             </div>
           </div>
           <div className={style["button-icons"]}>
-            <Link to="RegistrationScreen">
-              <Button
-                label={"Adicionar produto"}
-                icon={<Icon />}
-                buttonBackgroundOff={"not"}
-                className={style["Button"]}
-              />
-            </Link>
+            <Button
+              label={"Adicionar produto"}
+              icon={<Icon />}
+              buttonBackgroundOff={"not"}
+              className={style["Button"]}
+              onClick={goToRegistration}
+            />
 
             <div className={style["icon-photo"]}>
               <Bell size={20} className={style["icon-bell"]} />
@@ -174,6 +180,7 @@ export function App() {
         <Modal
           name="Yan Cesar"
           onChangeModalStatusClose={onChangeModalStatusClose}
+          goToRegistration={goToRegistration}
         />
       </section>
     </div>

@@ -18,6 +18,7 @@ export function Modal({
   provider,
   active,
   onChangeModalStatusClose,
+  goToRegistration,
 }) {
   return (
     <section className={styles["modal-section"]}>
@@ -106,7 +107,7 @@ export function Modal({
         </div>
 
         <div className={styles["buttons-div"]}>
-          <button className={styles["edit-button"]}>
+          <button className={styles["edit-button"]} onClick={goToRegistration}>
             <NotePencil size={17} />
             Editar
           </button>

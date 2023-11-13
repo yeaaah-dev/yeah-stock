@@ -1,7 +1,11 @@
+<<<<<<< HEAD:src/pages/home/RegistrationScreen.jsx
 import styles from "../../pages/home/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input"
 import { Image } from "@phosphor-icons/react"
+=======
+import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
+>>>>>>> main:src/pages/registrationScreen/RegistrationScreen.jsx
 
 export function RegistrationScreen() {
   return (

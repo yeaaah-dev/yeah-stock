@@ -3,7 +3,7 @@ import "./styles/global.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import { ErrorPage } from "./error-page";
-import { RegistrationScreen } from "./pages/home/RegistrationScreen";
+import { RegistrationScreen } from "./pages/registrationScreen/RegistrationScreen";
 import { Root } from "./routes/root";
 
 const router = createBrowserRouter([
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/RegistrationScreen",
+    path: "/registration",
     element: <RegistrationScreen />,
   },
 ]);
