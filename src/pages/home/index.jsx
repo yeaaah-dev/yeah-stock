@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Bell, Plus } from "@phosphor-icons/react";
+import { Bell, MagnifyingGlass, Plus } from "@phosphor-icons/react";
 import { Modal } from "../../components/ModalComponent/Modal";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input/index";
@@ -95,11 +95,24 @@ export function App() {
 
       <main className={changeLayoutAllScreen()}>
         <nav className={style["nav-bar"]}>
-          <Input
-            onChange={(event) => {
-              setSearch(event.currentTarget.value);
-            }}
-          />
+          <div className={style["content-input"]}>
+            <div className={style["input-wrapper"]}>
+              <button
+                className={style["button-search"]}
+                onClick={goToRegistration}
+              >
+                <MagnifyingGlass size={16} />
+              </button>
+              <Input
+                borderNone={true}
+                type="text"
+                placeholder="pesquisar produtos"
+                onChange={(event) => {
+                  setSearch(event.currentTarget.value);
+                }}
+              />
+            </div>
+          </div>
           <div className={style["button-icons"]}>
             <Button
               label={"Adicionar produto"}
