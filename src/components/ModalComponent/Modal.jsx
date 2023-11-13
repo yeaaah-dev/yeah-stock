@@ -2,6 +2,7 @@
 import styles from "./Modal.module.css";
 import FOTO from "../../assets/FOTO.png";
 import { Trash, NotePencil, X } from "@phosphor-icons/react";
+import { Textarea } from "../textarea/textarea";
 
 export const modalStatus = {
   OPEN: "open",
@@ -100,10 +101,10 @@ export function Modal({
         </div>
 
         <div className={styles["product-description"]}>
-          <textarea
+          <Textarea
+            location={true}
             type="text"
-            placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness."
-          />
+            placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness." />
         </div>
 
         <div className={styles["buttons-div"]}>

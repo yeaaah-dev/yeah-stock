@@ -2,6 +2,7 @@ import styles from "../../pages/registrationScreen/RegistrationScreen.module.css
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Image } from "@phosphor-icons/react";
+import { Textarea } from "../../components/textarea/textarea";
 
 export function RegistrationScreen() {
   return (
@@ -54,7 +55,7 @@ export function RegistrationScreen() {
 
         <div className={styles["description-products-content"]}>
           <span className={styles["title-inputs"]}>Descrição do produto</span>
-          <textarea></textarea>
+          <Textarea />
         </div>
       </div>
     </div>
