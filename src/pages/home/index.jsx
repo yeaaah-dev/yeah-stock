@@ -104,7 +104,9 @@ export function App() {
                 <MagnifyingGlass size={16} />
               </button>
               <Input
-                borderNone={"yes"}
+                borderNone={true}
+                type="text"
+                placeholder="pesquisar produtos"
                 onChange={(event) => {
                   setSearch(event.currentTarget.value);
                 }}
