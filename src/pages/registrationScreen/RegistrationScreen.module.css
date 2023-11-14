@@ -140,7 +140,18 @@ input[type="number"]::-webkit-outer-spin-button {
   position: absolute;
   margin-left: 5.7rem;
   top: 50%;
+  transform: translateY(-50%);
+}
 
+.icon-sale-purchase-currency {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: #fff;
+  padding: 4px;
+  position: absolute;
+  margin-left: 7rem;
+  top: 50%;
   transform: translateY(-50%);
 }
 

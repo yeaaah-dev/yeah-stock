@@ -1,7 +1,7 @@
+import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
-import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import { useState } from "react";
 
 export function RegistrationScreen() {
@@ -82,7 +82,7 @@ export function RegistrationScreen() {
           <div className={styles["inputs-Purchase-price-currency"]}>
             <span className={styles["title-inputs"]}>Purchase price</span>
             <div className={styles["wrapper"]}>
-              <div className={styles["icon"]}>
+              <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
                   onClick={() => setPurchasePrice(purchasePrice + 1)}
                   className={styles["icon-caret-up"]}
@@ -105,7 +105,7 @@ export function RegistrationScreen() {
           <div className={styles["inputs-Purchase-price-currency"]}>
             <span className={styles["title-inputs"]}>Sale price</span>
             <div className={styles["wrapper"]}>
-              <div className={styles["icon"]}>
+              <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
                   onClick={() => setSalePrice(salePrice + 1)}
                   className={styles["icon-caret-up"]}
@@ -128,7 +128,7 @@ export function RegistrationScreen() {
           <div className={styles["inputs-Purchase-price-currency"]}>
             <span className={styles["title-inputs"]}>Currency</span>
             <div className={styles["wrapper"]}>
-              <div className={styles["icon"]}>
+              <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
                   onClick={() => setCurrency(currency + 1)}
                   className={styles["icon-caret-up"]}
