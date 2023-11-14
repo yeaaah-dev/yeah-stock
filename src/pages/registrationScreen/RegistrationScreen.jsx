@@ -2,6 +2,7 @@ import styles from "../../pages/registrationScreen/RegistrationScreen.module.css
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Image } from "@phosphor-icons/react";
+import { Button } from "../../components/Button/Button";
 
 export function RegistrationScreen() {
   return (
@@ -56,6 +57,14 @@ export function RegistrationScreen() {
           <span className={styles["title-inputs"]}>Descrição do produto</span>
           <textarea></textarea>
         </div>
+
+        <div className={styles["div-button"]}>
+            <Button
+              label={"Salvar"}
+              buttonBackgroundOff={"not"}
+              className={styles["Button"]}
+            />
+          </div>
       </div>
     </div>
   );

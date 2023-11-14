@@ -106,7 +106,7 @@ export function App() {
               <Input
                 borderNone={true}
                 type="text"
-                placeholder="pesquisar produtos"
+                placeholder="Pesquisar produtos"
                 onChange={(event) => {
                   setSearch(event.currentTarget.value);
                 }}
@@ -114,13 +114,16 @@ export function App() {
             </div>
           </div>
           <div className={style["button-icons"]}>
+
+            <div className={style["div-button"]}>
             <Button
               label={"Adicionar produto"}
-              icon={<Icon />}
+              icon={<Icon/>}
               buttonBackgroundOff={"not"}
               className={style["Button"]}
               onClick={goToRegistration}
             />
+            </div>
 
             <div className={style["icon-photo"]}>
               <Bell size={20} className={style["icon-bell"]} />

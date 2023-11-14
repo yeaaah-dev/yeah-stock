@@ -1,5 +1,12 @@
 .Button {
   width: 10.08213rem;
+  color: #FFF;
+
+  font-family: Outfit;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .home-page {
@@ -8,9 +15,8 @@
 
 .nav-bar {
   display: flex;
-  justify-content: space-between;
   margin-top: 3.37rem;
-
+  gap: 1.25rem;
   width: 100%;
 }
 
@@ -80,8 +86,9 @@ nav {
 
 .button-icons {
   display: flex;
+  align-items: center;
   gap: 2rem;
-  margin-right: 2rem;
+  width: 45%;
 }
 
 .notification {
@@ -109,12 +116,12 @@ nav {
 .icon-bell {
   color: #fff;
   margin-top: 0.3rem;
+  width: 30px;
 }
 
 .logo {
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
   margin-left: -1rem;
 }
 
@@ -152,4 +159,9 @@ nav {
   padding-top: 0.56rem;
   padding-bottom: 0.56rem;
   margin-left: -2rem;
+}
+
+.div-button{
+  max-width: 10.08213rem;;
+  width: 100%;
 }
