@@ -1,6 +1,6 @@
 .title-page {
   margin-top: 3.56rem;
-  color: #FFF;
+  color: #fff;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
@@ -56,7 +56,7 @@
 }
 
 .jpg-image {
-  color: #8A8A8A;
+  color: #8a8a8a;
   font-size: 0.53669rem;
   font-style: normal;
   font-weight: 700;
@@ -71,11 +71,11 @@
   width: 8.875rem;
   height: 8.5rem;
   border-radius: 0.30625rem;
-  background: #4A4A4A;
+  background: #4a4a4a;
 }
 
 .title-inputs {
-  color: #8A8A8A;
+  color: #8a8a8a;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
@@ -120,4 +120,59 @@
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: #242424;
   resize: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: #fff;
+  padding: 4px;
+  position: absolute;
+  margin-left: 5.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-sale-purchase-currency {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: #fff;
+  padding: 4px;
+  position: absolute;
+  margin-left: 7rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input {
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.line {
+  margin-left: 2px;
+  width: 0.4rem;
+  height: 0.1px;
+  background: #8a8a8a;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.icon-caret-up {
+  cursor: pointer;
+}
+
+.icon-caret-down {
+  cursor: pointer;
 }
