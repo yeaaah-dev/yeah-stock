@@ -11,6 +11,12 @@ export function RegistrationScreen() {
   const [mensureUnity, setMensureUnity] = useState(0);
   const [currency, setCurrency] = useState(0);
 
+  const preventMinus = (e) => {
+    if (e.code === "Minus") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
@@ -46,8 +52,13 @@ export function RegistrationScreen() {
                   </div>
                   <Input
                     type="number"
+                    min="0"
+                    onKeyPress={preventMinus}
                     className={styles["input"]}
-                    value={quantify === 0 ? "" : quantify}
+                    value={quantify}
+                    onChange={(event) => {
+                      setQuantify(event.target.value);
+                    }}
                   />
                 </div>
               </div>
@@ -70,7 +81,10 @@ export function RegistrationScreen() {
                   <Input
                     type="number"
                     className={styles["input"]}
-                    value={mensureUnity === 0 ? "" : mensureUnity}
+                    value={mensureUnity}
+                    onChange={(event) => {
+                      setMensureUnity(event.target.value);
+                    }}
                   />
                 </div>
               </div>
@@ -98,7 +112,10 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
-                value={purchasePrice === 0 ? "" : purchasePrice}
+                value={purchasePrice}
+                onChange={(event) => {
+                  setPurchasePrice(event.target.value);
+                }}
               />
             </div>
           </div>
@@ -121,7 +138,10 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
-                value={salePrice === 0 ? "" : salePrice}
+                value={salePrice}
+                onChange={(event) => {
+                  setSalePrice(event.target.value);
+                }}
               />
             </div>
           </div>
@@ -144,7 +164,10 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
-                value={currency === 0 ? "" : currency}
+                value={currency}
+                onChange={(event) => {
+                  setCurrency(event.target.value);
+                }}
               />
             </div>
           </div>
