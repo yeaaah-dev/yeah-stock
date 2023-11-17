@@ -1,15 +1,48 @@
+import { useState } from "react";
+import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
-import { useState } from "react";
+import { Button } from "../../components/Button/Button";
 
 export function RegistrationScreen() {
+  const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [salePrice, setSalePrice] = useState(0);
   const [mensureUnity, setMensureUnity] = useState(0);
   const [currency, setCurrency] = useState(0);
+  const [supllier, setSupplier] = useState("");
+
+  async function addProducts() {
+    if (
+      nameProduct === "" ||
+      quantify === 0 ||
+      purchasePrice === 0 ||
+      salePrice === 0 ||
+      mensureUnity === 0 ||
+      currency === 0 ||
+      supllier === ""
+    ) {
+      alert("Preencha todos os campos");
+    } else {
+      try {
+        await axios.post(`http://localhost:3004/products`, {
+          title: nameProduct,
+          quantify: quantify,
+          measurein: mensureUnity,
+          purchasePrice: purchasePrice,
+          salePrice: salePrice,
+          supllier: supllier,
+          key: 10,
+          id: 98,
+        });
+      } catch (error) {
+        alert("Não foi possível registrar seu produto :(");
+      }
+    }
+  }
 
   const preventMinus = (e) => {
     if (e.code === "Minus") {
@@ -31,7 +64,12 @@ export function RegistrationScreen() {
           <div className={styles["content-input-registration"]}>
             <div className={styles["input-name-products"]}>
               <span className={styles["title-inputs"]}>Nome do prooduto</span>
-              <Input type="text" placeholder="" />
+              <Input
+                type="text"
+                onChange={(event) => {
+                  setNameProduct(event.target.value);
+                }}
+              />
             </div>
             <div className={styles["inputs-description-quanty-mensure"]}>
               <div className={styles["input-quanty-mensure"]}>
@@ -173,13 +211,21 @@ export function RegistrationScreen() {
           </div>
           <div className={styles["inputs-description-supplier"]}>
             <span className={styles["title-inputs"]}>Fornecedor</span>
-            <Input type="text" />
+            <Input
+              type="text"
+              onChange={(event) => {
+                setSupplier(event.target.value);
+              }}
+            />
           </div>
         </div>
 
         <div className={styles["description-products-content"]}>
           <span className={styles["title-inputs"]}>Descrição do produto</span>
           <textarea></textarea>
+        </div>
+        <div className={styles["container-button-submit"]}>
+          <Button label="Salvar" onClick={addProducts} type="submit" />
         </div>
       </div>
     </div>

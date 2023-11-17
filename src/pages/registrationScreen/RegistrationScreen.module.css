@@ -155,6 +155,10 @@ input[type="number"]::-webkit-outer-spin-button {
   transform: translateY(-50%);
 }
 
+.container-button-submit {
+  width: 10rem;
+}
+
 .input {
   height: 50px;
   box-sizing: border-box;
