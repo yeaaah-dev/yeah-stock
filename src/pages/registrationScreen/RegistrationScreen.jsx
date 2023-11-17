@@ -1,10 +1,10 @@
+import { useState } from "react";
+import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
-import { useState } from "react";
 import { Button } from "../../components/Button/Button";
-import axios from "axios";
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -16,19 +16,31 @@ export function RegistrationScreen() {
   const [supllier, setSupplier] = useState("");
 
   async function addProducts() {
-    try {
-      await axios.post(`http://localhost:3004/products`, {
-        title: nameProduct,
-        quantify: quantify,
-        measurein: mensureUnity,
-        purchasePrice: purchasePrice,
-        salePrice: salePrice,
-        supllier: supllier,
-        key: 10,
-        id: 98,
-      });
-    } catch (error) {
-      alert("Não foi possível registrar seu produto :(");
+    if (
+      nameProduct === "" ||
+      quantify === 0 ||
+      purchasePrice === 0 ||
+      salePrice === 0 ||
+      mensureUnity === 0 ||
+      currency === 0 ||
+      supllier === ""
+    ) {
+      alert("Preencha todos os campos");
+    } else {
+      try {
+        await axios.post(`http://localhost:3004/products`, {
+          title: nameProduct,
+          quantify: quantify,
+          measurein: mensureUnity,
+          purchasePrice: purchasePrice,
+          salePrice: salePrice,
+          supllier: supllier,
+          key: 10,
+          id: 98,
+        });
+      } catch (error) {
+        alert("Não foi possível registrar seu produto :(");
+      }
     }
   }
 
@@ -54,7 +66,6 @@ export function RegistrationScreen() {
               <span className={styles["title-inputs"]}>Nome do prooduto</span>
               <Input
                 type="text"
-                placeholder=""
                 onChange={(event) => {
                   setNameProduct(event.target.value);
                 }}
@@ -213,7 +224,7 @@ export function RegistrationScreen() {
           <span className={styles["title-inputs"]}>Descrição do produto</span>
           <textarea></textarea>
         </div>
-        <div className={styles["èPraExcluirSaPorra"]}>
+        <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProducts} type="submit" />
         </div>
       </div>
