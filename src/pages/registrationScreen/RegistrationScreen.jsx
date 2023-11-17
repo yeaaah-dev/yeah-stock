@@ -5,7 +5,6 @@ import { Input } from "../../components/Input";
 import { useState } from "react";
 import { Button } from "../../components/Button/Button";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -15,7 +14,6 @@ export function RegistrationScreen() {
   const [mensureUnity, setMensureUnity] = useState(0);
   const [currency, setCurrency] = useState(0);
   const [supllier, setSupplier] = useState("");
-  const navigate = useNavigate();
 
   async function addProducts() {
     try {
@@ -27,9 +25,8 @@ export function RegistrationScreen() {
         salePrice: salePrice,
         supllier: supllier,
         key: 10,
-        id: 16,
+        id: 98,
       });
-      navigate("/registration");
     } catch (error) {
       alert("Não foi possível registrar seu produto :(");
     }

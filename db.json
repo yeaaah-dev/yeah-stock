@@ -106,6 +106,26 @@
       "supllier": "",
       "key": 10,
       "id": 16
+    },
+    {
+      "title": "Sascas",
+      "quantify": 0,
+      "measurein": 0,
+      "purchasePrice": 0,
+      "salePrice": 0,
+      "supllier": "",
+      "key": 10,
+      "id": 18
+    },
+    {
+      "title": "Sascas",
+      "quantify": 0,
+      "measurein": 0,
+      "purchasePrice": 0,
+      "salePrice": 0,
+      "supllier": "",
+      "key": 10,
+      "id": 98
     }
   ]
 }
