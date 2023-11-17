@@ -47,6 +47,65 @@
       "purchasePrice": 535,
       "salePrice": 512,
       "key": 6
+    },
+    {
+      "title": "Faz logo a função de deletar Caioba",
+      "quantify": 1,
+      "measurein": 2,
+      "purchasePrice": 3,
+      "salePrice": 4,
+      "key": 10,
+      "id": 9
+    },
+    {
+      "title": "Foi fondo",
+      "quantify": 5,
+      "measurein": 4,
+      "purchasePrice": 3,
+      "salePrice": 4,
+      "supllier": "eu",
+      "key": 10,
+      "id": 12
+    },
+    {
+      "title": "Enzo X videos",
+      "quantify": "69",
+      "measurein": "69",
+      "purchasePrice": "69",
+      "salePrice": "69",
+      "supllier": "5 constra 1",
+      "key": 10,
+      "id": 13
+    },
+    {
+      "title": "Fazer um monte para Caio ter trabalho",
+      "quantify": 0,
+      "measurein": 0,
+      "purchasePrice": 0,
+      "salePrice": 0,
+      "supllier": "",
+      "key": 10,
+      "id": 14
+    },
+    {
+      "title": "Só mais duas",
+      "quantify": 0,
+      "measurein": 0,
+      "purchasePrice": 0,
+      "salePrice": 0,
+      "supllier": "",
+      "key": 10,
+      "id": 15
+    },
+    {
+      "title": "Só mais essa aqui",
+      "quantify": 0,
+      "measurein": 0,
+      "purchasePrice": 0,
+      "salePrice": 0,
+      "supllier": "",
+      "key": 10,
+      "id": 16
     }
   ]
 }
