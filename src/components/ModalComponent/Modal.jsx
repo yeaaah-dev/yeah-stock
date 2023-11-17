@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import styles from "./Modal.module.css";
 import FOTO from "../../assets/FOTO.png";

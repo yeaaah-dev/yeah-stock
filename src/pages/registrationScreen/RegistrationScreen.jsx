@@ -1,10 +1,23 @@
+import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
-import { Image } from "@phosphor-icons/react";
 import { Textarea } from "../../components/textarea/textarea";
+import { useState } from "react";
 
 export function RegistrationScreen() {
+  const [quantify, setQuantify] = useState(0);
+  const [purchasePrice, setPurchasePrice] = useState(0);
+  const [salePrice, setSalePrice] = useState(0);
+  const [mensureUnity, setMensureUnity] = useState(0);
+  const [currency, setCurrency] = useState(0);
+
+  const preventMinus = (e) => {
+    if (e.code === "Minus") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
@@ -24,11 +37,57 @@ export function RegistrationScreen() {
             <div className={styles["inputs-description-quanty-mensure"]}>
               <div className={styles["input-quanty-mensure"]}>
                 <span className={styles["title-inputs"]}>Quanty</span>
-                <Input type="number" />
+                <div className={styles["wrapper"]}>
+                  <div className={styles["icon"]}>
+                    <CaretUp
+                      onClick={() => setQuantify(quantify + 1)}
+                      className={styles["icon-caret-up"]}
+                      size={12}
+                    ></CaretUp>
+                    <div className={styles["line"]}></div>
+                    <CaretDown
+                      size={12}
+                      className={styles["icon-caret-down"]}
+                      onClick={() => setQuantify(quantify - 1)}
+                    ></CaretDown>
+                  </div>
+                  <Input
+                    type="number"
+                    min="0"
+                    onKeyPress={preventMinus}
+                    className={styles["input"]}
+                    value={quantify}
+                    onChange={(event) => {
+                      setQuantify(event.target.value);
+                    }}
+                  />
+                </div>
               </div>
               <div className={styles["input-quanty-mensure"]}>
                 <span className={styles["title-inputs"]}>Mensure_unity</span>
-                <Input type="number" />
+                <div className={styles["wrapper"]}>
+                  <div className={styles["icon"]}>
+                    <CaretUp
+                      onClick={() => setMensureUnity(mensureUnity + 1)}
+                      className={styles["icon-caret-up"]}
+                      size={12}
+                    ></CaretUp>
+                    <div className={styles["line"]}></div>
+                    <CaretDown
+                      size={12}
+                      className={styles["icon-caret-down"]}
+                      onClick={() => setMensureUnity(mensureUnity - 1)}
+                    ></CaretDown>
+                  </div>
+                  <Input
+                    type="number"
+                    className={styles["input"]}
+                    value={mensureUnity}
+                    onChange={(event) => {
+                      setMensureUnity(event.target.value);
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -37,15 +96,81 @@ export function RegistrationScreen() {
         <div className={styles["inputs-purchase-price-currency-supplier"]}>
           <div className={styles["inputs-Purchase-price-currency"]}>
             <span className={styles["title-inputs"]}>Purchase price</span>
-            <Input type="number" />
+            <div className={styles["wrapper"]}>
+              <div className={styles["icon-sale-purchase-currency"]}>
+                <CaretUp
+                  onClick={() => setPurchasePrice(purchasePrice + 1)}
+                  className={styles["icon-caret-up"]}
+                  size={12}
+                ></CaretUp>
+                <div className={styles["line"]}></div>
+                <CaretDown
+                  size={12}
+                  className={styles["icon-caret-down"]}
+                  onClick={() => setPurchasePrice(purchasePrice - 1)}
+                ></CaretDown>
+              </div>
+              <Input
+                type="number"
+                className={styles["input"]}
+                value={purchasePrice}
+                onChange={(event) => {
+                  setPurchasePrice(event.target.value);
+                }}
+              />
+            </div>
           </div>
           <div className={styles["inputs-Purchase-price-currency"]}>
             <span className={styles["title-inputs"]}>Sale price</span>
-            <Input type="number" />
+            <div className={styles["wrapper"]}>
+              <div className={styles["icon-sale-purchase-currency"]}>
+                <CaretUp
+                  onClick={() => setSalePrice(salePrice + 1)}
+                  className={styles["icon-caret-up"]}
+                  size={12}
+                ></CaretUp>
+                <div className={styles["line"]}></div>
+                <CaretDown
+                  size={12}
+                  className={styles["icon-caret-down"]}
+                  onClick={() => setSalePrice(salePrice - 1)}
+                ></CaretDown>
+              </div>
+              <Input
+                type="number"
+                className={styles["input"]}
+                value={salePrice}
+                onChange={(event) => {
+                  setSalePrice(event.target.value);
+                }}
+              />
+            </div>
           </div>
           <div className={styles["inputs-Purchase-price-currency"]}>
             <span className={styles["title-inputs"]}>Currency</span>
-            <Input type="number" />
+            <div className={styles["wrapper"]}>
+              <div className={styles["icon-sale-purchase-currency"]}>
+                <CaretUp
+                  onClick={() => setCurrency(currency + 1)}
+                  className={styles["icon-caret-up"]}
+                  size={12}
+                ></CaretUp>
+                <div className={styles["line"]}></div>
+                <CaretDown
+                  size={12}
+                  className={styles["icon-caret-down"]}
+                  onClick={() => setCurrency(currency - 1)}
+                ></CaretDown>
+              </div>
+              <Input
+                type="number"
+                className={styles["input"]}
+                value={currency}
+                onChange={(event) => {
+                  setCurrency(event.target.value);
+                }}
+              />
+            </div>
           </div>
           <div className={styles["inputs-description-supplier"]}>
             <span className={styles["title-inputs"]}>Fornecedor</span>
