@@ -17,6 +17,7 @@ export function RegistrationScreen() {
   const [mensureUnity, setMensureUnity] = useState(0);
   const [currency, setCurrency] = useState(0);
   const [supllier, setSupplier] = useState("");
+  const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
 
   function validateFields(values = {}) {
@@ -45,6 +46,7 @@ export function RegistrationScreen() {
       purchasePrice: purchasePrice,
       salePrice: salePrice,
       supllier: supllier,
+      description,
       currency,
       key: 10,
       id: uuidv4(),
@@ -256,7 +258,11 @@ export function RegistrationScreen() {
 
         <div className={styles["description-products-content"]}>
           <span className={styles["title-inputs"]}>Descrição do produto</span>
-          <Textarea />
+          <Textarea
+            name="description"
+            error={errors.includes("description")}
+            onChange={setDescription}
+          />
         </div>
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProducts} type="submit" />
