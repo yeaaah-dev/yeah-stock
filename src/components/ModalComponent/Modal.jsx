@@ -24,8 +24,6 @@ export function Modal({ product, onChangeModalStatusClose }) {
     goToRegistration,
   } = product;
 
-  console.log(product);
-
   return (
     <section className={styles["modal-section"]}>
       <div className={styles["modal-content"]}>
