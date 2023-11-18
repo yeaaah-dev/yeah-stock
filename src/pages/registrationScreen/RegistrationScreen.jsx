@@ -96,11 +96,11 @@ export function RegistrationScreen() {
             <span className={styles["jpg-image"]}>JPG</span>
           </div>
           <div className={styles["content-input-registration"]}>
-            <div className={styles["input-name-products"]}>
-              <span className={styles["title-inputs"]}>Nome do prooduto</span>
+            <div className={styles["input-products"]}>
               <Input
                 type="text"
-                name="name"
+                name="Nome do produto"
+                label="Nome do produto"
                 error={errors.includes("title")}
                 onBlur={removeValidation}
                 onChange={(event) => {
@@ -110,7 +110,6 @@ export function RegistrationScreen() {
             </div>
             <div className={styles["inputs-description-quanty-mensure"]}>
               <div className={styles["input-quanty-mensure"]}>
-                <span className={styles["title-inputs"]}>Quanty</span>
                 <div className={styles["wrapper"]}>
                   <div className={styles["icon"]}>
                     <CaretUp
@@ -125,23 +124,25 @@ export function RegistrationScreen() {
                       onClick={() => setQuantify(quantify - 1)}
                     ></CaretDown>
                   </div>
-                  <Input
-                    type="number"
-                    min="0"
-                    name="quantity"
-                    error={errors.includes("quantify")}
-                    onKeyPress={preventMinus}
-                    className={styles["input"]}
-                    value={quantify}
-                    onBlur={removeValidation}
-                    onChange={(event) => {
-                      setQuantify(event.target.value);
-                    }}
-                  />
+                  <div className={styles["input-amount-products"]}>
+                    <Input
+                      type="number"
+                      min="0"
+                      label="quantify"
+                      name="quantify"
+                      error={errors.includes("quantify")}
+                      onKeyPress={preventMinus}
+                      className={styles["input"]}
+                      value={quantify}
+                      onBlur={removeValidation}
+                      onChange={(event) => {
+                        setQuantify(event.target.value);
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className={styles["input-quanty-mensure"]}>
-                <span className={styles["title-inputs"]}>Mensure_unity</span>
                 <div className={styles["wrapper"]}>
                   <div className={styles["icon"]}>
                     <CaretUp
@@ -156,17 +157,20 @@ export function RegistrationScreen() {
                       onClick={() => setMensureUnity(mensureUnity - 1)}
                     ></CaretDown>
                   </div>
-                  <Input
-                    type="number"
-                    name="Measure"
-                    className={styles["input"]}
-                    value={mensureUnity}
-                    error={errors.includes("measurein")}
-                    onBlur={removeValidation}
-                    onChange={(event) => {
-                      setMensureUnity(event.target.value);
-                    }}
-                  />
+                  <div className={styles["input-amount-products"]}>
+                    <Input
+                      type="number"
+                      label="Measure"
+                      name="measure"
+                      className={styles["input"]}
+                      value={mensureUnity}
+                      error={errors.includes("measurein")}
+                      onBlur={removeValidation}
+                      onChange={(event) => {
+                        setMensureUnity(event.target.value);
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,7 +179,6 @@ export function RegistrationScreen() {
 
         <div className={styles["inputs-purchase-price-currency-supplier"]}>
           <div className={styles["inputs-Purchase-price-currency"]}>
-            <span className={styles["title-inputs"]}>Purchase price</span>
             <div className={styles["wrapper"]}>
               <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
@@ -190,20 +193,21 @@ export function RegistrationScreen() {
                   onClick={() => setPurchasePrice(purchasePrice - 1)}
                 ></CaretDown>
               </div>
-              <Input
-                type="number"
-                className={styles["input"]}
-                name="purchase"
-                error={errors.includes("purchasePrice")}
-                value={purchasePrice}
-                onChange={(event) => {
-                  setPurchasePrice(event.target.value);
-                }}
-              />
+              <div className={styles["input-amount-products"]}>
+                <Input
+                  type="number"
+                  label="purchase"
+                  name="purchase"
+                  error={errors.includes("purchasePrice")}
+                  value={purchasePrice}
+                  onChange={(event) => {
+                    setPurchasePrice(event.target.value);
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className={styles["inputs-Purchase-price-currency"]}>
-            <span className={styles["title-inputs"]}>Sale price</span>
             <div className={styles["wrapper"]}>
               <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
@@ -218,21 +222,23 @@ export function RegistrationScreen() {
                   onClick={() => setSalePrice(salePrice - 1)}
                 ></CaretDown>
               </div>
-              <Input
-                type="number"
-                name="Sale"
-                error={errors.includes("salePrice")}
-                className={styles["input"]}
-                value={salePrice}
-                onBlur={removeValidation}
-                onChange={(event) => {
-                  setSalePrice(event.target.value);
-                }}
-              />
+              <div className={styles["input-amount-products"]}>
+                <Input
+                  type="number"
+                  label="sale price"
+                  name="sale price"
+                  error={errors.includes("salePrice")}
+                  className={styles["input"]}
+                  value={salePrice}
+                  onBlur={removeValidation}
+                  onChange={(event) => {
+                    setSalePrice(event.target.value);
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className={styles["inputs-Purchase-price-currency"]}>
-            <span className={styles["title-inputs"]}>Currency</span>
             <div className={styles["wrapper"]}>
               <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
@@ -247,30 +253,35 @@ export function RegistrationScreen() {
                   onClick={() => setCurrency(currency - 1)}
                 ></CaretDown>
               </div>
-              <Input
-                type="number"
-                name="currency"
-                className={styles["input"]}
-                value={currency}
-                error={errors.includes("currency")}
-                onBlur={removeValidation}
-                onChange={(event) => {
-                  setCurrency(event.target.value);
-                }}
-              />
+              <div className={styles["input-amount-products"]}>
+                <Input
+                  type="number"
+                  label="currency"
+                  name="currency"
+                  className={styles["input"]}
+                  value={currency}
+                  error={errors.includes("currency")}
+                  onBlur={removeValidation}
+                  onChange={(event) => {
+                    setCurrency(event.target.value);
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className={styles["inputs-description-supplier"]}>
-            <span className={styles["title-inputs"]}>Fornecedor</span>
-            <Input
-              type="text"
-              name="supplier"
-              error={errors.includes("supllier")}
-              onBlur={removeValidation}
-              onChange={(event) => {
-                setSupplier(event.target.value);
-              }}
-            />
+            <div className={styles["input-products-supplier"]}>
+              <Input
+                type="text"
+                name="fornecedor"
+                label="fornecedor"
+                error={errors.includes("supllier")}
+                onBlur={removeValidation}
+                onChange={(event) => {
+                  setSupplier(event.target.value);
+                }}
+              />
+            </div>
           </div>
         </div>
 
