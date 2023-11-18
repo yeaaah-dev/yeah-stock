@@ -2,15 +2,19 @@
 
 import styles from "./styles.module.css";
 
-export function Input({ borderNone, ...rest }) {
+export function Input({ borderNone, error = false, ...rest }) {
   return (
-    <input
-      {...rest}
-      className={
-        borderNone
-          ? `${styles["input-header_border-none"]}`
-          : `${styles["input-header"]}`
-      }
-    />
+    <div>
+      <input
+        {...rest}
+        className={
+          borderNone
+            ? `${styles["input-header_border-none"]}`
+            : `${styles["input-header"]}`
+        }
+      />
+
+      {error && <span className={styles.error}>{rest.name} is required</span>}
+    </div>
   );
 }
