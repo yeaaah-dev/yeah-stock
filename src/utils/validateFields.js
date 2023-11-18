@@ -17,7 +17,5 @@ export function validateFields(values = {}) {
     return false;
   });
 
-  console.log(errors);
-
   return errors;
 }
