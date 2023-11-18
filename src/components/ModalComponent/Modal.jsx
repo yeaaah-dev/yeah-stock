@@ -10,7 +10,7 @@ export const modalStatus = {
   CLOSE: "close",
 };
 
-export function Modal({ product, onChangeModalStatusClose }) {
+export function Modal({ product, onChangeModalStatusClose, goToEdition }) {
   const {
     title,
     quantify,
@@ -20,8 +20,6 @@ export function Modal({ product, onChangeModalStatusClose }) {
     currency,
     supllier,
     active,
-
-    goToRegistration,
   } = product;
 
   return (
@@ -94,7 +92,7 @@ export function Modal({ product, onChangeModalStatusClose }) {
         </div>
 
         <div className={styles["buttons-div"]}>
-          <button className={styles["edit-button"]} onClick={goToRegistration}>
+          <button className={styles["edit-button"]} onClick={goToEdition}>
             <NotePencil size={17} />
             Editar
           </button>

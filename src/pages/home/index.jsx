@@ -45,6 +45,10 @@ export function App() {
     navigate("/registration");
   }
 
+  function goToEdition() {
+    navigate("/edition");
+  }
+
   function onChangeModalStatusClose() {
     setModalModel(modalStatus.CLOSE);
   }
@@ -192,7 +196,7 @@ export function App() {
         <Modal
           name="Yan Cesar"
           onChangeModalStatusClose={onChangeModalStatusClose}
-          goToRegistration={goToRegistration}
+          goToEdition={goToEdition}
           product={productSelected}
         />
       </section>

@@ -5,6 +5,7 @@ import React from "react";
 import { ErrorPage } from "./error-page";
 import { RegistrationScreen } from "./pages/registrationScreen/RegistrationScreen";
 import { Root } from "./routes/root";
+import { EditScreen } from "./components/registration";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/registration",
     element: <RegistrationScreen />,
+  },
+  {
+    path: "/edition",
+    element: <EditScreen />,
   },
 ]);
 
