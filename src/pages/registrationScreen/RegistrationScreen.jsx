@@ -8,8 +8,8 @@ import styles from "../../pages/registrationScreen/RegistrationScreen.module.css
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
+import { Trash } from "@phosphor-icons/react/dist/ssr";
 import { Textarea } from "../../components/textarea/textarea";
-
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -67,8 +67,8 @@ export function RegistrationScreen() {
     } catch (error) {
       console.log(error);
       alert("Não foi possível registrar seu produto :(");
-
-
+    }
+  }
 
   const preventMinus = (e) => {
     if (e.code === "Minus") {
@@ -80,8 +80,16 @@ export function RegistrationScreen() {
     <div className={styles["registration-container"]}>
       <Sidebar />
       <div className={styles["layout-registration"]}>
-        <h1 className={styles["title-page"]}>Produto</h1>
-
+        <div className={styles["title-button"]}>
+          <h1 className={styles["title-page"]}>Produto</h1>
+          <div className={styles["container-button-delete"]}>
+            <Button
+              label="Excluir"
+              icon={<Trash size={20}></Trash>}
+              buttonBackgroundOff="yes"
+            />
+          </div>
+        </div>
         <div className={styles["container-inputs-image"]}>
           <div className={styles["image-product"]}>
             <Image size={26} color="#8A8A8A" />
@@ -279,7 +287,6 @@ export function RegistrationScreen() {
         </div>
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProduct} type="submit" />
-
         </div>
       </div>
     </div>
