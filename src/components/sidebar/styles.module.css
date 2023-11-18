@@ -11,7 +11,12 @@
 .logo {
   display: flex;
   justify-content: center;
-  padding-top: 2.9rem;
+
+  margin-top: 2.9rem;
+}
+
+.image-logo {
+  cursor: pointer;
 }
 
 .line {

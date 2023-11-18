@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styles from "../sidebar/styles.module.css";
 import logo from "../../assets/imgs/LOGO.svg";
@@ -19,12 +20,22 @@ const buttonName = {
 
 export function Sidebar() {
   const [buttonSelected, setButtonSelected] = useState(buttonName.START);
+  const navigate = useNavigate();
+
+  function goToHome() {
+    navigate("/");
+  }
 
   return (
     <div className={styles["container-all"]}>
       <div className={styles["container"]}>
         <div className={styles["logo"]}>
-          <img src={logo} alt="Logo" />
+          <img
+            src={logo}
+            alt="Logo"
+            onClick={() => goToHome()}
+            className={styles["image-logo"]}
+          />
         </div>
 
         <div className={styles["div-line"]}>
@@ -38,7 +49,7 @@ export function Sidebar() {
                 ? styles["button-selected"]
                 : styles["button-not-selected"]
             }
-            onClick={() => setButtonSelected(buttonName.START)}
+            onClick={() => goToHome()}
           >
             <HouseLine size={17} />
             Inicio
