@@ -18,7 +18,7 @@ export function Modal({ product, onChangeModalStatusClose }) {
     purchasePrice,
     salePrice,
     currency,
-    provider,
+    supllier,
     active,
 
     goToRegistration,
@@ -39,52 +39,34 @@ export function Modal({ product, onChangeModalStatusClose }) {
 
         <div className={styles["product-info"]}>
           <span>
-            Name:{" "}
-            <span className={styles["info-value"]}>
-              {title ? title : "Calabresa de Tubarão Leitoa"}
-            </span>
+            Name: <span className={styles["info-value"]}>{title}</span>
           </span>
 
           <span>
-            Quantity:{" "}
-            <span className={styles["info-value"]}>
-              {quantify ? quantify : 106}
-            </span>
+            Quantity: <span className={styles["info-value"]}>{quantify}</span>
           </span>
 
           <span>
             Measure unity:{" "}
-            <span className={styles["info-value"]}>
-              {measurein ? measurein : 106}
-            </span>
+            <span className={styles["info-value"]}>{measurein}</span>
           </span>
 
           <span>
             Purchase price:{" "}
-            <span className={styles["info-value"]}>
-              {purchasePrice ? purchasePrice : 535}
-            </span>
+            <span className={styles["info-value"]}>{purchasePrice}</span>
           </span>
 
           <span>
             Sale Price:{" "}
-            <span className={styles["info-value"]}>
-              {salePrice ? salePrice : 512}
-            </span>
+            <span className={styles["info-value"]}>{salePrice}</span>
           </span>
 
           <span>
-            Currency:{" "}
-            <span className={styles["info-value"]}>
-              {currency ? currency : "Unity"}
-            </span>
+            Currency: <span className={styles["info-value"]}>{currency}</span>
           </span>
 
           <span>
-            Fornecedor:{" "}
-            <span className={styles["info-value"]}>
-              {provider ? provider : "Hugostoso"}
-            </span>
+            Fornecedor: <span className={styles["info-value"]}>{supllier}</span>
           </span>
 
           <span>
