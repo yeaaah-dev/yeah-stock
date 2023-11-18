@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
+import { v4 as uuidv4 } from "uuid";
+
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
@@ -15,33 +17,50 @@ export function RegistrationScreen() {
   const [mensureUnity, setMensureUnity] = useState(0);
   const [currency, setCurrency] = useState(0);
   const [supllier, setSupplier] = useState("");
+  const [errors, setErrors] = useState([]);
+
+  function validateFields(values = {}) {
+    const errors = Object.keys(values).filter((key) => {
+      const value = values[key];
+      const numberOrString = typeof value;
+
+      if (!value) {
+        return true;
+      }
+
+      if (numberOrString === "string" && !numberOrString.length) return true;
+      if (numberOrString === "number" && numberOrString === 0) return true;
+
+      return false;
+    });
+
+    return errors;
+  }
 
   async function addProducts() {
-    if (
-      nameProduct === "" ||
-      quantify === 0 ||
-      purchasePrice === 0 ||
-      salePrice === 0 ||
-      mensureUnity === 0 ||
-      currency === 0 ||
-      supllier === ""
-    ) {
-      alert("Preencha todos os campos");
-    } else {
-      try {
-        await axios.post(`http://localhost:3004/products`, {
-          title: nameProduct,
-          quantify: quantify,
-          measurein: mensureUnity,
-          purchasePrice: purchasePrice,
-          salePrice: salePrice,
-          supllier: supllier,
-          key: 10,
-          id: 98,
-        });
-      } catch (error) {
-        alert("Não foi possível registrar seu produto :(");
-      }
+    const values = {
+      title: nameProduct,
+      quantify: quantify,
+      measurein: mensureUnity,
+      purchasePrice: purchasePrice,
+      salePrice: salePrice,
+      supllier: supllier,
+      currency,
+      key: 10,
+      id: uuidv4(),
+    };
+
+    const validate = validateFields(values);
+
+    if (validate.length) {
+      setErrors(validate);
+      return;
+    }
+
+    try {
+      await axios.post(`http://localhost:3004/products`, values);
+    } catch (error) {
+      alert("Não foi possível registrar seu produto :(");
     }
   }
 
@@ -67,6 +86,8 @@ export function RegistrationScreen() {
               <span className={styles["title-inputs"]}>Nome do prooduto</span>
               <Input
                 type="text"
+                name="name"
+                error={errors.includes("title")}
                 onChange={(event) => {
                   setNameProduct(event.target.value);
                 }}
@@ -92,6 +113,8 @@ export function RegistrationScreen() {
                   <Input
                     type="number"
                     min="0"
+                    name="quantity"
+                    error={errors.includes("quantify")}
                     onKeyPress={preventMinus}
                     className={styles["input"]}
                     value={quantify}
@@ -119,8 +142,10 @@ export function RegistrationScreen() {
                   </div>
                   <Input
                     type="number"
+                    name="Measure"
                     className={styles["input"]}
                     value={mensureUnity}
+                    error={errors.includes("measurein")}
                     onChange={(event) => {
                       setMensureUnity(event.target.value);
                     }}
@@ -151,6 +176,8 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
+                name="purchase"
+                error={errors.includes("purchasePrice")}
                 value={purchasePrice}
                 onChange={(event) => {
                   setPurchasePrice(event.target.value);
@@ -176,6 +203,8 @@ export function RegistrationScreen() {
               </div>
               <Input
                 type="number"
+                name="Sale"
+                error={errors.includes("salePrice")}
                 className={styles["input"]}
                 value={salePrice}
                 onChange={(event) => {
@@ -202,8 +231,10 @@ export function RegistrationScreen() {
               </div>
               <Input
                 type="number"
+                name="currency"
                 className={styles["input"]}
                 value={currency}
+                error={errors.includes("currency")}
                 onChange={(event) => {
                   setCurrency(event.target.value);
                 }}
@@ -214,6 +245,8 @@ export function RegistrationScreen() {
             <span className={styles["title-inputs"]}>Fornecedor</span>
             <Input
               type="text"
+              name="supplier"
+              error={errors.includes("supllier")}
               onChange={(event) => {
                 setSupplier(event.target.value);
               }}

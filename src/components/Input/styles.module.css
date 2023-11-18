@@ -11,7 +11,7 @@
   border-radius: 0.4375rem;
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: #242424;
-  color: #FFF;
+  color: #fff;
 }
 
 .input-header_border-none {
@@ -24,10 +24,15 @@
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
-  color: #FFF;
+  color: #fff;
 }
 
 .input::placeholder {
   outline: none;
   color: #323232;
+}
+
+.error {
+  font-size: 0.75rem;
+  color: red;
 }
