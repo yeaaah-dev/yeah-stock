@@ -69,6 +69,7 @@ export function RegistrationScreen() {
       alert("Não foi possível registrar seu produto :(");
     }
   }
+
   const preventMinus = (e) => {
     if (e.code === "Minus") {
       e.preventDefault();
@@ -84,7 +85,7 @@ export function RegistrationScreen() {
           <div className={styles["container-button-delete"]}>
             <Button
               label="Excluir"
-              onClick={addProducts}
+              onClick={addProduct}
               icon={<Trash size={20}></Trash>}
               buttonBackgroundOff="yes"
             />
