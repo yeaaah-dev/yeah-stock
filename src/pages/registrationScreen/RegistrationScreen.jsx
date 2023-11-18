@@ -85,7 +85,6 @@ export function RegistrationScreen() {
           <div className={styles["container-button-delete"]}>
             <Button
               label="Excluir"
-              onClick={addProduct}
               icon={<Trash size={20}></Trash>}
               buttonBackgroundOff="yes"
             />
