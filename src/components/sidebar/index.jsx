@@ -23,7 +23,6 @@ export function Sidebar() {
   const navigate = useNavigate();
 
   function goToHome() {
-    setButtonSelected(buttonName.START);
     navigate("/");
   }
 
