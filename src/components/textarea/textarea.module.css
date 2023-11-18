@@ -21,3 +21,8 @@
   resize: none;
   color: #fff;
 }
+
+.error {
+  font-size: 0.75rem;
+  color: red;
+}

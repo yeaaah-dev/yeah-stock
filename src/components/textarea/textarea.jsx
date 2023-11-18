@@ -1,14 +1,19 @@
 /* eslint-disable react/prop-types */
-import style from "../textarea/textarea.module.css"
+import styles from "../textarea/textarea.module.css";
 
-export function Textarea({
-    location,
-    ...rest
-}) {
-    return (
-        <textarea
-            {...rest}
-            className={location ? `${style["product-description-textarea"]
-                }` : `${style["description-products-content-textarea"]}`} />
-    );
+export function Textarea({ location, error = false, ...rest }) {
+  return (
+    <div>
+      <textarea
+        {...rest}
+        className={
+          location
+            ? `${styles["product-description-textarea"]}`
+            : `${styles["description-products-content-textarea"]}`
+        }
+      />
+
+      {error && <span className={styles.error}>{rest.name} is required</span>}
+    </div>
+  );
 }
