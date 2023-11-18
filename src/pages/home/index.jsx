@@ -167,7 +167,7 @@ export function App() {
             {products.map((product) => {
               return (
                 <Card
-                  key={product.key}
+                  key={product.id}
                   product={product}
                   layout={layout}
                   onChangeModalStatusOpen={onChangeModalStatusOpen}

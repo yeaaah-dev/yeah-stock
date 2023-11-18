@@ -7,6 +7,7 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
 import { Textarea } from "../../components/textarea/textarea";
 
+
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
