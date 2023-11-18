@@ -38,6 +38,7 @@ export function App() {
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
   const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
+  const [productSelected, setProductSelected] = useState({});
   const navigate = useNavigate();
 
   function goToRegistration() {
@@ -48,7 +49,8 @@ export function App() {
     setModalModel(modalStatus.CLOSE);
   }
 
-  function onChangeModalStatusOpen() {
+  function onChangeModalStatusOpen(product) {
+    setProductSelected(product);
     setModalModel(modalStatus.OPEN);
   }
 
@@ -170,7 +172,9 @@ export function App() {
                   key={product.id}
                   product={product}
                   layout={layout}
-                  onChangeModalStatusOpen={onChangeModalStatusOpen}
+                  onChangeModalStatusOpen={(product) =>
+                    onChangeModalStatusOpen(product)
+                  }
                 />
               );
             })}
@@ -189,6 +193,7 @@ export function App() {
           name="Yan Cesar"
           onChangeModalStatusClose={onChangeModalStatusClose}
           goToRegistration={goToRegistration}
+          product={productSelected}
         />
       </section>
     </div>
