@@ -7,11 +7,17 @@ export function validateFields(values = {}) {
       return true;
     }
 
-    if (numberOrString === "string" && !numberOrString.length) return true;
-    if (numberOrString === "number" && numberOrString === 0) return true;
+    if (numberOrString === "string" && !value.length) return true;
+    if (numberOrString === "number" && value === 0) return true;
+
+    if (key === "description") {
+      console.log(numberOrString, value.length);
+    }
 
     return false;
   });
+
+  console.log(errors);
 
   return errors;
 }

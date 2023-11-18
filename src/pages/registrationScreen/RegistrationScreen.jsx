@@ -21,7 +21,26 @@ export function RegistrationScreen() {
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
 
-  async function addProducts() {
+  function removeValidation() {
+    if (!errors.length) return;
+
+    const values = {
+      title: nameProduct,
+      quantify: quantify,
+      measurein: mensureUnity,
+      purchasePrice: purchasePrice,
+      salePrice: salePrice,
+      supllier: supllier,
+      description,
+      currency,
+    };
+
+    const validate = validateFields(values);
+
+    setErrors(validate);
+  }
+
+  async function addProduct() {
     const values = {
       title: nameProduct,
       quantify: quantify,
@@ -74,6 +93,7 @@ export function RegistrationScreen() {
                 type="text"
                 name="name"
                 error={errors.includes("title")}
+                onBlur={removeValidation}
                 onChange={(event) => {
                   setNameProduct(event.target.value);
                 }}
@@ -104,6 +124,7 @@ export function RegistrationScreen() {
                     onKeyPress={preventMinus}
                     className={styles["input"]}
                     value={quantify}
+                    onBlur={removeValidation}
                     onChange={(event) => {
                       setQuantify(event.target.value);
                     }}
@@ -132,6 +153,7 @@ export function RegistrationScreen() {
                     className={styles["input"]}
                     value={mensureUnity}
                     error={errors.includes("measurein")}
+                    onBlur={removeValidation}
                     onChange={(event) => {
                       setMensureUnity(event.target.value);
                     }}
@@ -193,6 +215,7 @@ export function RegistrationScreen() {
                 error={errors.includes("salePrice")}
                 className={styles["input"]}
                 value={salePrice}
+                onBlur={removeValidation}
                 onChange={(event) => {
                   setSalePrice(event.target.value);
                 }}
@@ -221,6 +244,7 @@ export function RegistrationScreen() {
                 className={styles["input"]}
                 value={currency}
                 error={errors.includes("currency")}
+                onBlur={removeValidation}
                 onChange={(event) => {
                   setCurrency(event.target.value);
                 }}
@@ -233,6 +257,7 @@ export function RegistrationScreen() {
               type="text"
               name="supplier"
               error={errors.includes("supllier")}
+              onBlur={removeValidation}
               onChange={(event) => {
                 setSupplier(event.target.value);
               }}
@@ -245,13 +270,14 @@ export function RegistrationScreen() {
           <Textarea
             name="description"
             error={errors.includes("description")}
+            onBlur={removeValidation}
             onChange={(e) => {
               setDescription(e.currentTarget.value);
             }}
           />
         </div>
         <div className={styles["container-button-submit"]}>
-          <Button label="Salvar" onClick={addProducts} type="submit" />
+          <Button label="Salvar" onClick={addProduct} type="submit" />
         </div>
       </div>
     </div>
