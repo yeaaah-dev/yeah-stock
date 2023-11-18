@@ -8,6 +8,7 @@ import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/textarea/textarea";
 import { Button } from "../../components/Button/Button";
+import { validateFields } from "../../utils";
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -19,24 +20,6 @@ export function RegistrationScreen() {
   const [supllier, setSupplier] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
-
-  function validateFields(values = {}) {
-    const errors = Object.keys(values).filter((key) => {
-      const value = values[key];
-      const numberOrString = typeof value;
-
-      if (!value) {
-        return true;
-      }
-
-      if (numberOrString === "string" && !numberOrString.length) return true;
-      if (numberOrString === "number" && numberOrString === 0) return true;
-
-      return false;
-    });
-
-    return errors;
-  }
 
   async function addProducts() {
     const values = {
