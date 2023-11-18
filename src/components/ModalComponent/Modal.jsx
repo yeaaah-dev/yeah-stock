@@ -10,18 +10,20 @@ export const modalStatus = {
   CLOSE: "close",
 };
 
-export function Modal({
-  name,
-  quantity,
-  measureUnity,
-  purchasePrice,
-  salePrice,
-  currency,
-  provider,
-  active,
-  onChangeModalStatusClose,
-  goToRegistration,
-}) {
+export function Modal({ product, onChangeModalStatusClose }) {
+  const {
+    title,
+    quantify,
+    measurein,
+    purchasePrice,
+    salePrice,
+    currency,
+    supllier,
+    active,
+
+    goToRegistration,
+  } = product;
+
   return (
     <section className={styles["modal-section"]}>
       <div className={styles["modal-content"]}>
@@ -37,52 +39,34 @@ export function Modal({
 
         <div className={styles["product-info"]}>
           <span>
-            Name:{" "}
-            <span className={styles["info-value"]}>
-              {name ? name : "Calabresa de Tubarão Leitoa"}
-            </span>
+            Name: <span className={styles["info-value"]}>{title}</span>
           </span>
 
           <span>
-            Quantity:{" "}
-            <span className={styles["info-value"]}>
-              {quantity ? quantity : 106}
-            </span>
+            Quantity: <span className={styles["info-value"]}>{quantify}</span>
           </span>
 
           <span>
             Measure unity:{" "}
-            <span className={styles["info-value"]}>
-              {measureUnity ? measureUnity : 106}
-            </span>
+            <span className={styles["info-value"]}>{measurein}</span>
           </span>
 
           <span>
             Purchase price:{" "}
-            <span className={styles["info-value"]}>
-              {purchasePrice ? purchasePrice : 535}
-            </span>
+            <span className={styles["info-value"]}>{purchasePrice}</span>
           </span>
 
           <span>
             Sale Price:{" "}
-            <span className={styles["info-value"]}>
-              {salePrice ? salePrice : 512}
-            </span>
+            <span className={styles["info-value"]}>{salePrice}</span>
           </span>
 
           <span>
-            Currency:{" "}
-            <span className={styles["info-value"]}>
-              {currency ? currency : "Unity"}
-            </span>
+            Currency: <span className={styles["info-value"]}>{currency}</span>
           </span>
 
           <span>
-            Fornecedor:{" "}
-            <span className={styles["info-value"]}>
-              {provider ? provider : "Hugostoso"}
-            </span>
+            Fornecedor: <span className={styles["info-value"]}>{supllier}</span>
           </span>
 
           <span>
@@ -105,7 +89,8 @@ export function Modal({
           <Textarea
             location={true}
             type="text"
-            placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness." />
+            placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness."
+          />
         </div>
 
         <div className={styles["buttons-div"]}>

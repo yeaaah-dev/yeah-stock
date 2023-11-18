@@ -6,6 +6,8 @@
       "measurein": 106,
       "purchasePrice": 535,
       "salePrice": 512,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 3
     },
     {
@@ -14,6 +16,8 @@
       "measurein": 106,
       "purchasePrice": 535,
       "salePrice": 512,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 4
     },
     {
@@ -22,6 +26,8 @@
       "measurein": 106,
       "purchasePrice": 535,
       "salePrice": 512,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 5
     },
     {
@@ -30,6 +36,8 @@
       "measurein": 106,
       "purchasePrice": 535,
       "salePrice": 512,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 6
     },
     {
@@ -38,6 +46,8 @@
       "measurein": 106,
       "purchasePrice": 535,
       "salePrice": 512,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 7
     },
     {
@@ -46,6 +56,8 @@
       "measurein": 106,
       "purchasePrice": 535,
       "salePrice": 512,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 8
     },
     {
@@ -54,6 +66,8 @@
       "measurein": 2,
       "purchasePrice": 3,
       "salePrice": 4,
+      "supllier": "5 constra 1",
+      "currency": 23,
       "id": 9
     },
     {
@@ -63,6 +77,7 @@
       "purchasePrice": 3,
       "salePrice": 4,
       "supllier": "eu",
+      "currency": 23,
       "id": 12
     },
     {
@@ -71,6 +86,7 @@
       "measurein": "69",
       "purchasePrice": "69",
       "salePrice": "69",
+      "currency": 69,
       "supllier": "5 constra 1",
       "id": 13
     },
@@ -80,6 +96,7 @@
       "measurein": 0,
       "purchasePrice": 0,
       "salePrice": 0,
+      "currency": 23,
       "supllier": "",
       "id": 14
     },
@@ -89,6 +106,7 @@
       "measurein": 0,
       "purchasePrice": 0,
       "salePrice": 0,
+      "currency": 23,
       "supllier": "",
       "id": 15
     },
@@ -98,6 +116,7 @@
       "measurein": 0,
       "purchasePrice": 0,
       "salePrice": 0,
+      "currency": 23,
       "supllier": "",
       "id": 16
     },
@@ -107,6 +126,7 @@
       "measurein": 0,
       "purchasePrice": 0,
       "salePrice": 0,
+      "currency": 23,
       "supllier": "",
       "id": 17
     },
@@ -116,6 +136,7 @@
       "measurein": "100",
       "purchasePrice": "90",
       "salePrice": "1222",
+      "currency": 23,
       "supllier": "skjcs",
       "id": 18
     },
@@ -125,6 +146,7 @@
       "measurein": 0,
       "purchasePrice": 0,
       "salePrice": 0,
+      "currency": 23,
       "supllier": "",
       "id": 19
     }
