@@ -5,10 +5,12 @@
 .main-width-open-modal {
   max-width: 45rem;
   margin-right: 1.7rem;
+  margin-top: 3rem;
 }
 
 .main-width-close-modal {
   max-width: 62rem;
+  margin-top: 3rem;
 }
 
 .tab-toggle {

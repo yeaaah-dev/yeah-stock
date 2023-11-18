@@ -69,15 +69,46 @@
   min-height: 1.875rem;
 }
 
-.input-name-products {
+.input-products {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 0.25rem;
   width: 31.4375rem;
   min-height: 1.875rem;
+  color: #8a8a8a;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.jpg-image {
+.input-products-supplier {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.25rem;
+  width: 14rem;
+  min-height: 1.875rem;
+  color: #8a8a8a;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-amount-products {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.25rem;
+
+  min-height: 1.875rem;
+  color: #8a8a8a;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input .jpg-image {
   color: #8a8a8a;
   font-size: 0.53669rem;
   font-style: normal;
@@ -108,7 +139,7 @@
   width: 8rem;
   min-height: 1.875rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 0.25rem;
 }
 
@@ -174,7 +205,7 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 4px;
   position: absolute;
   margin-left: 5.7rem;
-  top: 50%;
+  margin-top: 2.3rem;
   transform: translateY(-50%);
 }
 
@@ -186,7 +217,8 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 4px;
   position: absolute;
   margin-left: 7rem;
-  top: 50%;
+  margin-top: 2.4rem;
+
   transform: translateY(-50%);
 }
 
