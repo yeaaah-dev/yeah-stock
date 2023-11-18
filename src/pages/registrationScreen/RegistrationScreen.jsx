@@ -2,13 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
+import { validateFields } from "../../utils";
 
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
-import { Textarea } from "../../components/textarea/textarea";
 import { Button } from "../../components/Button/Button";
-import { validateFields } from "../../utils";
+import { Textarea } from "../../components/textarea/textarea";
+
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -66,8 +67,8 @@ export function RegistrationScreen() {
     } catch (error) {
       console.log(error);
       alert("Não foi possível registrar seu produto :(");
-    }
-  }
+
+
 
   const preventMinus = (e) => {
     if (e.code === "Minus") {
@@ -278,6 +279,7 @@ export function RegistrationScreen() {
         </div>
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProduct} type="submit" />
+
         </div>
       </div>
     </div>

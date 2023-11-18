@@ -108,6 +108,15 @@
       "purchasePrice": 0,
       "salePrice": 0,
       "supllier": "",
+      "id": 17
+    },
+    {
+      "title": "jasjas",
+      "quantify": "12",
+      "measurein": "100",
+      "purchasePrice": "90",
+      "salePrice": "1222",
+      "supllier": "skjcs",
       "id": 18
     },
     {
@@ -117,7 +126,7 @@
       "purchasePrice": 0,
       "salePrice": 0,
       "supllier": "",
-      "id": 98
+      "id": 19
     }
   ]
 }
