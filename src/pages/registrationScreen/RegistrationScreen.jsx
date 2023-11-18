@@ -62,6 +62,7 @@ export function RegistrationScreen() {
     try {
       await axios.post(`http://localhost:3004/products`, values);
     } catch (error) {
+      console.log(error);
       alert("Não foi possível registrar seu produto :(");
     }
   }
@@ -261,7 +262,9 @@ export function RegistrationScreen() {
           <Textarea
             name="description"
             error={errors.includes("description")}
-            onChange={setDescription}
+            onChange={(e) => {
+              setDescription(e.currentTarget.value);
+            }}
           />
         </div>
         <div className={styles["container-button-submit"]}>
