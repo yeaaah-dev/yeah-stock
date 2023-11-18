@@ -99,6 +99,7 @@ export function RegistrationScreen() {
             <div className={styles["input-products"]}>
               <Input
                 type="text"
+                name="Nome do produto"
                 label="Nome do produto"
                 error={errors.includes("title")}
                 onBlur={removeValidation}
@@ -128,6 +129,7 @@ export function RegistrationScreen() {
                       type="number"
                       min="0"
                       label="quantify"
+                      name="quantify"
                       error={errors.includes("quantify")}
                       onKeyPress={preventMinus}
                       className={styles["input"]}
@@ -159,6 +161,7 @@ export function RegistrationScreen() {
                     <Input
                       type="number"
                       label="Measure"
+                      name="measure"
                       className={styles["input"]}
                       value={mensureUnity}
                       error={errors.includes("measurein")}
@@ -194,6 +197,7 @@ export function RegistrationScreen() {
                 <Input
                   type="number"
                   label="purchase"
+                  name="purchase"
                   error={errors.includes("purchasePrice")}
                   value={purchasePrice}
                   onChange={(event) => {
@@ -221,7 +225,8 @@ export function RegistrationScreen() {
               <div className={styles["input-amount-products"]}>
                 <Input
                   type="number"
-                  label="currency"
+                  label="sale price"
+                  name="sale price"
                   error={errors.includes("salePrice")}
                   className={styles["input"]}
                   value={salePrice}
@@ -252,6 +257,7 @@ export function RegistrationScreen() {
                 <Input
                   type="number"
                   label="currency"
+                  name="currency"
                   className={styles["input"]}
                   value={currency}
                   error={errors.includes("currency")}
@@ -267,6 +273,7 @@ export function RegistrationScreen() {
             <div className={styles["input-products-supplier"]}>
               <Input
                 type="text"
+                name="fornecedor"
                 label="fornecedor"
                 error={errors.includes("supllier")}
                 onBlur={removeValidation}
