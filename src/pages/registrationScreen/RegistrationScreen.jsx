@@ -6,6 +6,7 @@ import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/textarea/textarea";
 import { Button } from "../../components/Button/Button";
+import { Trash } from "@phosphor-icons/react/dist/ssr";
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -55,8 +56,17 @@ export function RegistrationScreen() {
     <div className={styles["registration-container"]}>
       <Sidebar />
       <div className={styles["layout-registration"]}>
-        <h1 className={styles["title-page"]}>Produto</h1>
-
+        <div className={styles["title-button"]}>
+          <h1 className={styles["title-page"]}>Produto</h1>
+          <div className={styles["container-button-delete"]}>
+            <Button
+              label="Excluir"
+              onClick={addProducts}
+              icon={<Trash size={20}></Trash>}
+              buttonBackgroundOff="yes"
+            />
+          </div>
+        </div>
         <div className={styles["container-inputs-image"]}>
           <div className={styles["image-product"]}>
             <Image size={26} color="#8A8A8A" />
