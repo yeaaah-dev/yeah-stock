@@ -128,7 +128,6 @@
 
 .description-products-content {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -142,6 +141,18 @@
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: #242424;
   resize: none;
+}
+
+button-save-style .Button {
+  width: 5.5rem;
+  height: 1.75rem;
+}
+
+.div-button {
+  display: flex;
+  width: 5.5rem;
+  height: 1.75rem;
+  margin-top: 1.44rem;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -176,10 +187,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-left: 7rem;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.container-button-submit {
-  width: 10rem;
 }
 
 .input {

@@ -4,9 +4,9 @@ import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
-import { Textarea } from "../../components/textarea/textarea";
 import { Button } from "../../components/Button/Button";
 import { Trash } from "@phosphor-icons/react/dist/ssr";
+import { Textarea } from "../../components/textarea/textarea";
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -37,8 +37,8 @@ export function RegistrationScreen() {
           purchasePrice: purchasePrice,
           salePrice: salePrice,
           supllier: supllier,
-          key: 10,
-          id: 98,
+          key: 100,
+          id: 100,
         });
       } catch (error) {
         alert("Não foi possível registrar seu produto :(");
@@ -235,8 +235,15 @@ export function RegistrationScreen() {
           <span className={styles["title-inputs"]}>Descrição do produto</span>
           <Textarea />
         </div>
-        <div className={styles["container-button-submit"]}>
-          <Button label="Salvar" onClick={addProducts} type="submit" />
+
+        <div className={styles["div-button"]}>
+          <Button
+            label="Salvar"
+            buttonBackgroundOff={"not"}
+            className={styles["Button"]}
+            onClick={addProducts}
+            type="submit"
+          />
         </div>
       </div>
     </div>
