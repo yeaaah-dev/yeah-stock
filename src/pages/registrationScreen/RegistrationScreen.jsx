@@ -4,7 +4,9 @@ import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
+import { Textarea } from "../../components/textarea/textarea";
 import { Button } from "../../components/Button/Button";
+
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -222,7 +224,7 @@ export function RegistrationScreen() {
 
         <div className={styles["description-products-content"]}>
           <span className={styles["title-inputs"]}>Descrição do produto</span>
-          <textarea></textarea>
+          <Textarea />
         </div>
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProducts} type="submit" />

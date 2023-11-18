@@ -113,6 +113,8 @@
   margin-top: 2.5rem;
 }
 
+
+
 .description-products-content textarea {
   width: 41.75rem;
   height: 6.375rem;
@@ -121,6 +123,7 @@
   background: #242424;
   resize: none;
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
