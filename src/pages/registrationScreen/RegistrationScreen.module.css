@@ -120,14 +120,13 @@
   background: #242424;
   resize: none;
 }
-button-save-style
 
-.Button{
+button-save-style .Button {
   width: 5.5rem;
   height: 1.75rem;
 }
 
-.div-button{
+.div-button {
   display: flex;
   width: 5.5rem;
   height: 1.75rem;
@@ -189,4 +188,3 @@ input[type="number"]::-webkit-outer-spin-button {
 .icon-caret-down {
   cursor: pointer;
 }
- main

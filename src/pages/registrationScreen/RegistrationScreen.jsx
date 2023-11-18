@@ -1,19 +1,55 @@
+import { useState } from "react";
+import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
- button-save-style
-import { Image } from "@phosphor-icons/react";
 import { Button } from "../../components/Button/Button";
-import { useState } from "react";
- main
+import { Textarea } from "../../components/textarea/textarea";
 
 export function RegistrationScreen() {
+  const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [salePrice, setSalePrice] = useState(0);
   const [mensureUnity, setMensureUnity] = useState(0);
   const [currency, setCurrency] = useState(0);
+  const [supllier, setSupplier] = useState("");
+
+  async function addProducts() {
+    if (
+      nameProduct === "" ||
+      quantify === 0 ||
+      purchasePrice === 0 ||
+      salePrice === 0 ||
+      mensureUnity === 0 ||
+      currency === 0 ||
+      supllier === ""
+    ) {
+      alert("Preencha todos os campos");
+    } else {
+      try {
+        await axios.post(`http://localhost:3004/products`, {
+          title: nameProduct,
+          quantify: quantify,
+          measurein: mensureUnity,
+          purchasePrice: purchasePrice,
+          salePrice: salePrice,
+          supllier: supllier,
+          key: 100,
+          id: 100,
+        });
+      } catch (error) {
+        alert("Não foi possível registrar seu produto :(");
+      }
+    }
+  }
+
+  const preventMinus = (e) => {
+    if (e.code === "Minus") {
+      e.preventDefault();
+    }
+  };
 
   return (
     <div className={styles["registration-container"]}>
@@ -29,7 +65,12 @@ export function RegistrationScreen() {
           <div className={styles["content-input-registration"]}>
             <div className={styles["input-name-products"]}>
               <span className={styles["title-inputs"]}>Nome do prooduto</span>
-              <Input type="text" placeholder="" />
+              <Input
+                type="text"
+                onChange={(event) => {
+                  setNameProduct(event.target.value);
+                }}
+              />
             </div>
             <div className={styles["inputs-description-quanty-mensure"]}>
               <div className={styles["input-quanty-mensure"]}>
@@ -50,8 +91,13 @@ export function RegistrationScreen() {
                   </div>
                   <Input
                     type="number"
+                    min="0"
+                    onKeyPress={preventMinus}
                     className={styles["input"]}
-                    value={quantify === 0 ? "" : quantify}
+                    value={quantify}
+                    onChange={(event) => {
+                      setQuantify(event.target.value);
+                    }}
                   />
                 </div>
               </div>
@@ -74,7 +120,10 @@ export function RegistrationScreen() {
                   <Input
                     type="number"
                     className={styles["input"]}
-                    value={mensureUnity === 0 ? "" : mensureUnity}
+                    value={mensureUnity}
+                    onChange={(event) => {
+                      setMensureUnity(event.target.value);
+                    }}
                   />
                 </div>
               </div>
@@ -102,7 +151,10 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
-                value={purchasePrice === 0 ? "" : purchasePrice}
+                value={purchasePrice}
+                onChange={(event) => {
+                  setPurchasePrice(event.target.value);
+                }}
               />
             </div>
           </div>
@@ -125,7 +177,10 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
-                value={salePrice === 0 ? "" : salePrice}
+                value={salePrice}
+                onChange={(event) => {
+                  setSalePrice(event.target.value);
+                }}
               />
             </div>
           </div>
@@ -148,28 +203,38 @@ export function RegistrationScreen() {
               <Input
                 type="number"
                 className={styles["input"]}
-                value={currency === 0 ? "" : currency}
+                value={currency}
+                onChange={(event) => {
+                  setCurrency(event.target.value);
+                }}
               />
             </div>
           </div>
           <div className={styles["inputs-description-supplier"]}>
             <span className={styles["title-inputs"]}>Fornecedor</span>
-            <Input type="text" />
+            <Input
+              type="text"
+              onChange={(event) => {
+                setSupplier(event.target.value);
+              }}
+            />
           </div>
         </div>
 
         <div className={styles["description-products-content"]}>
           <span className={styles["title-inputs"]}>Descrição do produto</span>
-          <textarea></textarea>
+          <Textarea />
         </div>
 
         <div className={styles["div-button"]}>
-            <Button
-              label={"Salvar"}
-              buttonBackgroundOff={"not"}
-              className={styles["Button"]}
-            />
-          </div>
+          <Button
+            label="Salvar"
+            buttonBackgroundOff={"not"}
+            className={styles["Button"]}
+            onClick={addProducts}
+            type="submit"
+          />
+        </div>
       </div>
     </div>
   );

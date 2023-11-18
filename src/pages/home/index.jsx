@@ -94,7 +94,7 @@ export function App() {
       </aside>
 
       <main className={changeLayoutAllScreen()}>
-        <nav className={style["nav-bar"]}>
+        <nav className={style["nav"]}>
           <div className={style["content-input"]}>
             <div className={style["input-wrapper"]}>
               <button
@@ -114,15 +114,18 @@ export function App() {
             </div>
           </div>
           <div className={style["button-icons"]}>
-
             <div className={style["div-button"]}>
-            <Button
-              label={"Adicionar produto"}
-              icon={<Icon/>}
-              buttonBackgroundOff={"not"}
-              className={style["Button"]}
-              onClick={goToRegistration}
-            />
+              <Button
+                label={
+                  <span className={style["name-button"]}>
+                    Adicionar produto
+                  </span>
+                }
+                icon={<Icon className={style["icon-plus"]} />}
+                buttonBackgroundOff={"not"}
+                className={style["Button"]}
+                onClick={goToRegistration}
+              />
             </div>
 
             <div className={style["icon-photo"]}>

@@ -1,23 +1,5 @@
-.Button {
-  width: 10.08213rem;
-  color: #FFF;
-
-  font-family: Outfit;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 .home-page {
   display: flex;
-}
-
-.nav-bar {
-  display: flex;
-  margin-top: 3.37rem;
-  gap: 1.25rem;
-  width: 100%;
 }
 
 .main-width-open-modal {
@@ -62,6 +44,9 @@ section {
 }
 
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-left: 1.25rem;
 }
 
@@ -88,7 +73,14 @@ nav {
   display: flex;
   align-items: center;
   gap: 2rem;
-  width: 45%;
+}
+
+.Button {
+  gap: 1rem;
+}
+
+.name-button {
+  margin-left: -10px;
 }
 
 .notification {
@@ -161,7 +153,13 @@ nav {
   margin-left: -2rem;
 }
 
-.div-button{
-  max-width: 10.08213rem;;
-  width: 100%;
+.div-button {
+  width: 10.08213rem;
+  color: #fff;
+
+  font-family: Outfit;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
