@@ -94,7 +94,7 @@ export function App() {
       </aside>
 
       <main className={changeLayoutAllScreen()}>
-        <nav className={style["nav-bar"]}>
+        <nav className={style["nav"]}>
           <div className={style["content-input"]}>
             <div className={style["input-wrapper"]}>
               <button
@@ -106,7 +106,7 @@ export function App() {
               <Input
                 borderNone={true}
                 type="text"
-                placeholder="pesquisar produtos"
+                placeholder="Pesquisar produtos"
                 onChange={(event) => {
                   setSearch(event.currentTarget.value);
                 }}
@@ -114,13 +114,19 @@ export function App() {
             </div>
           </div>
           <div className={style["button-icons"]}>
-            <Button
-              label={"Adicionar produto"}
-              icon={<Icon />}
-              buttonBackgroundOff={"not"}
-              className={style["Button"]}
-              onClick={goToRegistration}
-            />
+            <div className={style["div-button"]}>
+              <Button
+                label={
+                  <span className={style["name-button"]}>
+                    Adicionar produto
+                  </span>
+                }
+                icon={<Icon className={style["icon-plus"]} />}
+                buttonBackgroundOff={"not"}
+                className={style["Button"]}
+                onClick={goToRegistration}
+              />
+            </div>
 
             <div className={style["icon-photo"]}>
               <Bell size={20} className={style["icon-bell"]} />
