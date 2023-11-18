@@ -10,7 +10,6 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
 import { Textarea } from "../../components/textarea/textarea";
 
-
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
@@ -67,9 +66,8 @@ export function RegistrationScreen() {
     } catch (error) {
       console.log(error);
       alert("Não foi possível registrar seu produto :(");
-
-
-
+    }
+  }
   const preventMinus = (e) => {
     if (e.code === "Minus") {
       e.preventDefault();
@@ -279,7 +277,6 @@ export function RegistrationScreen() {
         </div>
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProduct} type="submit" />
-
         </div>
       </div>
     </div>
