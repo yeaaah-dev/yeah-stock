@@ -10,6 +10,7 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
 import { Trash } from "@phosphor-icons/react/dist/ssr";
 import { Textarea } from "../../components/textarea/textarea";
+import { useNavigate } from "react-router-dom";
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -21,6 +22,11 @@ export function RegistrationScreen() {
   const [supllier, setSupplier] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
+  const navigate = useNavigate();
+
+  function goToHome() {
+    navigate("/");
+  }
 
   function removeValidation() {
     if (!errors.length) return;
@@ -64,10 +70,12 @@ export function RegistrationScreen() {
 
     try {
       await axios.post(`http://localhost:3004/products`, values);
+      alert("o produto foi criado");
     } catch (error) {
       console.log(error);
       alert("Não foi possível registrar seu produto :(");
     }
+    goToHome();
   }
 
   const preventMinus = (e) => {
