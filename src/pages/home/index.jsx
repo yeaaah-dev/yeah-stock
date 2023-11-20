@@ -57,7 +57,20 @@ export function App() {
   }
 
   function notifyFailed() {
-    toast.success("o produto não foi deletetado!", {
+    toast.success("o produto não foi deletado!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  }
+
+  function notifyFailedGetProducts() {
+    toast.success("Os produtos não foram encontrados !", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -114,7 +127,7 @@ export function App() {
       setProducts(data);
       setTimeout(() => onChangeModalStatusClose(), 3000);
     } catch (error) {
-      notifyFailed();
+      notifyFailedGetProducts();
     }
   }
 
