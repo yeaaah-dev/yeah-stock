@@ -3,8 +3,9 @@ import "./styles/global.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import { ErrorPage } from "./error-page";
-import { RegistrationScreen } from "./pages/registrationScreen/RegistrationScreen";
+import { RegistrationScreen } from "./pages/registration/RegistrationScreen";
 import { Root } from "./routes/root";
+import { EditScreen } from "./pages/edition";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/registration",
     element: <RegistrationScreen />,
+  },
+  {
+    path: "/edition",
+    element: <EditScreen />,
   },
 ]);
 

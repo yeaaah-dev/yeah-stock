@@ -4,7 +4,7 @@ import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
 import { validateFields } from "../../utils";
 
-import styles from "../../pages/registrationScreen/RegistrationScreen.module.css";
+import styles from "../../components/dataProducts/styles.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function RegistrationScreen() {
+export function DataProducts() {
   const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
