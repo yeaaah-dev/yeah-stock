@@ -1,16 +1,6 @@
 {
   "products": [
     {
-      "title": "Tenis 1",
-      "quantify": 106,
-      "measurein": 106,
-      "purchasePrice": 535,
-      "salePrice": 512,
-      "supllier": "5 constra 1",
-      "currency": 23,
-      "id": 3
-    },
-    {
       "title": "café 2",
       "quantify": 106,
       "measurein": 106,
@@ -29,16 +19,6 @@
       "supllier": "5 constra 1",
       "currency": 23,
       "id": 5
-    },
-    {
-      "title": "sabão 4",
-      "quantify": 106,
-      "measurein": 106,
-      "purchasePrice": 535,
-      "salePrice": 512,
-      "supllier": "5 constra 1",
-      "currency": 23,
-      "id": 6
     },
     {
       "title": "enzo cabeçudo 5",

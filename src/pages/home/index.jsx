@@ -78,10 +78,13 @@ export function App() {
 
   async function deleteProduct() {
     try {
-      await axios.delete(`http://localhost:3004/products${productSelected.id}`)
-    } catch(err) {
+      await axios.delete(
+        `http://localhost:3004/products/${productSelected.id}`
+      );
+    } catch (err) {
       console.error(err);
-    };
+    }
+    console.log(productSelected);
   }
 
   useEffect(() => {
