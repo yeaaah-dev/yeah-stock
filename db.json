@@ -1,46 +1,6 @@
 {
   "products": [
     {
-      "title": "café 2",
-      "quantify": 106,
-      "measurein": 106,
-      "purchasePrice": 535,
-      "salePrice": 512,
-      "supllier": "5 constra 1",
-      "currency": 23,
-      "id": 4
-    },
-    {
-      "title": "fogão 3",
-      "quantify": 106,
-      "measurein": 106,
-      "purchasePrice": 535,
-      "salePrice": 512,
-      "supllier": "5 constra 1",
-      "currency": 23,
-      "id": 5
-    },
-    {
-      "title": "enzo cabeçudo 5",
-      "quantify": 106,
-      "measurein": 106,
-      "purchasePrice": 535,
-      "salePrice": 512,
-      "supllier": "5 constra 1",
-      "currency": 23,
-      "id": 7
-    },
-    {
-      "title": "Faz logo a função de deletar Caioba",
-      "quantify": 1,
-      "measurein": 2,
-      "purchasePrice": 3,
-      "salePrice": 4,
-      "supllier": "5 constra 1",
-      "currency": 23,
-      "id": 9
-    },
-    {
       "title": "Foi fondo",
       "quantify": 5,
       "measurein": 4,
@@ -89,36 +49,6 @@
       "currency": 23,
       "supllier": "",
       "id": 16
-    },
-    {
-      "title": "Sascas",
-      "quantify": 0,
-      "measurein": 0,
-      "purchasePrice": 0,
-      "salePrice": 0,
-      "currency": 23,
-      "supllier": "",
-      "id": 17
-    },
-    {
-      "title": "jasjas",
-      "quantify": "12",
-      "measurein": "100",
-      "purchasePrice": "90",
-      "salePrice": "1222",
-      "currency": 23,
-      "supllier": "skjcs",
-      "id": 18
-    },
-    {
-      "title": "Sascas",
-      "quantify": 0,
-      "measurein": 0,
-      "purchasePrice": 0,
-      "salePrice": 0,
-      "currency": 23,
-      "supllier": "",
-      "id": 19
     },
     {
       "title": "xc",

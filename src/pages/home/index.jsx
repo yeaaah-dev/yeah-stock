@@ -12,6 +12,8 @@ import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
 import { modalStatus } from "../../components/ModalComponent/Modal";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const tabs = [
   {
@@ -40,6 +42,19 @@ export function App() {
   const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
   const [productSelected, setProductSelected] = useState({});
   const navigate = useNavigate();
+
+  function notifySuccess() {
+    toast.success("Produto deletado com sucesso!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  }
 
   function goToRegistration() {
     navigate("/registration");
@@ -80,15 +95,26 @@ export function App() {
     }
   }
 
+  async function getProducts() {
+    try {
+      const { data } = await axios.get(`http://localhost:3004/products`);
+      setProducts(data);
+      setTimeout(() => onChangeModalStatusClose(), 3000);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async function deleteProduct() {
     try {
       await axios.delete(
         `http://localhost:3004/products/${productSelected.id}`
       );
+      notifySuccess();
+      getProducts();
     } catch (err) {
       console.error(err);
     }
-    console.log(productSelected);
   }
 
   useEffect(() => {
@@ -212,6 +238,7 @@ export function App() {
           onDeleteProduct={deleteProduct}
         />
       </section>
+      <ToastContainer />
     </div>
   );
 }
