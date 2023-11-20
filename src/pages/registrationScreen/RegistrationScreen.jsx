@@ -29,7 +29,7 @@ export function RegistrationScreen() {
   function notifySuccess() {
     toast.success("Produto criado com sucesso!", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
@@ -85,8 +85,9 @@ export function RegistrationScreen() {
 
     try {
       await axios.post(`http://localhost:3004/products`, values);
+
       notifySuccess();
-      goToHome();
+      setTimeout(() => goToHome(), 4000);
     } catch (error) {
       console.log(error);
       alert("Não foi possível registrar seu produto :(");
@@ -319,11 +320,11 @@ export function RegistrationScreen() {
             }}
           />
         </div>
+        <ToastContainer position="top-right" />
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProduct} type="submit" />
         </div>
       </div>
-      <ToastContainer position="top-right" />
     </div>
   );
 }
