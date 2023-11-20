@@ -173,6 +173,18 @@
       "currency": "12",
       "key": 10,
       "id": "ab024180-1592-4053-9ffb-2fe34d6e4923"
+    },
+    {
+      "title": "sas",
+      "quantify": "120",
+      "measurein": "12",
+      "purchasePrice": "12",
+      "salePrice": "112",
+      "supllier": "sd",
+      "description": "asxs",
+      "currency": "112",
+      "key": 10,
+      "id": "565104cd-71c2-4930-afbf-484ecec14d76"
     }
   ]
 }
