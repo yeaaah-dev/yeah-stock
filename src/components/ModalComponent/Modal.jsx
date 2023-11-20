@@ -10,7 +10,7 @@ export const modalStatus = {
   CLOSE: "close",
 };
 
-export function Modal({ product, onChangeModalStatusClose }) {
+export function Modal({ product, onChangeModalStatusClose, onDeleteProduct }) {
   const {
     title,
     quantify,
@@ -99,7 +99,7 @@ export function Modal({ product, onChangeModalStatusClose }) {
             Editar
           </button>
 
-          <button className={styles["delete-button"]}>
+          <button onClick={onDeleteProduct} className={styles["delete-button"]}>
             <Trash size={32}></Trash>
             Excluir
           </button>

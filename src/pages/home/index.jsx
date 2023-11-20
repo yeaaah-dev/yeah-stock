@@ -76,6 +76,14 @@ export function App() {
     }
   }
 
+  async function deleteProduct() {
+    try {
+      await axios.delete(`http://localhost:3004/products${productSelected.id}`)
+    } catch(err) {
+      console.error(err);
+    };
+  }
+
   useEffect(() => {
     const query = search.length ? `?title_like=${search}` : "";
 
@@ -194,6 +202,7 @@ export function App() {
           onChangeModalStatusClose={onChangeModalStatusClose}
           goToRegistration={goToRegistration}
           product={productSelected}
+          onDeleteProduct={deleteProduct}
         />
       </section>
     </div>
