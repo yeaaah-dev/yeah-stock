@@ -56,6 +56,19 @@ export function App() {
     });
   }
 
+  function notifyFailed() {
+    toast.success("o produto não foi deletetado!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  }
+
   function goToRegistration() {
     navigate("/registration");
   }
@@ -101,7 +114,7 @@ export function App() {
       setProducts(data);
       setTimeout(() => onChangeModalStatusClose(), 3000);
     } catch (error) {
-      console.log(error);
+      notifyFailed();
     }
   }
 
@@ -111,9 +124,9 @@ export function App() {
         `http://localhost:3004/products/${productSelected.id}`
       );
       notifySuccess();
-      getProducts();
+      await getProducts();
     } catch (err) {
-      console.error(err);
+      notifyFailed();
     }
   }
 
