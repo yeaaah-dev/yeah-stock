@@ -8,7 +8,6 @@ import styles from "../../components/dataProducts/styles.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
-import { Trash } from "@phosphor-icons/react/dist/ssr";
 import { Textarea } from "../../components/textarea/textarea";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -106,13 +105,6 @@ export function DataProducts() {
       <div className={styles["layout-registration"]}>
         <div className={styles["title-button"]}>
           <h1 className={styles["title-page"]}>Produto</h1>
-          <div className={styles["container-button-delete"]}>
-            <Button
-              label="Excluir"
-              icon={<Trash size={20}></Trash>}
-              buttonBackgroundOff="yes"
-            />
-          </div>
         </div>
         <div className={styles["container-inputs-image"]}>
           <div className={styles["image-product"]}>

@@ -15,20 +15,6 @@
   line-height: normal;
 }
 
-.container-button-delete {
-  display: flex;
-  flex-direction: row;
-  width: 4rem;
-  height: 1rem;
-  color: #c0293d;
-
-  font-family: Outifit;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 400;
-}
-
 .content-container {
   display: flex;
   flex-direction: column;
