@@ -10,6 +10,8 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
 import { Trash } from "@phosphor-icons/react/dist/ssr";
 import { Textarea } from "../../components/textarea/textarea";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function RegistrationScreen() {
   const [nameProduct, setNameProduct] = useState("");
@@ -21,6 +23,19 @@ export function RegistrationScreen() {
   const [supllier, setSupplier] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
+
+  function notifySuccess() {
+    toast.success("Produto criado com sucesso!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    })
+  }
 
   function removeValidation() {
     if (!errors.length) return;
@@ -64,6 +79,7 @@ export function RegistrationScreen() {
 
     try {
       await axios.post(`http://localhost:3004/products`, values);
+      notifySuccess();
     } catch (error) {
       console.log(error);
       alert("Não foi possível registrar seu produto :(");
@@ -296,6 +312,7 @@ export function RegistrationScreen() {
             }}
           />
         </div>
+        <ToastContainer position="top-right" />
         <div className={styles["container-button-submit"]}>
           <Button label="Salvar" onClick={addProduct} type="submit" />
         </div>
