@@ -70,7 +70,6 @@ export function RegistrationScreen() {
 
     try {
       await axios.post(`http://localhost:3004/products`, values);
-
       goToHome();
     } catch (error) {
       console.log(error);
