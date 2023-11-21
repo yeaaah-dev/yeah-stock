@@ -8,10 +8,11 @@ export function EditScreen() {
 
   const params = useParams();
 
-  async function editProduct() {
+  async function editProduct(product) {
     try {
       const { data } = await axios.put(
-        `http://localhost:3004/products/${params.id}`
+        `http://localhost:3004/products/${params.id}`,
+        product
       );
 
       setNewProductValue(data);
@@ -21,12 +22,8 @@ export function EditScreen() {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3004/products`).then((response) => {
-      setNewProductValue(response.data);
-    });
+    axios.get(`http://localhost:3004/products`);
   }, []);
-
-  console.log(newProductValue);
 
   return (
     <DataProducts

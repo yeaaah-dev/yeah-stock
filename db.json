@@ -1,34 +1,14 @@
 {
   "products": [
     {
-      "id": 12
-    },
-    {
-      "title": "Enzo X videos",
-      "quantify": "69",
-      "measurein": "69",
-      "purchasePrice": "69",
-      "salePrice": "69",
-      "currency": 69,
-      "supllier": "5 constra 1",
-      "id": 13
-    },
-    {
-      "id": "33ec43e7-3f37-4cfd-8825-236d2ad21d4c"
-    },
-    {
-      "id": "b09694b4-bb2a-465c-8515-3e425bc0676a"
-    },
-    {
-      "title": "xasx",
-      "quantify": "012",
-      "measurein": "12",
-      "purchasePrice": "1212",
-      "salePrice": "12",
-      "supllier": "1212",
-      "description": "121",
-      "currency": "12",
-      "key": 10,
+      "title": "blabla",
+      "quantify": "12",
+      "measurein": "212",
+      "purchasePrice": "21",
+      "salePrice": "21",
+      "supllier": "2",
+      "description": "12",
+      "currency": "21",
       "id": "62c9179a-f20d-49fc-9c27-499d99afbd6a"
     },
     {

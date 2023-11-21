@@ -14,9 +14,9 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function DataProducts({ editProduct, isEdit }) {
-  const [nameProduct, setNameProduct] = useState("");
-  const [quantify, setQuantify] = useState(0);
+export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
+  const [nameProduct, setNameProduct] = useState(newProductValue.title || "");
+  const [quantify, setQuantify] = useState(newProductValue.quantify || 0);
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [salePrice, setSalePrice] = useState(0);
   const [mensureUnity, setMensureUnity] = useState(0);
@@ -99,7 +99,7 @@ export function DataProducts({ editProduct, isEdit }) {
       e.preventDefault();
     }
   };
-
+  console.log(newProductValue);
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
@@ -118,6 +118,7 @@ export function DataProducts({ editProduct, isEdit }) {
                 type="text"
                 name="Nome do produto"
                 label="Nome do produto"
+                value={nameProduct}
                 error={errors.includes("title")}
                 onBlur={removeValidation}
                 onChange={(event) => {
@@ -147,6 +148,7 @@ export function DataProducts({ editProduct, isEdit }) {
                       min="0"
                       label="quantify"
                       name="quantify"
+                      value={quantify}
                       error={errors.includes("quantify")}
                       onKeyPress={preventMinus}
                       className={styles["input"]}
@@ -318,7 +320,16 @@ export function DataProducts({ editProduct, isEdit }) {
             label={isEdit ? "Editar" : "Salvar"}
             onClick={() => {
               if (isEdit) {
-                return editProduct();
+                return editProduct({
+                  title: nameProduct,
+                  quantify: quantify,
+                  measurein: mensureUnity,
+                  purchasePrice: purchasePrice,
+                  salePrice: salePrice,
+                  supllier: supllier,
+                  description,
+                  currency,
+                });
               } else {
                 return addProduct();
               }
