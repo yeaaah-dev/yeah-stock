@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
@@ -13,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function DataProducts() {
+export function DataProducts({ editProduct, isEdit }) {
   const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
@@ -149,7 +150,6 @@ export function DataProducts() {
                       error={errors.includes("quantify")}
                       onKeyPress={preventMinus}
                       className={styles["input"]}
-                      value={quantify}
                       onBlur={removeValidation}
                       onChange={(event) => {
                         setQuantify(event.target.value);
@@ -314,7 +314,17 @@ export function DataProducts() {
         </div>
         <ToastContainer position="top-right" />
         <div className={styles["container-button-submit"]}>
-          <Button label="Salvar" onClick={addProduct} type="submit" />
+          <Button
+            label={isEdit ? "Editar" : "Salvar"}
+            onClick={() => {
+              if (isEdit) {
+                return editProduct();
+              } else {
+                return addProduct();
+              }
+            }}
+            type="submit"
+          />
         </div>
       </div>
     </div>
