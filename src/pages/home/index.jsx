@@ -12,6 +12,8 @@ import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
 import { modalStatus } from "../../components/ModalComponent/Modal";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const tabs = [
   {
@@ -40,6 +42,31 @@ export function App() {
   const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
   const [productSelected, setProductSelected] = useState({});
   const navigate = useNavigate();
+
+  function toastInstance(message) {
+    const config = {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      theme: "dark",
+    };
+
+    function success() {
+      toast.success(message, config);
+    }
+
+    function error() {
+      toast.error(message, config);
+    }
+
+    return {
+      success,
+      error,
+    };
+  }
 
   function goToRegistration() {
     navigate("/registration");
@@ -77,6 +104,30 @@ export function App() {
       return style["main-width-open-modal"];
     } else {
       return style["main-width-close-modal"];
+    }
+  }
+
+  async function getProducts() {
+    const { error } = toastInstance("O produto não foi deletado!");
+    try {
+      const { data } = await axios.get(`http://localhost:3004/products`);
+      setProducts(data);
+      setTimeout(() => onChangeModalStatusClose(), 3000);
+    } catch (err) {
+      error();
+    }
+  }
+
+  async function deleteProduct() {
+    const { success } = toastInstance("Produto deletado com sucesso!");
+    const { error } = toastInstance("O produto não foi deletado!");
+
+    try {
+      await axios.delete(`http://localhost:3004/product/${productSelected.id}`);
+      success();
+      await getProducts();
+    } catch (err) {
+      error();
     }
   }
 
@@ -198,8 +249,10 @@ export function App() {
           onChangeModalStatusClose={onChangeModalStatusClose}
           goToEdition={goToEdition}
           product={productSelected}
+          onDeleteProduct={deleteProduct}
         />
       </section>
+      <ToastContainer />
     </div>
   );
 }
