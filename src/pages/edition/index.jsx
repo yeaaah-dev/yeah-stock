@@ -10,19 +10,19 @@ export function EditScreen() {
 
   async function editProduct(product) {
     try {
-      const { data } = await axios.put(
+      await axios.put(
         `http://localhost:3004/products/${params.id}`,
         product
       );
-
-      setNewProductValue(data);
     } catch (error) {
       console.log(error);
     }
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3004/products`);
+    axios.get(`http://localhost:3004/products`).then(({data}) => {
+      setNewProductValue(data)
+    });
   }, []);
 
   return (
