@@ -68,11 +68,6 @@ export function App() {
     };
   }
 
-  const { success, error } = toastInstance();
-
-  success("Produto deletado com sucesso!");
-  error("O produto não foi deletado!");
-
   function goToRegistration() {
     navigate("/registration");
   }
@@ -113,24 +108,26 @@ export function App() {
   }
 
   async function getProducts() {
+    const { error } = toastInstance("O produto não foi deletado!");
     try {
       const { data } = await axios.get(`http://localhost:3004/products`);
       setProducts(data);
       setTimeout(() => onChangeModalStatusClose(), 3000);
-    } catch (error) {
-      toastInstance();
+    } catch (err) {
+      error();
     }
   }
 
   async function deleteProduct() {
+    const { success } = toastInstance("Produto deletado com sucesso!");
+    const { error } = toastInstance("O produto não foi deletado!");
+
     try {
-      await axios.delete(
-        `http://localhost:3004/products/${productSelected.id}`
-      );
-      toastInstance(success);
+      await axios.delete(`http://localhost:3004/product/${productSelected.id}`);
+      success();
       await getProducts();
     } catch (err) {
-      toastInstance.error();
+      error();
     }
   }
 
