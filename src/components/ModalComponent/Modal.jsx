@@ -37,7 +37,7 @@ export function Modal({
         </div>
 
         <div className={styles["modal-title"]}>
-          <h1>Detalhes do produto</h1>
+          <h1>Product Details</h1>
         </div>
 
         <div className={styles["product-info"]}>
@@ -69,7 +69,7 @@ export function Modal({
           </span>
 
           <span>
-            Fornecedor: <span className={styles["info-value"]}>{supllier}</span>
+            Supplier: <span className={styles["info-value"]}>{supllier}</span>
           </span>
 
           <span>
@@ -85,7 +85,7 @@ export function Modal({
         </div>
 
         <div className={styles["subtitle"]}>
-          <h2>Descrição:</h2>
+          <h2>Description:</h2>
         </div>
 
         <div className={styles["product-description"]}>
@@ -93,18 +93,19 @@ export function Modal({
             location={true}
             type="text"
             placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness."
+            //Essa aqui eu vou arrumar na branch de criação de funções /^\
           />
         </div>
 
         <div className={styles["buttons-div"]}>
           <button className={styles["edit-button"]} onClick={goToEdition}>
             <NotePencil size={17} />
-            Editar
+            Edition
           </button>
 
           <button onClick={onDeleteProduct} className={styles["delete-button"]}>
             <Trash size={32}></Trash>
-            Excluir
+            Delete
           </button>
         </div>
       </div>

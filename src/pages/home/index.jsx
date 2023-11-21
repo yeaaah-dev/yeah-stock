@@ -17,15 +17,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 const tabs = [
   {
-    title: "tipo  01",
+    title: "type  01",
     key: 0,
   },
   {
-    title: "tipo  02",
+    title: "type  02",
     key: 1,
   },
   {
-    title: "tipo  03",
+    title: "type  03",
     key: 2,
   },
 ];
@@ -108,7 +108,7 @@ export function App() {
   }
 
   async function getProducts() {
-    const { error } = toastInstance("O produto não foi deletado!");
+    const { error } = toastInstance("The product has not been deleted !");
     try {
       const { data } = await axios.get(`http://localhost:3004/products`);
       setProducts(data);
@@ -119,8 +119,8 @@ export function App() {
   }
 
   async function deleteProduct() {
-    const { success } = toastInstance("Produto deletado com sucesso!");
-    const { error } = toastInstance("O produto não foi deletado!");
+    const { success } = toastInstance("Product deleted successfully!");
+    const { error } = toastInstance("The product has not been deleted!");
 
     try {
       await axios.delete(`http://localhost:3004/product/${productSelected.id}`);
@@ -163,7 +163,7 @@ export function App() {
               <Input
                 borderNone={true}
                 type="text"
-                placeholder="Pesquisar produtos"
+                placeholder="Search products"
                 onChange={(event) => {
                   setSearch(event.currentTarget.value);
                 }}
@@ -174,9 +174,7 @@ export function App() {
             <div className={style["div-button"]}>
               <Button
                 label={
-                  <span className={style["name-button"]}>
-                    Adicionar produto
-                  </span>
+                  <span className={style["name-button"]}>Add product</span>
                 }
                 icon={<Icon className={style["icon-plus"]} />}
                 buttonBackgroundOff={"not"}
@@ -197,14 +195,14 @@ export function App() {
               <img
                 src={Rick}
                 className={style["logo"]}
-                alt="imagem Rick e Morty"
+                alt="Rick and Morty image"
               />
             </div>
           </div>
         </nav>
 
         <section>
-          <p className={style["title"]}>ìnicio</p>
+          <p className={style["title"]}>Start</p>
 
           <div className={style["tab-toggle"]}>
             <div>
