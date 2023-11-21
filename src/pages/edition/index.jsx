@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 export function EditScreen() {
   const [newProductValue, setNewProductValue] = useState({});
 
-  const params = useParams();
+  const { id } = useParams();
 
   async function editProduct(product) {
     try {
       await axios.put(
-        `http://localhost:3004/products/${params.id}`,
+        `http://localhost:3004/products/${id}`,
         product
       );
     } catch (error) {
@@ -20,10 +20,10 @@ export function EditScreen() {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3004/products`).then(({data}) => {
+    axios.get(`http://localhost:3004/products/${id}`).then(({data}) => {
       setNewProductValue(data)
     });
-  }, []);
+  }, [id]);
 
   return (
     <DataProducts
