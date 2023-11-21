@@ -26,7 +26,7 @@ export function DataProducts() {
   const navigate = useNavigate();
 
   function notifySuccess() {
-    toast.success("Produto criado com sucesso!", {
+    toast.success("Product created successfully !", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -89,7 +89,7 @@ export function DataProducts() {
       setTimeout(() => goToHome(), 4000);
     } catch (error) {
       console.log(error);
-      alert("Não foi possível registrar seu produto :(");
+      alert("Unable to register your product :(");
     }
   }
 
@@ -104,7 +104,7 @@ export function DataProducts() {
       <Sidebar />
       <div className={styles["layout-registration"]}>
         <div className={styles["title-button"]}>
-          <h1 className={styles["title-page"]}>Produto</h1>
+          <h1 className={styles["title-page"]}>Product</h1>
         </div>
         <div className={styles["container-inputs-image"]}>
           <div className={styles["image-product"]}>
@@ -115,8 +115,8 @@ export function DataProducts() {
             <div className={styles["input-products"]}>
               <Input
                 type="text"
-                name="Nome do produto"
-                label="Nome do produto"
+                name="Product`s name"
+                label="Product`s name"
                 error={errors.includes("title")}
                 onBlur={removeValidation}
                 onChange={(event) => {
@@ -289,8 +289,8 @@ export function DataProducts() {
             <div className={styles["input-products-supplier"]}>
               <Input
                 type="text"
-                name="fornecedor"
-                label="fornecedor"
+                name="Supllier"
+                label="Supllier"
                 error={errors.includes("supllier")}
                 onBlur={removeValidation}
                 onChange={(event) => {
@@ -302,7 +302,7 @@ export function DataProducts() {
         </div>
 
         <div className={styles["description-products-content"]}>
-          <span className={styles["title-inputs"]}>Descrição do produto</span>
+          <span className={styles["title-inputs"]}>Product Description</span>
           <Textarea
             name="description"
             error={errors.includes("description")}
@@ -314,9 +314,9 @@ export function DataProducts() {
         </div>
         <ToastContainer position="top-right" />
         <div className={styles["container-button-submit"]}>
-          <Button label="Salvar" onClick={addProduct} type="submit" />
+          <Button label="Save" onClick={addProduct} type="submit" />
         </div>
       </div>
-    </div>
+    </div> //Essa aqui eu vou editar na branch das funções da pagina edition
   );
 }
