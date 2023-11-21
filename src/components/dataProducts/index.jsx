@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
@@ -15,8 +15,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
-  const [nameProduct, setNameProduct] = useState(newProductValue.title || "");
-  const [quantify, setQuantify] = useState(newProductValue.quantify || 0);
+  const [nameProduct, setNameProduct] = useState("");
+  const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [salePrice, setSalePrice] = useState(0);
   const [mensureUnity, setMensureUnity] = useState(0);
@@ -99,7 +99,14 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
       e.preventDefault();
     }
   };
-  console.log(newProductValue);
+
+  useEffect(() => {
+    if (newProductValue.id) {
+      setNameProduct(newProductValue.title)
+      setCurrency(newProductValue.quantify)
+    }
+  }, [newProductValue])
+
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
