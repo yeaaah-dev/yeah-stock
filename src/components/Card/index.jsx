@@ -6,14 +6,14 @@ import style from "../Card/listStyles.module.css";
 
 export function Card({ layout, product, onChangeModalStatusOpen }) {
   return (
-    <div>
+    <div className={style["list-product-conteiner"]}>
       {layout === iconType.COLUMNS ? (
         <CardLayout
           product={product}
           onChangeModalStatusOpen={() => onChangeModalStatusOpen(product)}
         />
       ) : (
-        <div className={style["list-product-container"]}>
+        <div className={style["list-product-conteiner"]}>
           <ListLayout
             product={product}
             onChangeModalStatusOpen={() => onChangeModalStatusOpen(product)}

@@ -9,24 +9,29 @@ button {
   flex-direction: column;
   margin-left: 1rem;
 
-  max-width: 18.125rem;
-  height: 100%;
+  width: 15rem;
+  height: 38.5rem;
   background-color: #323232;
   font-family: "Outfit", sans-serif;
 }
 
 .modal-content {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   padding-right: 3.12rem;
   padding-left: 1.19rem;
-
-  height: 100%;
 }
 
 .modal-header {
   display: flex;
   justify-content: end;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+.button-close {
   width: 100%;
+  height: 100%;
+  margin-right: -11rem;
 }
 
 .modal-title {
@@ -57,7 +62,7 @@ button {
 }
 
 .product-image {
-  max-width: 13.8125rem;
+  width: 12rem;
   height: 9.1875rem;
 
   display: flex;
@@ -81,10 +86,9 @@ button {
   margin-left: 0.44rem;
 }
 
-.product-description {
-  width: 13.8125rem;
-  height: 3.625rem;
-
+.product-description textarea {
+  width: 12rem;
+  height: 4.9rem;
   margin-top: 0.25rem;
 }
 

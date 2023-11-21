@@ -86,10 +86,12 @@ export function App() {
   }
 
   function changeLayoutCards() {
-    if (layout === iconType.LIST) {
-      return style["grid-layout-list"];
+    if (layout === iconType.LIST && modalModel === modalStatus.CLOSE) {
+      return style["grid-layout-list-close-modal"];
+    } else if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
+      return style["grid-layout-list-open-modal"];
     }
-    if (modalModel === modalStatus.OPEN) {
+    if (modalModel === modalStatus.OPEN && layout === iconType.COLUMNS) {
       return style["grid-layout-column-open-modal"];
     } else if (modalModel === modalStatus.CLOSE) {
       return style["grid-layout-column-close-modal"];
@@ -151,7 +153,7 @@ export function App() {
       </aside>
 
       <main className={changeLayoutAllScreen()}>
-        <nav className={style["nav"]}>
+        <nav className={style["nav-style"]}>
           <div className={style["content-input"]}>
             <div className={style["input-wrapper"]}>
               <button

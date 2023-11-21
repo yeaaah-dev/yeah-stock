@@ -29,10 +29,10 @@ export function ListLayout({ product, onChangeModalStatusOpen }) {
             Sale Price: <span>{product.salePrice}</span>
           </div>
           <div>
-            Currency: <span>Unity </span>
+            Currency: <span>{product.currency}</span>
           </div>
           <div>
-            Supplier: <span>Hugostoso</span>
+            Supplier: <span>name name</span>
           </div>
         </div>
       </div>

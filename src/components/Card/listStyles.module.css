@@ -1,12 +1,15 @@
 .container_list_card {
   display: flex;
   align-items: center;
-  width: 61.1875rem;
-  height: 4.6875rem;
+  width: 100%;
+  height: 4.6rem;
   border-radius: 0.442rem;
   background: #323232;
 }
 
+.list-product-conteiner {
+  width: 100%;
+}
 .content_card_list {
   display: flex;
   flex-direction: column;

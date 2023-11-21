@@ -3,14 +3,7 @@
 }
 
 .main-width-open-modal {
-  max-width: 45rem;
-  margin-right: 1.7rem;
-  margin-top: 3rem;
-}
-
-.main-width-close-modal {
-  max-width: 62rem;
-  margin-top: 3rem;
+  width: 44.1rem;
 }
 
 .tab-toggle {
@@ -24,32 +17,40 @@
 .grid-layout-column-open-modal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.7rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .grid-layout-column-close-modal {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.7rem;
+  gap: 1rem;
   width: 100%;
 }
 
-.grid-layout-list {
+.grid-layout-list-close-modal {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.grid-layout-list-open-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 43rem;
 }
 
 section {
   margin-left: 1.25rem;
 }
 
-nav {
+.nav-style {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 1.25rem;
+  margin-top: 3rem;
 }
 
 .title {
@@ -120,7 +121,7 @@ nav {
 }
 
 .modal-close {
-  visibility: hidden;
+  display: none;
 }
 
 .error-page {

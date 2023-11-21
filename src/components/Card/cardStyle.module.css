@@ -1,8 +1,8 @@
 .container_card {
   display: flex;
   flex-direction: column;
-  width: 13.95519rem;
-  height: 13.76575rem;
+  width: 100%;
+  height: 13.8rem;
   border-radius: 0.442rem;
   background: #323232;
 }
