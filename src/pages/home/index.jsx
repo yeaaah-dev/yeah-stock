@@ -43,44 +43,35 @@ export function App() {
   const [productSelected, setProductSelected] = useState({});
   const navigate = useNavigate();
 
-  function notifySuccess() {
-    toast.success("Produto deletado com sucesso!", {
+  function toastInstance(message) {
+    const config = {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: true,
-      progress: undefined,
       theme: "dark",
-    });
+    };
+
+    function success() {
+      toast.success(message, config);
+    }
+
+    function error() {
+      toast.error(message, config);
+    }
+
+    return {
+      success,
+      error,
+    };
   }
 
-  function notifyFailed() {
-    toast.success("o produto não foi deletado!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  }
+  const { success, error } = toastInstance();
 
-  function notifyFailedGetProducts() {
-    toast.success("Os produtos não foram encontrados !", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  }
+  success("Produto deletado com sucesso!");
+  error("O produto não foi deletado!");
 
   function goToRegistration() {
     navigate("/registration");
@@ -127,7 +118,7 @@ export function App() {
       setProducts(data);
       setTimeout(() => onChangeModalStatusClose(), 3000);
     } catch (error) {
-      notifyFailedGetProducts();
+      toastInstance();
     }
   }
 
@@ -136,10 +127,10 @@ export function App() {
       await axios.delete(
         `http://localhost:3004/products/${productSelected.id}`
       );
-      notifySuccess();
+      toastInstance(success);
       await getProducts();
     } catch (err) {
-      notifyFailed();
+      toastInstance.error();
     }
   }
 
