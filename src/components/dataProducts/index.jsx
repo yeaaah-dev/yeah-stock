@@ -26,17 +26,29 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
-  function notifySuccess() {
-    toast.success("Product created successfully !", {
+  function toastInstance(message) {
+    const config = {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: true,
-      progress: undefined,
       theme: "dark",
-    });
+    };
+
+    function success() {
+      toast.success(message, config);
+    }
+
+    function error() {
+      toast.error(message, config);
+    }
+
+    return {
+      success,
+      error,
+    };
   }
 
   function goToHome() {
@@ -53,8 +65,8 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
       purchasePrice: purchasePrice,
       salePrice: salePrice,
       supllier: supllier,
-      description,
-      currency,
+      description: description,
+      currency: currency,
     };
 
     const validate = validateFields(values);
@@ -70,9 +82,8 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
       purchasePrice: purchasePrice,
       salePrice: salePrice,
       supllier: supllier,
-      description,
-      currency,
-      key: 10,
+      description: description,
+      currency: currency,
       id: uuidv4(),
     };
 
@@ -82,15 +93,15 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
       setErrors(validate);
       return;
     }
-
+    const { success } = toastInstance("product added successfully");
+    const { error } = toastInstance("Unable to register your product !");
     try {
       await axios.post(`http://localhost:3004/products`, values);
 
-      notifySuccess();
-      setTimeout(() => goToHome(), 4000);
-    } catch (error) {
-      console.log(error);
-      alert("Unable to register your product :(");
+      success();
+      setTimeout(() => goToHome(), 3000);
+    } catch (err) {
+      error();
     }
   }
 
@@ -112,7 +123,7 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
       setSupplier(newProductValue.supllier);
     }
   }, [newProductValue]);
-  console.log(newProductValue);
+
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
@@ -306,6 +317,7 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
                 type="text"
                 name="Supllier"
                 label="Supllier"
+                value={supllier}
                 error={errors.includes("supllier")}
                 onBlur={removeValidation}
                 onChange={(event) => {
@@ -321,6 +333,7 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
           <Textarea
             name="description"
             error={errors.includes("description")}
+            value={description}
             onBlur={removeValidation}
             onChange={(e) => {
               setDescription(e.currentTarget.value);
@@ -340,8 +353,8 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
                   purchasePrice: purchasePrice,
                   salePrice: salePrice,
                   supllier: supllier,
-                  description,
-                  currency,
+                  description: description,
+                  currency: currency,
                 });
               } else {
                 return addProduct();
