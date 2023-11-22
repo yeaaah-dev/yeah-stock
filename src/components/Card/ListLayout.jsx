@@ -32,7 +32,7 @@ export function ListLayout({ product, onChangeModalStatusOpen }) {
             Currency: <span>Unity </span>
           </div>
           <div>
-            Fornecedor: <span>Hugostoso</span>
+            Supplier: <span>Hugostoso</span>
           </div>
         </div>
       </div>
