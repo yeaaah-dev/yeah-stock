@@ -51,6 +51,20 @@ export function EditScreen() {
     }
   }
 
+  async function deleteProduct() {
+    const { success } = toastInstance("Product deleted successfully!");
+    const { error } = toastInstance("The product has not been deleted!");
+
+    try {
+      await axios.delete(`http://localhost:3004/products/${id}`);
+      success();
+      setTimeout(() => goToHome(), 3000);
+    } catch (err) {
+      console.error(err);
+      error();
+    }
+  }
+
   useEffect(() => {
     axios.get(`http://localhost:3004/products/${id}`).then(({ data }) => {
       setNewProductValue(data);
@@ -63,6 +77,7 @@ export function EditScreen() {
       newProductValue={newProductValue}
       toastInstance={(message) => toastInstance(message)}
       isEdit
+      onDeleteProduct={deleteProduct}
     />
   );
 }

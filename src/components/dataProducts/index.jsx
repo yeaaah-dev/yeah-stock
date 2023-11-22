@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
+import { CaretDown, CaretUp, Image, Trash } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
 import { validateFields } from "../../utils";
 
@@ -14,7 +14,12 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
+export function DataProducts({
+  editProduct,
+  isEdit,
+  onDeleteProduct,
+  newProductValue = {},
+}) {
   const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
@@ -130,6 +135,14 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
       <div className={styles["layout-registration"]}>
         <div className={styles["title-button"]}>
           <h1 className={styles["title-page"]}>Product</h1>
+          {isEdit ? (
+            <Button
+              label={"Delete"}
+              buttonBackgroundOff={"yes"}
+              icon={<Trash />}
+              onClick={onDeleteProduct}
+            />
+          ) : null}
         </div>
         <div className={styles["container-inputs-image"]}>
           <div className={styles["image-product"]}>
