@@ -102,11 +102,17 @@ export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
 
   useEffect(() => {
     if (newProductValue.id) {
-      setNameProduct(newProductValue.title)
-      setCurrency(newProductValue.quantify)
+      setNameProduct(newProductValue.title);
+      setCurrency(newProductValue.quantify);
+      setPurchasePrice(newProductValue.purchasePrice);
+      setQuantify(newProductValue.quantify);
+      setDescription(newProductValue.description);
+      setMensureUnity(newProductValue.measurein);
+      setSalePrice(newProductValue.salePrice);
+      setSupplier(newProductValue.supllier);
     }
-  }, [newProductValue])
-
+  }, [newProductValue]);
+  console.log(newProductValue);
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
