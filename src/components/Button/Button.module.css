@@ -25,3 +25,13 @@ button {
   background: transparent;
   color: #c0293d;
 }
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.31rem;
+}
+
+.content > div {
+  margin-top: 2px;
+}
