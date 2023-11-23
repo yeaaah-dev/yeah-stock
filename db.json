@@ -133,6 +133,7 @@
       "id": "21e7c87e-dcbd-4daf-82cb-46fff91edbf2"
     },
     {
+ function-edit-css
       "title": "1",
       "quantify": "2",
       "measurein": "12",
@@ -203,6 +204,40 @@
       "currency": "12",
       "key": 10,
       "id": "26f1e519-c1db-4a0f-abba-b2c394e7f5ed"
+      "title": "123",
+      "quantify": "02",
+      "measurein": "02",
+      "purchasePrice": "03",
+      "salePrice": "03",
+      "supllier": "teste",
+      "description": "kkk",
+      "currency": "03",
+      "key": 10,
+      "id": "1c8159f6-683a-47dc-a026-76a05762b40f"
+    },
+    {
+      "title": "eu",
+      "quantify": "02",
+      "measurein": "03",
+      "purchasePrice": "06",
+      "salePrice": "07",
+      "supllier": "neymar",
+      "description": "messi",
+      "currency": "07",
+      "key": 10,
+      "id": "19af1726-6015-45f1-ae00-325be98607da"
+    },
+    {
+      "title": "fdfdfd",
+      "quantify": "04",
+      "measurein": "044",
+      "purchasePrice": "04",
+      "salePrice": "04",
+      "supllier": "5555",
+      "description": "ffvx",
+      "currency": "04",
+      "key": 10,
+      "id": "f0b29e26-785c-42d1-a520-69564360118e" main
     }
   ]
 }
