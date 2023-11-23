@@ -168,7 +168,7 @@ export function DataProducts({
                 <div className={styles["wrapper"]}>
                   <div className={styles["icon"]}>
                     <CaretUp
-                      onClick={() => setQuantify(quantify + 1)}
+                      onClick={() => setQuantify(Number(quantify) + 1)}
                       className={styles["icon-caret-up"]}
                       size={12}
                     ></CaretUp>
@@ -176,7 +176,12 @@ export function DataProducts({
                     <CaretDown
                       size={12}
                       className={styles["icon-caret-down"]}
-                      onClick={() => setQuantify(quantify - 1)}
+                      onClick={() => {
+                        if(quantify == 0) {
+                          return setQuantify(0)
+                        }
+                        setQuantify(quantify - 1)
+                      }}
                     ></CaretDown>
                   </div>
                   <div className={styles["input-amount-products"]}>
@@ -201,7 +206,7 @@ export function DataProducts({
                 <div className={styles["wrapper"]}>
                   <div className={styles["icon"]}>
                     <CaretUp
-                      onClick={() => setMensureUnity(mensureUnity + 1)}
+                      onClick={() => setMensureUnity(Number(mensureUnity) + 1)}
                       className={styles["icon-caret-up"]}
                       size={12}
                     ></CaretUp>
@@ -209,7 +214,12 @@ export function DataProducts({
                     <CaretDown
                       size={12}
                       className={styles["icon-caret-down"]}
-                      onClick={() => setMensureUnity(mensureUnity - 1)}
+                      onClick={() => {
+                        if(mensureUnity == 0) {
+                          return setMensureUnity(0);
+                        }
+                        setMensureUnity(mensureUnity - 1)
+                      }}
                     ></CaretDown>
                   </div>
                   <div className={styles["input-amount-products"]}>
@@ -237,7 +247,7 @@ export function DataProducts({
             <div className={styles["wrapper"]}>
               <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
-                  onClick={() => setPurchasePrice(purchasePrice + 1)}
+                  onClick={() => setPurchasePrice(Number(purchasePrice) + 1)}
                   className={styles["icon-caret-up"]}
                   size={12}
                 ></CaretUp>
@@ -245,7 +255,12 @@ export function DataProducts({
                 <CaretDown
                   size={12}
                   className={styles["icon-caret-down"]}
-                  onClick={() => setPurchasePrice(purchasePrice - 1)}
+                  onClick={() => {
+                    if(purchasePrice == 0) {
+                      return setPurchasePrice(0);
+                    }
+                    setPurchasePrice(purchasePrice - 1)
+                  }}
                 ></CaretDown>
               </div>
               <div className={styles["input-amount-products"]}>
@@ -266,7 +281,7 @@ export function DataProducts({
             <div className={styles["wrapper"]}>
               <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
-                  onClick={() => setSalePrice(salePrice + 1)}
+                  onClick={() => setSalePrice(Number(salePrice) + 1)}
                   className={styles["icon-caret-up"]}
                   size={12}
                 ></CaretUp>
@@ -274,7 +289,12 @@ export function DataProducts({
                 <CaretDown
                   size={12}
                   className={styles["icon-caret-down"]}
-                  onClick={() => setSalePrice(salePrice - 1)}
+                  onClick={() => {
+                    if(salePrice == 0) {
+                      return setSalePrice(0);
+                    }
+                    setSalePrice(salePrice - 1)
+                  }}
                 ></CaretDown>
               </div>
               <div className={styles["input-amount-products"]}>
@@ -297,7 +317,7 @@ export function DataProducts({
             <div className={styles["wrapper"]}>
               <div className={styles["icon-sale-purchase-currency"]}>
                 <CaretUp
-                  onClick={() => setCurrency(currency + 1)}
+                  onClick={() => setCurrency(Number(currency) + 1)}
                   className={styles["icon-caret-up"]}
                   size={12}
                 ></CaretUp>
@@ -305,7 +325,12 @@ export function DataProducts({
                 <CaretDown
                   size={12}
                   className={styles["icon-caret-down"]}
-                  onClick={() => setCurrency(currency - 1)}
+                  onClick={() => {
+                    if(currency == 0) {
+                      return setCurrency(0);
+                    }
+                    setCurrency(currency - 1)
+                  }}
                 ></CaretDown>
               </div>
               <div className={styles["input-amount-products"]}>
@@ -359,7 +384,7 @@ export function DataProducts({
             label={isEdit ? "Editar" : "Salvar"}
             onClick={() => {
               if (isEdit) {
-                return editProduct({
+                const editionValues = {
                   title: nameProduct,
                   quantify: quantify,
                   measurein: mensureUnity,
@@ -368,7 +393,16 @@ export function DataProducts({
                   supllier: supllier,
                   description: description,
                   currency: currency,
-                });
+                }
+
+                const validate = validateFields(editionValues);
+
+                if (validate.length) {
+                  setErrors(validate);
+                  return;
+                }
+
+                return editProduct();
               } else {
                 return addProduct();
               }
