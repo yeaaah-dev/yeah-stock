@@ -72,7 +72,7 @@
 
 .input-products {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 0.25rem;
   width: 31.4375rem;
   min-height: 1.875rem;
@@ -85,7 +85,7 @@
 
 .input-products-supplier {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 0.25rem;
   width: 14rem;
   min-height: 1.875rem;
@@ -98,7 +98,7 @@
 
 .input-amount-products {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 0.25rem;
 
   min-height: 1.875rem;
@@ -126,6 +126,7 @@
   height: 8.5rem;
   border-radius: 0.30625rem;
   background: #4a4a4a;
+  color: #4a4a4a;
 }
 
 .title-inputs {
@@ -140,7 +141,7 @@
   width: 8rem;
   min-height: 1.875rem;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 0.25rem;
 }
 
