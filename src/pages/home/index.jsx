@@ -76,7 +76,7 @@ export function App() {
   }
 
   function goToEdition() {
-    navigate("/edition");
+    navigate(`/edition/${productSelected.id}`);
   }
 
   function onChangeModalStatusClose() {

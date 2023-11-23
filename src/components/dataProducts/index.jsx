@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
@@ -13,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function DataProducts() {
+export function DataProducts({ editProduct, isEdit, newProductValue = {} }) {
   const [nameProduct, setNameProduct] = useState("");
   const [quantify, setQuantify] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
@@ -25,17 +26,29 @@ export function DataProducts() {
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
-  function notifySuccess() {
-    toast.success("Product created successfully !", {
+  function toastInstance(message) {
+    const config = {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: true,
-      progress: undefined,
       theme: "dark",
-    });
+    };
+
+    function success() {
+      toast.success(message, config);
+    }
+
+    function error() {
+      toast.error(message, config);
+    }
+
+    return {
+      success,
+      error,
+    };
   }
 
   function goToHome() {
@@ -52,8 +65,8 @@ export function DataProducts() {
       purchasePrice: purchasePrice,
       salePrice: salePrice,
       supllier: supllier,
-      description,
-      currency,
+      description: description,
+      currency: currency,
     };
 
     const validate = validateFields(values);
@@ -69,9 +82,8 @@ export function DataProducts() {
       purchasePrice: purchasePrice,
       salePrice: salePrice,
       supllier: supllier,
-      description,
-      currency,
-      key: 10,
+      description: description,
+      currency: currency,
       id: uuidv4(),
     };
 
@@ -81,15 +93,15 @@ export function DataProducts() {
       setErrors(validate);
       return;
     }
-
+    const { success } = toastInstance("product added successfully");
+    const { error } = toastInstance("Unable to register your product !");
     try {
       await axios.post(`http://localhost:3004/products`, values);
 
-      notifySuccess();
-      setTimeout(() => goToHome(), 4000);
-    } catch (error) {
-      console.log(error);
-      alert("Unable to register your product :(");
+      success();
+      setTimeout(() => goToHome(), 3000);
+    } catch (err) {
+      error();
     }
   }
 
@@ -98,6 +110,19 @@ export function DataProducts() {
       e.preventDefault();
     }
   };
+
+  useEffect(() => {
+    if (newProductValue.id) {
+      setNameProduct(newProductValue.title);
+      setCurrency(newProductValue.quantify);
+      setPurchasePrice(newProductValue.purchasePrice);
+      setQuantify(newProductValue.quantify);
+      setDescription(newProductValue.description);
+      setMensureUnity(newProductValue.measurein);
+      setSalePrice(newProductValue.salePrice);
+      setSupplier(newProductValue.supllier);
+    }
+  }, [newProductValue]);
 
   return (
     <div className={styles["registration-container"]}>
@@ -116,6 +141,7 @@ export function DataProducts() {
             <div className={styles["input-products"]}>
               <Input
                 type="text"
+                value={nameProduct}
                 name="Product`s name"
                 label="Product`s name"
                 error={errors.includes("title")}
@@ -147,10 +173,10 @@ export function DataProducts() {
                       min="0"
                       label="quantify"
                       name="quantify"
+                      value={quantify}
                       error={errors.includes("quantify")}
                       onKeyPress={preventMinus}
                       className={styles["input"]}
-                      value={quantify}
                       onBlur={removeValidation}
                       onChange={(event) => {
                         setQuantify(event.target.value);
@@ -292,6 +318,7 @@ export function DataProducts() {
                 type="text"
                 name="Supllier"
                 label="Supllier"
+                value={supllier}
                 error={errors.includes("supllier")}
                 onBlur={removeValidation}
                 onChange={(event) => {
@@ -307,6 +334,7 @@ export function DataProducts() {
           <Textarea
             name="description"
             error={errors.includes("description")}
+            value={description}
             onBlur={removeValidation}
             onChange={(e) => {
               setDescription(e.currentTarget.value);
@@ -315,7 +343,26 @@ export function DataProducts() {
         </div>
         <ToastContainer position="top-right" />
         <div className={styles["container-button-submit"]}>
-          <Button label="Save" onClick={addProduct} type="submit" />
+          <Button
+            label={isEdit ? "Editar" : "Salvar"}
+            onClick={() => {
+              if (isEdit) {
+                return editProduct({
+                  title: nameProduct,
+                  quantify: quantify,
+                  measurein: mensureUnity,
+                  purchasePrice: purchasePrice,
+                  salePrice: salePrice,
+                  supllier: supllier,
+                  description: description,
+                  currency: currency,
+                });
+              } else {
+                return addProduct();
+              }
+            }}
+            type="submit"
+          />
         </div>
       </div>
     </div> //Essa aqui eu vou editar na branch das funções da pagina edition
