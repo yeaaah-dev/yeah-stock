@@ -43,7 +43,7 @@
 }
 
 .line-vertical {
-  height: 100%;
+  height: 100vh;
   width: 0.09rem;
   background: #323232;
 }
