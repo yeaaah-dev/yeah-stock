@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 export function Input({ icon, label, borderNone, error = false, ...rest }) {
   return (
     <>
-    {label}
+     {label}
       <input
         {...rest}
         className={

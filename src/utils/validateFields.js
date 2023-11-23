@@ -1,5 +1,5 @@
 export function validateFields(values = {}) {
-  const errors = Object.keys(values).filter((key) => {
+  const errors = Object.keys(values).filter((key) => { //[title, quantify,]
     const value = values[key];
     const numberOrString = typeof value;
 
@@ -9,10 +9,6 @@ export function validateFields(values = {}) {
 
     if (numberOrString === "string" && !value.length) return true;
     if (numberOrString === "number" && value === 0) return true;
-
-    if (key === "description") {
-      console.log(numberOrString, value.length);
-    }
 
     return false;
   });
