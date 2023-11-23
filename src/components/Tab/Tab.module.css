@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   background-color: #1b1b1b;
-  gap: 20%;
+  gap: 1rem;
 }
 
 span {
@@ -30,7 +30,7 @@ span {
 
 button {
   font-family: "Outfit", sans-serif;
-  font-size: 0.75rem;
+  font-size: large;
   font-style: normal;
   font-weight: 400;
 }

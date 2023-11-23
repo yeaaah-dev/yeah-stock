@@ -56,7 +56,7 @@
 h1 {
   color: #fff;
   font-family: Outfit;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -81,10 +81,8 @@ h1 {
 
 .input-search {
   display: flex;
-  align-items: baseline;
   width: 50%;
   height: 100%;
-  padding: 1%;
   background-color: #242424;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -92,7 +90,8 @@ h1 {
 
 .icon {
   width: 10%;
-  height: 10%;
+  height: 100%;
+  padding-top: 9px;
 }
 
 .button-component {

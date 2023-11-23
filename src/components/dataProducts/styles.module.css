@@ -19,9 +19,14 @@
   flex-direction: column;
 }
 
+.column-sidebar-registration {
+  width: 50rem;
+}
+
 .layout-registration {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .container-inputs-image {

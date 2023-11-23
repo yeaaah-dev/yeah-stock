@@ -102,6 +102,7 @@ export function DataProducts() {
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
+
       <div className={styles["layout-registration"]}>
         <div className={styles["title-button"]}>
           <h1 className={styles["title-page"]}>Product</h1>
@@ -320,3 +321,5 @@ export function DataProducts() {
     </div> //Essa aqui eu vou editar na branch das funções da pagina edition
   );
 }
+
+export default DataProducts;

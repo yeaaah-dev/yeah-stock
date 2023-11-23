@@ -51,7 +51,7 @@ export function Sidebar() {
             }
             onClick={() => goToHome()}
           >
-            <HouseLine size={17} />
+            <HouseLine size={20} />
             Home
           </button>
 
@@ -63,7 +63,7 @@ export function Sidebar() {
             }
             onClick={() => setButtonSelected(buttonName.TRASH)}
           >
-            <Trash size={17} />
+            <Trash size={20} />
             Trash
           </button>
 
@@ -75,7 +75,7 @@ export function Sidebar() {
             }
             onClick={() => setButtonSelected(buttonName.PROFILE)}
           >
-            <User size={17} />
+            <User size={20} />
             profile
           </button>
         </div>
@@ -92,7 +92,7 @@ export function Sidebar() {
             }
             onClick={() => setButtonSelected(buttonName.SETTINGS)}
           >
-            <GearSix size={17} />
+            <GearSix size={20} />
             Settings
           </button>
 
@@ -104,7 +104,7 @@ export function Sidebar() {
             }
             onClick={() => setButtonSelected(buttonName.EXIT)}
           >
-            <SignOut size={17} />
+            <SignOut size={20} />
             Exit
           </button>
         </div>

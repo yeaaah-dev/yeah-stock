@@ -28,7 +28,7 @@ export function CardLayout({
 
         <button className={styles["button-icon-pencil"]}>
           <NotePencil
-            size={14}
+            size={22}
             color=" #1F7CFB"
             onClick={onChangeModalStatusOpen}
           />

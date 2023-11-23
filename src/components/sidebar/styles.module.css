@@ -7,8 +7,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: #1b1b1b;
 }
 
@@ -20,6 +21,8 @@
 
 .image-logo {
   cursor: pointer;
+  width: 40%;
+  height: 100%;
 }
 
 .line {
@@ -31,7 +34,7 @@
 .div-line-one {
   display: flex;
   justify-content: center;
-  padding-top: 20%;
+  padding-top: 30%;
 }
 
 .div-line-three {
@@ -48,10 +51,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10%;
+  padding-top: 20%;
   gap: 1rem;
-  width: 100%;
-  height: 90%;
 }
 
 .buttons-settings-exit {
@@ -70,11 +71,12 @@ button {
   display: flex;
   justify-content: center;
   padding-top: 60%;
-  padding-bottom: 30%;
+  padding-bottom: 50%;
 }
 
 .button-selected {
   border-radius: 0.4375rem;
+  font-size: x-large;
   border: 1px solid rgba(255, 255, 255, 0.04);
   color: #fff;
   border: none;
@@ -84,6 +86,9 @@ button {
   align-items: center;
   font-family: Outfit;
   box-shadow: none;
+  width: 90%;
+  height: 1.8rem;
+  gap: 0.5rem;
 }
 
 .button-not-selected {
@@ -93,6 +98,8 @@ button {
   align-items: center;
   justify-content: center;
   font-family: Outfit;
+  font-size: x-large;
+  gap: 0.5rem;
 }
 
 .button-exit-selected {
@@ -105,6 +112,8 @@ button {
   justify-content: center;
   align-items: center;
   font-family: Outfit;
+  font-size: x-large;
+  gap: 0.5rem;
 }
 
 .button-exit-not-selected {
@@ -113,6 +122,8 @@ button {
   display: flex;
   color: #c0293d;
   font-family: Outfit;
+  font-size: x-large;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 }
