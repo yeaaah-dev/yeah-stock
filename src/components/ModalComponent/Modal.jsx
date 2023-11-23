@@ -4,6 +4,7 @@ import styles from "./Modal.module.css";
 import FOTO from "../../assets/FOTO.png";
 import { Trash, NotePencil, X } from "@phosphor-icons/react";
 import { Textarea } from "../textarea/textarea";
+import { Button } from "../Button/Button";
 
 export const modalStatus = {
   OPEN: "open",
@@ -87,25 +88,26 @@ export function Modal({
           <img src={FOTO} alt="product-image" />
         </div>
 
-        <div className={styles["subtitle"]}>
-          <h2>Description:</h2>
+        <div>
+          <div className={styles["subtitle"]}>
+            <span>Description:</span>
+          </div>
+
+          <div className={styles["product-description"]}>
+            <Textarea location={true} type="text" value={description} />
+          </div>
         </div>
 
-        <div className={styles["product-description"]}>
-          <Textarea location={true} type="text" value={description} />
-        </div>
+        <Button
+          icon={<NotePencil size={17} />}
+          label="Edition"
+          onClick={goToEdition}
+        />
 
-        <div className={styles["buttons-div"]}>
-          <button className={styles["edit-button"]} onClick={goToEdition}>
-            <NotePencil size={17} />
-            Edition
-          </button>
-
-          <button onClick={onDeleteProduct} className={styles["delete-button"]}>
-            <Trash size={32}></Trash>
-            Delete
-          </button>
-        </div>
+        <button onClick={onDeleteProduct} className={styles["delete-button"]}>
+          <Trash size={24}></Trash>
+          Delete
+        </button>
       </div>
     </div>
   );

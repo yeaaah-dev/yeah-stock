@@ -16,6 +16,7 @@ span {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-size: 0.75rem;
 }
 
 .btn-active-style {
@@ -26,6 +27,7 @@ span {
   text-decoration: underline;
   border: none;
   cursor: pointer;
+  font-size: 0.75rem;
 }
 
 button {

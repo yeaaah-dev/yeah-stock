@@ -7,8 +7,9 @@ button {
 .modal-section {
   display: flex;
   flex-direction: column;
+  min-width: 18rem;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 5%;
   padding-top: 15%;
   background-color: #323232;
@@ -56,19 +57,20 @@ button {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 20%;
+  height: 9.1rem;
   background-color: #4a4a4a;
   border-radius: 0.4rem;
 }
 
 .subtitle {
-  padding-top: 6%;
+  margin-top: 4rem;
 }
 
 .subtitle span {
   color: #fff;
-  font-size: 0.875rem;
   font-weight: 400;
+  font-size: 0.875rem;
+  color: #fff;
 }
 
 .product-description {
@@ -109,7 +111,7 @@ button {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  margin-top: 0.69rem;
   color: #c0293d;
   font-size: 0.875rem;
   font-weight: 400;

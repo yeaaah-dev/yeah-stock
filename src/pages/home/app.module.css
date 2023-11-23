@@ -1,7 +1,6 @@
 .home-page {
   display: flex;
-  height: 100vh;
-  gap: 2rem;
+  height: 100%;
 }
 
 .header-nav-main-conteiner {
@@ -184,7 +183,6 @@ h1 {
 }
 
 .column-modal {
-  width: 15%;
   height: 100%;
 }
 
