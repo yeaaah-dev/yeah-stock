@@ -33,7 +33,7 @@ export function Modal({
         <div className={styles["modal-header"]}>
           <button
             className={styles["button-close"]}
-            onClick={onChangeModalStatusClose}
+            onClick={() => onChangeModalStatusClose(modalStatus.CLOSE)}
           >
             <X size={19} color="#FFFFFF" />
           </button>

@@ -11,8 +11,10 @@ export function Button({ label, buttonBackgroundOff, icon, ...rest }) {
           : styles["normal_button"]
       }
     >
-      {icon}
-      {label}
+      <span>
+        {icon}
+        {label}
+      </span>
     </button>
   );
 }

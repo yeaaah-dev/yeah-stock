@@ -2,7 +2,6 @@
 import { iconType } from "../Toggle/Toggle";
 import { CardLayout } from "./CardLayout";
 import { ListLayout } from "./ListLayout";
-// import style from "../Card/listStyles.module.css";
 
 export function Card({ layout, product, onChangeModalStatusOpen }) {
   return (

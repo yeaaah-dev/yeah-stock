@@ -1,10 +1,23 @@
 /* eslint-disable react/prop-types */
 import { Image, NotePencil } from "@phosphor-icons/react";
 import styles from "./cardStyle.module.css";
+import { iconType } from "../Toggle/Toggle";
+import { modalStatus } from "../ModalComponent/Modal";
 
-export function CardLayout({ product, onChangeModalStatusOpen }) {
+export function CardLayout({
+  product,
+  onChangeModalStatusOpen,
+  modalModel,
+  layout,
+}) {
   return (
-    <div className={styles["container_card"]}>
+    <div
+      className={
+        layout === iconType.COLUMNS || modalModel === modalStatus.OPEN
+          ? styles["container-card-open-modal"]
+          : styles["container_card"]
+      }
+    >
       <div className={styles["content_card"]}>
         <Image size={40} color="#8A8A8A" />
         <span>JPG</span>

@@ -10,25 +10,25 @@ import { Card } from "../../components/Card";
 import { Button } from "../../components/Button/Button";
 import style from "../home/app.module.css";
 import Rick from "../../assets/images/RickAndMory.png";
-// import { modalStatus } from "../../components/ModalComponent/Modal";
+import { modalStatus } from "../../components/ModalComponent/Modal";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const tabs = [
   {
-    title: "type  ",
-    label: "  01",
+    title: "Type",
+    label: "01",
     key: 0,
   },
   {
-    title: "type  ",
-    label: "  02",
+    title: "Type",
+    label: "02",
     key: 1,
   },
   {
-    title: "type  ",
-    label: "  03",
+    title: "Type",
+    label: "03",
     key: 2,
   },
 ];
@@ -42,7 +42,7 @@ export function App() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [layout, setLayout] = useState(iconType.COLUMNS);
-  // const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
+  const [modalModel, setModalModel] = useState(modalStatus.CLOSE);
   const [productSelected, setProductSelected] = useState({});
   const navigate = useNavigate();
 
@@ -80,37 +80,36 @@ export function App() {
   }
 
   function onChangeModalStatusClose() {
-    // setModalModel(modalStatus.CLOSE);
+    setModalModel(modalStatus.CLOSE);
   }
 
   function onChangeModalStatusOpen(product) {
     setProductSelected(product);
-    // setModalModel(modalStatus.OPEN);
+    setModalModel(modalStatus.OPEN);
   }
 
-  // function changeLayoutCards() {
-  //   //   if (layout === iconType.LIST && modalModel === modalStatus.CLOSE) {
-  //   //     return style["grid-layout-list-close-modal"];
-  //   //   } else if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
-  //   //     return style["grid-layout-list-open-modal"];
-  //   //   }
-  //   //   if (modalModel === modalStatus.OPEN && layout === iconType.COLUMNS) {
-  //   //     return style["grid-layout-column-open-modal"];
-  //   //   } else if (modalModel === modalStatus.CLOSE) {
-  //   //     return style["grid-layout-column-close-modal"];
-  //   //   }
-  // }
+  function changeLayoutCardsWithModalOpen() {
+    if (layout === iconType.COLUMNS && modalModel === modalStatus.CLOSE) {
+      return style["products-cards"];
+    } else {
+      return style["products-lists"];
+    }
+  }
 
-  // function changeLayoutAllScreen() {
-  //   // if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
-  //   //   return style["main-width-close-modal"];
-  //   // }
-  //   // if (modalModel === modalStatus.OPEN) {
-  //   //   return style["main-width-open-modal"];
-  //   // } else {
-  //   //   return style["main-width-close-modal"];
-  //   // }
-  // }
+  function changeSizeAllScreen() {
+    if (layout === iconType.COLUMNS && modalModel === modalStatus.OPEN) {
+      return style["header-nav-main-conteiner"];
+    }
+    if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
+      return style["header-nav-main-list-conteiner"];
+    }
+    if (layout === iconType.COLUMNS && modalModel === modalStatus.CLOSE) {
+      return style["header-nav-main-conteiner-close"];
+    }
+    if (layout === iconType.LIST && modalModel === modalStatus.CLOSE) {
+      return style["header-nav-main-list-conteiner-close"];
+    }
+  }
 
   async function getProducts() {
     const { error } = toastInstance("The product has not been deleted !");
@@ -154,35 +153,43 @@ export function App() {
       <div className={style["column-sidebar"]}>
         <Sidebar />
       </div>
-      <div className={style["header-nav-main-conteiner"]}>
+      <div className={changeSizeAllScreen()}>
         <header className={style["header-button-icon"]}>
           <div className={style["input-search"]}>
-            <button
-              className={style["button-search"]}
-              onClick={goToRegistration}
-            >
-              <MagnifyingGlass size={16} />
-            </button>
-            <Input
-              borderNone={true}
-              type="text"
-              placeholder="Search products"
-              onChange={(event) => {
-                setSearch(event.currentTarget.value);
-              }}
-            />
+            <div className={style["icon"]}>
+              <MagnifyingGlass className={style["glass-icon"]} />
+            </div>
+            <div className={style["input-component"]}>
+              <Input
+                borderNone={true}
+                type="text"
+                placeholder="Search products"
+                onChange={(event) => {
+                  setSearch(event.currentTarget.value);
+                }}
+              />
+            </div>
           </div>
           <div className={style["button-add-icons"]}>
-            <Button
-              label={<span className={style["name-button"]}>Add product</span>}
-              icon={<Icon className={style["icon-plus"]} />}
-              buttonBackgroundOff={"not"}
-              className={style["Button"]}
-              onClick={goToRegistration}
-            />
+            <div className={style["button-component"]}>
+              <Button
+                label={
+                  <span className={style["name-button"]}>Add product</span>
+                }
+                icon={<Icon />}
+                buttonBackgroundOff={"not"}
+                onClick={goToRegistration}
+              />
+            </div>
+            <div className={style["all-item-notification"]}>
+              <div className={style["notification"]}>
+                <Bell size={30} className={style["icon-bell"]} />
+              </div>
+              <div className={style["number-notification"]}>
+                <span>13</span>
+              </div>
+            </div>
 
-            <Bell size={20} className={style["icon-bell"]} />
-            <span className={style["number-notification"]}>13</span>
             <img
               src={Rick}
               className={style["logo"]}
@@ -191,7 +198,9 @@ export function App() {
           </div>
         </header>
         <div className={style["nav-main-conteiner"]}>
-          <h1>Start</h1>
+          <div className={style["title-page"]}>
+            <h1>Start</h1>
+          </div>
           <nav className={style["nav-tab-toggle"]}>
             <div className={style["tab-conteiner"]}>
               <Tab
@@ -204,10 +213,9 @@ export function App() {
               <Toggle onChange={(layout) => setLayout(layout)} />
             </div>
           </nav>
-          <p className={style["title"]}>Start</p>
         </div>
         <main>
-          <div className={style["products-cards"]}>
+          <div className={changeLayoutCardsWithModalOpen()}>
             {products.map((product) => {
               return (
                 <Card
@@ -217,16 +225,25 @@ export function App() {
                   onChangeModalStatusOpen={(product) =>
                     onChangeModalStatusOpen(product)
                   }
+                  modalModel={modalModel}
                 />
               );
             })}
           </div>
         </main>
       </div>
-      <div className={style["column-modal"]}>
+      <div
+        className={
+          modalModel === modalStatus.CLOSE
+            ? style["column-modal-close"]
+            : style["column-modal"]
+        }
+      >
         <Modal
           name="Yan Cesar"
-          onChangeModalStatusClose={onChangeModalStatusClose}
+          onChangeModalStatusClose={(product) =>
+            onChangeModalStatusClose(product)
+          }
           goToEdition={goToEdition}
           product={productSelected}
           onDeleteProduct={deleteProduct}
