@@ -4,7 +4,7 @@ import { CaretDown, CaretUp, Image } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
 import { validateFields } from "../../utils";
 
-import styles from "../../components/dataProducts/styles.module.css";
+import styles from "../../pages/registration/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
