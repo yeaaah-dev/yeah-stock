@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 export function Input({ icon, label, borderNone, error = false, ...rest }) {
   return (
     <>
+     {label}
       <input
         {...rest}
         className={
@@ -13,7 +14,6 @@ export function Input({ icon, label, borderNone, error = false, ...rest }) {
             : `${styles["input-header"]}`
         }
       />
-      {label}
       {icon}
 
       {error && <span className={styles.error}>{rest.name} is required</span>}

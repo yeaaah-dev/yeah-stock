@@ -73,7 +73,7 @@ export function App() {
   }
 
   function goToEdition() {
-    navigate("/edition");
+    navigate(`/edition/${productSelected.id}`);
   }
 
   function onChangeModalStatusClose() {
@@ -112,7 +112,7 @@ export function App() {
     try {
       const { data } = await axios.get(`http://localhost:3004/products`);
       setProducts(data);
-      setTimeout(() => onChangeModalStatusClose(), 3000);
+      onChangeModalStatusClose();
     } catch (err) {
       error();
     }
@@ -123,7 +123,7 @@ export function App() {
     const { error } = toastInstance("The product has not been deleted!");
 
     try {
-      await axios.delete(`http://localhost:3004/product/${productSelected.id}`);
+      await axios.delete(`http://localhost:3004/products/${productSelected.id}`);
       success();
       await getProducts();
     } catch (err) {

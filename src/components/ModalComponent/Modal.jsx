@@ -25,6 +25,7 @@ export function Modal({
     currency,
     supllier,
     active,
+    description,
   } = product;
 
   return (
@@ -89,12 +90,7 @@ export function Modal({
         </div>
 
         <div className={styles["product-description"]}>
-          <Textarea
-            location={true}
-            type="text"
-            placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness."
-            //Essa aqui eu vou arrumar na branch de criação de funções /^\
-          />
+          <Textarea location={true} type="text" value={description} />
         </div>
 
         <div className={styles["buttons-div"]}>

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <RegistrationScreen />,
   },
   {
-    path: "/edition",
+    path: "/edition/:id",
     element: <EditScreen />,
   },
 ]);
