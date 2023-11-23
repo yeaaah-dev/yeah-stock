@@ -9,15 +9,21 @@ button {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  padding: 5%;
+  padding-top: 15%;
   background-color: #323232;
   font-family: "Outfit", sans-serif;
 }
 
-.modal-header {
+.button-title {
   display: flex;
-  justify-content: end;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+}
+
+.modal-header {
+  width: 0.6rem;
+  height: 0.6rem;
+  align-self: end;
 }
 
 .button-close {
@@ -34,6 +40,8 @@ button {
 .product-info {
   display: flex;
   flex-direction: column;
+  padding-top: 6%;
+  padding-bottom: 5%;
   width: 100%;
   font-size: 0.75rem;
   font-weight: 400;
@@ -45,54 +53,64 @@ button {
 }
 
 .product-image {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 38%;
   background-color: #4a4a4a;
-  border-radius: 0.4375rem;
+  border-radius: 0.4rem;
 }
 
-.subtitle h2 {
+.subtitle {
+  padding-top: 6%;
+}
+
+.subtitle span {
   color: #fff;
   font-size: 0.875rem;
   font-weight: 400;
 }
 
-.product-description textarea {
+.product-description {
+  height: max-content;
+  padding-top: 2%;
+  padding-bottom: 8%;
   width: 100%;
-  height: 100%;
+}
+
+.product-description textarea {
+  height: max-content;
+  width: 100%;
 }
 
 .buttons-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  gap: 10%;
 }
 
 .edit-button {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #1f7cfb;
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 400;
-  border-radius: 0.4375rem;
+  align-items: center;
   width: 100%;
   height: 100%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background-color: #1f7cfb;
+  color: #fff;
+  border-radius: 0.3rem;
 }
 
 .delete-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100%;
   color: #c0293d;
   font-size: 0.875rem;
   font-weight: 400;
-}
-
-.edition-icon {
-  width: 100%;
 }

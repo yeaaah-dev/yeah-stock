@@ -17,15 +17,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 const tabs = [
   {
-    title: "type  01",
+    title: "type  ",
+    label: "  01",
     key: 0,
   },
   {
-    title: "type  02",
+    title: "type  ",
+    label: "  02",
     key: 1,
   },
   {
-    title: "type  03",
+    title: "type  ",
+    label: "  03",
     key: 2,
   },
 ];
@@ -147,61 +150,90 @@ export function App() {
   }, [search]);
 
   return (
-    <>
-      <Sidebar />
+    <div className={style["home-page"]}>
+      <div className={style["column-sidebar"]}>
+        <Sidebar />
+      </div>
+      <div className={style["header-nav-main-conteiner"]}>
+        <header className={style["header-button-icon"]}>
+          <div className={style["input-search"]}>
+            <button
+              className={style["button-search"]}
+              onClick={goToRegistration}
+            >
+              <MagnifyingGlass size={16} />
+            </button>
+            <Input
+              borderNone={true}
+              type="text"
+              placeholder="Search products"
+              onChange={(event) => {
+                setSearch(event.currentTarget.value);
+              }}
+            />
+          </div>
+          <div className={style["button-add-icons"]}>
+            <Button
+              label={<span className={style["name-button"]}>Add product</span>}
+              icon={<Icon className={style["icon-plus"]} />}
+              buttonBackgroundOff={"not"}
+              className={style["Button"]}
+              onClick={goToRegistration}
+            />
 
-      <button className={style["button-search"]} onClick={goToRegistration}>
-        <MagnifyingGlass size={16} />
-      </button>
-      <Input
-        borderNone={true}
-        type="text"
-        placeholder="Search products"
-        onChange={(event) => {
-          setSearch(event.currentTarget.value);
-        }}
-      />
-
-      <Button
-        label={<span className={style["name-button"]}>Add product</span>}
-        icon={<Icon className={style["icon-plus"]} />}
-        buttonBackgroundOff={"not"}
-        className={style["Button"]}
-        onClick={goToRegistration}
-      />
-
-      <Bell size={20} className={style["icon-bell"]} />
-      <span className={style["number-notification"]}>13</span>
-      <img src={Rick} className={style["logo"]} alt="Rick and Morty image" />
-
-      <p className={style["title"]}>Start</p>
-      <Tab
-        tabs={tabs}
-        currentTab={currentTab}
-        onChange={(layout) => setCurrentTab(layout)}
-      />
-      <Toggle onChange={(layout) => setLayout(layout)} />
-      {products.map((product) => {
-        return (
-          <Card
-            key={product.id}
-            product={product}
-            layout={layout}
-            onChangeModalStatusOpen={(product) =>
-              onChangeModalStatusOpen(product)
-            }
-          />
-        );
-      })}
-      <Modal
-        name="Yan Cesar"
-        onChangeModalStatusClose={onChangeModalStatusClose}
-        goToEdition={goToEdition}
-        product={productSelected}
-        onDeleteProduct={deleteProduct}
-      />
+            <Bell size={20} className={style["icon-bell"]} />
+            <span className={style["number-notification"]}>13</span>
+            <img
+              src={Rick}
+              className={style["logo"]}
+              alt="Rick and Morty image"
+            />
+          </div>
+        </header>
+        <div className={style["nav-main-conteiner"]}>
+          <h1>Start</h1>
+          <nav className={style["nav-tab-toggle"]}>
+            <div className={style["tab-conteiner"]}>
+              <Tab
+                tabs={tabs}
+                currentTab={currentTab}
+                onChange={(layout) => setCurrentTab(layout)}
+              />
+            </div>
+            <div className={style["toggle-conteiner"]}>
+              <Toggle onChange={(layout) => setLayout(layout)} />
+            </div>
+          </nav>
+          <p className={style["title"]}>Start</p>
+        </div>
+        <main>
+          <div className={style["products-cards"]}>
+            {products.map((product) => {
+              return (
+                <Card
+                  key={product.id}
+                  product={product}
+                  layout={layout}
+                  onChangeModalStatusOpen={(product) =>
+                    onChangeModalStatusOpen(product)
+                  }
+                />
+              );
+            })}
+          </div>
+        </main>
+      </div>
+      <div className={style["column-modal"]}>
+        <Modal
+          name="Yan Cesar"
+          onChangeModalStatusClose={onChangeModalStatusClose}
+          goToEdition={goToEdition}
+          product={productSelected}
+          onDeleteProduct={deleteProduct}
+        />
+      </div>
       <ToastContainer />
-    </>
+    </div>
   );
 }
 

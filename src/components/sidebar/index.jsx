@@ -38,8 +38,8 @@ export function Sidebar() {
           />
         </div>
 
-        <div className={styles["div-line"]}>
-          <div className={styles.line}></div>
+        <div className={styles["div-line-one"]}>
+          <div className={styles["line"]}></div>
         </div>
 
         <div className={styles["buttons"]}>
@@ -78,11 +78,12 @@ export function Sidebar() {
             <User size={17} />
             profile
           </button>
+        </div>
 
-          <div className={styles["div-line-two"]}>
-            <div className={styles["line"]}></div>
-          </div>
-
+        <div className={styles["div-line-two"]}>
+          <div className={styles["line"]}></div>
+        </div>
+        <div className={styles["buttons-settings-exit"]}>
           <button
             className={
               buttonSelected === buttonName.SETTINGS

@@ -28,8 +28,8 @@ export function Modal({
   } = product;
 
   return (
-    <section className={styles["modal-section"]}>
-      <div className={styles["modal-content"]}>
+    <div className={styles["modal-section"]}>
+      <div className={styles["button-title"]}>
         <div className={styles["modal-header"]}>
           <button
             className={styles["button-close"]}
@@ -42,76 +42,76 @@ export function Modal({
         <div className={styles["modal-title"]}>
           <h1>Product Details</h1>
         </div>
-
-        <div className={styles["product-info"]}>
-          <span>
-            Name: <span className={styles["info-value"]}>{title}</span>
-          </span>
-
-          <span>
-            Quantity: <span className={styles["info-value"]}>{quantify}</span>
-          </span>
-
-          <span>
-            Measure unity:{" "}
-            <span className={styles["info-value"]}>{measurein}</span>
-          </span>
-
-          <span>
-            Purchase price:{" "}
-            <span className={styles["info-value"]}>{purchasePrice}</span>
-          </span>
-
-          <span>
-            Sale Price:{" "}
-            <span className={styles["info-value"]}>{salePrice}</span>
-          </span>
-
-          <span>
-            Currency: <span className={styles["info-value"]}>{currency}</span>
-          </span>
-
-          <span>
-            Supplier: <span className={styles["info-value"]}>{supllier}</span>
-          </span>
-
-          <span>
-            Active:{" "}
-            <span className={styles["info-value"]}>
-              {active ? active : "yes or no"}
-            </span>
-          </span>
-        </div>
-
-        <div className={styles["product-image"]}>
-          <img src={FOTO} alt="product-image" />
-        </div>
-
-        <div className={styles["subtitle"]}>
-          <h2>Description:</h2>
-        </div>
-
-        <div className={styles["product-description"]}>
-          <Textarea
-            location={true}
-            type="text"
-            placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness."
-            //Essa aqui eu vou arrumar na branch de criação de funções /^\
-          />
-        </div>
-
-        <div className={styles["buttons-div"]}>
-          <button className={styles["edit-button"]} onClick={goToEdition}>
-            <NotePencil size={17} />
-            Edition
-          </button>
-
-          <button onClick={onDeleteProduct} className={styles["delete-button"]}>
-            <Trash size={32}></Trash>
-            Delete
-          </button>
-        </div>
       </div>
-    </section>
+
+      <div className={styles["product-info"]}>
+        <span>
+          Name: <span className={styles["info-value"]}>{title}</span>
+        </span>
+
+        <span>
+          Quantity: <span className={styles["info-value"]}>{quantify}</span>
+        </span>
+
+        <span>
+          Measure unity:{" "}
+          <span className={styles["info-value"]}>{measurein}</span>
+        </span>
+
+        <span>
+          Purchase price:{" "}
+          <span className={styles["info-value"]}>{purchasePrice}</span>
+        </span>
+
+        <span>
+          Sale Price: <span className={styles["info-value"]}>{salePrice}</span>
+        </span>
+
+        <span>
+          Currency: <span className={styles["info-value"]}>{currency}</span>
+        </span>
+
+        <span>
+          Supplier: <span className={styles["info-value"]}>{supllier}</span>
+        </span>
+
+        <span>
+          Active:{" "}
+          <span className={styles["info-value"]}>
+            {active ? active : "yes or no"}
+          </span>
+        </span>
+      </div>
+
+      <div className={styles["product-image"]}>
+        <img src={FOTO} alt="product-image" />
+      </div>
+
+      <div className={styles["subtitle"]}>
+        <span>Description:</span>
+      </div>
+
+      <div className={styles["product-description"]}>
+        <Textarea
+          location={true}
+          rows="4"
+          type="text"
+          placeholder="Calabresa de tubarão leitoa enrolada com tripa de camarão boi, origem da Amazônia, perto do lago Ness."
+          //Essa aqui eu vou arrumar na branch de criação de funções /^\
+        />
+      </div>
+
+      <div className={styles["buttons-div"]}>
+        <button className={styles["edit-button"]} onClick={goToEdition}>
+          <NotePencil className={styles["pencil-icon-button"]} />
+          <span>Edition</span>
+        </button>
+
+        <button onClick={onDeleteProduct} className={styles["delete-button"]}>
+          <Trash className={styles["trash-icon-button"]}></Trash>
+          <span>Delete</span>
+        </button>
+      </div>
+    </div>
   );
 }

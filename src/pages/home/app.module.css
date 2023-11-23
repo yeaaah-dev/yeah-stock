@@ -1,0 +1,84 @@
+.home-page {
+  display: flex;
+  height: 100%;
+}
+
+.header-nav-main-conteiner {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  padding-top: 4%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+h1 {
+  color: #fff;
+  font-family: Outfit;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.header-button-icon {
+  display: flex;
+  justify-content: space-between;
+  height: 5%;
+}
+
+.input-search {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+
+.button-add-icons {
+  display: flex;
+  align-self: end;
+}
+
+.nav-tab-toggle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.tab-conteiner {
+  display: flex;
+}
+
+.toggle-conteiner {
+  display: flex;
+  align-self: baseline;
+}
+
+.toggle-conteiner {
+  display: flex;
+  align-self: end;
+}
+
+.nav-main-conteiner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1%;
+}
+
+.products-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%;
+}
+
+.column-modal {
+  width: 20%;
+  height: 100%;
+}
+
+.column-sidebar {
+  width: 20%;
+  height: 100%;
+}

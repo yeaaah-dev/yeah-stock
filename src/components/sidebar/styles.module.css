@@ -1,8 +1,12 @@
 .container-all {
   display: flex;
+  padding-top: 15%;
+  height: 100%;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background: #1b1b1b;
@@ -18,19 +22,24 @@
 }
 
 .line {
-  width: 80%;
+  width: 50%;
   height: 0.09rem;
   background: #323232;
 }
 
-.div-line {
+.div-line-one {
   display: flex;
   justify-content: center;
+  padding-top: 20%;
+}
+
+.div-line-three {
+  padding-left: 5%;
 }
 
 .line-vertical {
-  width: 100%;
   height: 100%;
+  width: 0.09rem;
   background: #323232;
 }
 
@@ -38,10 +47,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10%;
+  gap: 1rem;
+}
+
+.buttons-settings-exit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 button {
-  width: 100%;
+  width: 30%;
   height: 100%;
   color: #525252;
   cursor: pointer;
@@ -50,6 +68,8 @@ button {
 .div-line-two {
   display: flex;
   justify-content: center;
+  padding-top: 60%;
+  padding-bottom: 30%;
 }
 
 .button-selected {
