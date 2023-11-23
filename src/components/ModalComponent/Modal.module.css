@@ -7,30 +7,29 @@ button {
 .modal-section {
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
-
-  max-width: 18.125rem;
+  min-width: 18rem;
+  width: 100%;
   height: 100%;
+  padding: 5%;
+  padding-top: 15%;
   background-color: #323232;
   font-family: "Outfit", sans-serif;
 }
 
-.modal-content {
-  padding-top: 1.5rem;
-  padding-right: 3.12rem;
-  padding-left: 1.19rem;
-
-  height: 100%;
+.button-title {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: end;
-  width: 100%;
+  width: 0.6rem;
+  height: 0.6rem;
+  align-self: end;
 }
 
-.modal-title {
-  margin-top: 1.19rem;
+.button-close {
+  width: 100%;
+  height: 100%;
 }
 
 .modal-title h1 {
@@ -42,11 +41,9 @@ button {
 .product-info {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  width: 12rem;
-
-  margin-top: 0.56rem;
-
+  padding-top: 6%;
+  padding-bottom: 5%;
+  width: 100%;
   font-size: 0.75rem;
   font-weight: 400;
   color: #8a8a8a;
@@ -57,79 +54,65 @@ button {
 }
 
 .product-image {
-  max-width: 13.8125rem;
-  height: 9.1875rem;
-
   display: flex;
   flex-direction: column;
-
-  margin-top: 0.56rem;
-
+  width: 100%;
+  height: 9.1rem;
   background-color: #4a4a4a;
-  border-radius: 0.4375rem;
+  border-radius: 0.4rem;
 }
 
 .subtitle {
-  margin-top: 0.63rem;
+  margin-top: 4rem;
 }
 
-.subtitle h2 {
+.subtitle span {
   color: #fff;
-  font-size: 0.875rem;
   font-weight: 400;
-
-  margin-left: 0.44rem;
+  font-size: 0.875rem;
+  color: #fff;
 }
 
 .product-description {
-  width: 13.8125rem;
-  height: 3.625rem;
+  height: max-content;
+  padding-top: 2%;
+  padding-bottom: 8%;
+  width: 100%;
+}
 
-  margin-top: 0.25rem;
+.product-description textarea {
+  height: max-content;
+  width: 100%;
 }
 
 .buttons-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.87rem;
-
-  max-width: 13.8125rem;
-
-  margin-top: 1rem;
+  gap: 10%;
 }
 
 .edit-button {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-
-  background-color: #1f7cfb;
-  color: #fff;
-
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1%;
+  padding-top: 1%;
   font-size: 0.875rem;
   font-weight: 400;
-
-  border-radius: 0.4375rem;
-
-  width: 100%;
-  height: 1.75rem;
+  background-color: #1f7cfb;
+  color: #fff;
+  border-radius: 0.3rem;
 }
 
 .delete-button {
   display: flex;
-  gap: 0.5rem;
-  margin-right: 0.4rem;
   align-items: center;
-
-  max-width: 4rem;
-
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.69rem;
   color: #c0293d;
   font-size: 0.875rem;
   font-weight: 400;
-}
-
-.edition-icon {
-  width: 10px;
 }

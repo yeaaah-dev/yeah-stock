@@ -36,6 +36,7 @@
 
 .layout-registration {
   display: flex;
+  margin-top: 3.8%;
   flex-direction: column;
   margin-left: 1.25rem;
 }

@@ -1,10 +1,17 @@
 .container_list_card {
   display: flex;
   align-items: center;
-  width: 61.1875rem;
-  height: 4.6875rem;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.4%;
   border-radius: 0.442rem;
   background: #323232;
+}
+
+.image-products-props {
+  display: flex;
+  width: 100%;
 }
 
 .content_card_list {
@@ -12,9 +19,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 0.31rem;
-  width: 9.0625rem;
-  height: 4.0625rem;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 20%;
   border-radius: 0.31213rem;
   background: #4a4a4a;
 }
@@ -28,12 +35,12 @@
 }
 
 .product_name_list_card {
+  padding-bottom: 2%;
   color: #fff;
   font-size: 0.82088rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-bottom: 0.75rem;
 }
 
 .description_product_list_card {
@@ -42,6 +49,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.description {
+  display: flex;
+  align-items: baseline;
+  padding-right: 5%;
 }
 
 .description_product_list_card span {
@@ -53,15 +66,16 @@
 }
 
 .all_descriptions {
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-bottom: 1%;
   display: flex;
   flex-direction: column;
-  padding-left: 0.88rem;
 }
 
 .description_product_list_card {
   display: flex;
   flex-direction: row;
-  gap: 1.55rem;
 }
 
 .product_name_list_card button {
@@ -70,9 +84,12 @@
   border: none;
 }
 
+.pencil_edit {
+  display: flex;
+  padding-right: 3%;
+}
+
 .pencil_edit button {
-  padding-left: 6.5rem;
-  padding-right: 1.81rem;
   cursor: pointer;
   background: none;
   border: none;

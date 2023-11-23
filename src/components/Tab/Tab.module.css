@@ -1,7 +1,12 @@
 .tabs {
   display: flex;
-  width: 11.3rem;
+  width: 100%;
   background-color: #1b1b1b;
+  gap: 1rem;
+}
+
+span {
+  padding: 0.2rem;
 }
 
 .btn-not-active-style {
@@ -11,6 +16,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-size: 0.75rem;
 }
 
 .btn-active-style {
@@ -21,11 +27,12 @@
   text-decoration: underline;
   border: none;
   cursor: pointer;
+  font-size: 0.75rem;
 }
 
 button {
   font-family: "Outfit", sans-serif;
-  font-size: 0.75rem;
+  font-size: large;
   font-style: normal;
   font-weight: 400;
 }

@@ -1,4 +1,4 @@
-import { DataProducts } from "../../components/dataProducts";
+import DataProducts from "../../components/dataProducts";
 
 export function RegistrationScreen() {
   return <DataProducts />;

@@ -1,6 +1,6 @@
 .input-header {
   width: 100%;
-  height: 2rem;
+  height: 100%;
   background: #242424;
   border: none;
   border-radius: 0.5rem;
@@ -16,7 +16,7 @@
 
 .input-header_border-none {
   width: 100%;
-  height: 2rem;
+  height: 100%;
   background: #242424;
   border: none;
   border-radius: 0.5rem;

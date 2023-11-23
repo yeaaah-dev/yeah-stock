@@ -17,15 +17,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 const tabs = [
   {
-    title: "type  01",
+    title: "Type",
+    label: "01",
     key: 0,
   },
   {
-    title: "type  02",
+    title: "Type",
+    label: "02",
     key: 1,
   },
   {
-    title: "type  03",
+    title: "Type",
+    label: "03",
     key: 2,
   },
 ];
@@ -85,25 +88,26 @@ export function App() {
     setModalModel(modalStatus.OPEN);
   }
 
-  function changeLayoutCards() {
-    if (layout === iconType.LIST) {
-      return style["grid-layout-list"];
-    }
-    if (modalModel === modalStatus.OPEN) {
-      return style["grid-layout-column-open-modal"];
-    } else if (modalModel === modalStatus.CLOSE) {
-      return style["grid-layout-column-close-modal"];
+  function changeLayoutCardsWithModalOpen() {
+    if (layout === iconType.COLUMNS && modalModel === modalStatus.CLOSE) {
+      return style["products-cards"];
+    } else {
+      return style["products-lists"];
     }
   }
 
-  function changeLayoutAllScreen() {
-    if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
-      return style["main-width-close-modal"];
+  function changeSizeAllScreen() {
+    if (layout === iconType.COLUMNS && modalModel === modalStatus.OPEN) {
+      return style["header-nav-main-conteiner"];
     }
-    if (modalModel === modalStatus.OPEN) {
-      return style["main-width-open-modal"];
-    } else {
-      return style["main-width-close-modal"];
+    if (layout === iconType.LIST && modalModel === modalStatus.OPEN) {
+      return style["header-nav-main-list-conteiner"];
+    }
+    if (layout === iconType.COLUMNS && modalModel === modalStatus.CLOSE) {
+      return style["header-nav-main-conteiner-close"];
+    }
+    if (layout === iconType.LIST && modalModel === modalStatus.CLOSE) {
+      return style["header-nav-main-list-conteiner-close"];
     }
   }
 
@@ -146,20 +150,16 @@ export function App() {
 
   return (
     <div className={style["home-page"]}>
-      <aside>
+      <div className={style["column-sidebar"]}>
         <Sidebar />
-      </aside>
-
-      <main className={changeLayoutAllScreen()}>
-        <nav className={style["nav"]}>
-          <div className={style["content-input"]}>
-            <div className={style["input-wrapper"]}>
-              <button
-                className={style["button-search"]}
-                onClick={goToRegistration}
-              >
-                <MagnifyingGlass size={16} />
-              </button>
+      </div>
+      <div className={changeSizeAllScreen()}>
+        <header className={style["header-button-icon"]}>
+          <div className={style["input-search"]}>
+            <div className={style["icon"]}>
+              <MagnifyingGlass className={style["glass-icon"]} />
+            </div>
+            <div className={style["input-component"]}>
               <Input
                 borderNone={true}
                 type="text"
@@ -170,55 +170,52 @@ export function App() {
               />
             </div>
           </div>
-          <div className={style["button-icons"]}>
-            <div className={style["div-button"]}>
+          <div className={style["button-add-icons"]}>
+            <div className={style["button-component"]}>
               <Button
                 label={
                   <span className={style["name-button"]}>Add product</span>
                 }
-                icon={<Icon className={style["icon-plus"]} />}
+                icon={<Icon />}
                 buttonBackgroundOff={"not"}
-                className={style["Button"]}
                 onClick={goToRegistration}
               />
             </div>
-
-            <div className={style["icon-photo"]}>
-              <Bell size={20} className={style["icon-bell"]} />
+            <div className={style["all-item-notification"]}>
+              <div className={style["notification"]}>
+                <Bell size={30} className={style["icon-bell"]} />
+              </div>
+              <div className={style["number-notification"]}>
+                <span>13</span>
+              </div>
             </div>
 
-            <div className={style["notification"]}>
-              <span className={style["number-notification"]}>13</span>
-            </div>
-
-            <div>
-              <img
-                src={Rick}
-                className={style["logo"]}
-                alt="Rick and Morty image"
-              />
-            </div>
+            <img
+              src={Rick}
+              className={style["logo"]}
+              alt="Rick and Morty image"
+            />
           </div>
-        </nav>
-
-        <section>
-          <p className={style["title"]}>Start</p>
-
-          <div className={style["tab-toggle"]}>
-            <div>
+        </header>
+        <div className={style["nav-main-conteiner"]}>
+          <div className={style["title-page"]}>
+            <h1>Start</h1>
+          </div>
+          <nav className={style["nav-tab-toggle"]}>
+            <div className={style["tab-conteiner"]}>
               <Tab
                 tabs={tabs}
                 currentTab={currentTab}
                 onChange={(layout) => setCurrentTab(layout)}
               />
             </div>
-
-            <div>
+            <div className={style["toggle-conteiner"]}>
               <Toggle onChange={(layout) => setLayout(layout)} />
             </div>
-          </div>
-
-          <div className={changeLayoutCards()}>
+          </nav>
+        </div>
+        <main>
+          <div className={changeLayoutCardsWithModalOpen()}>
             {products.map((product) => {
               return (
                 <Card
@@ -228,28 +225,30 @@ export function App() {
                   onChangeModalStatusOpen={(product) =>
                     onChangeModalStatusOpen(product)
                   }
+                  modalModel={modalModel}
                 />
               );
             })}
           </div>
-        </section>
-      </main>
-
-      <section
+        </main>
+      </div>
+      <div
         className={
           modalModel === modalStatus.CLOSE
-            ? style["modal-close"]
-            : style["modal-section"]
+            ? style["column-modal-close"]
+            : style["column-modal"]
         }
       >
         <Modal
           name="Yan Cesar"
-          onChangeModalStatusClose={onChangeModalStatusClose}
+          onChangeModalStatusClose={(product) =>
+            onChangeModalStatusClose(product)
+          }
           goToEdition={goToEdition}
           product={productSelected}
           onDeleteProduct={deleteProduct}
         />
-      </section>
+      </div>
       <ToastContainer />
     </div>
   );

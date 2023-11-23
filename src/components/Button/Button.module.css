@@ -6,6 +6,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 1.75rem;
 
   width: 100%;
 
@@ -24,4 +25,15 @@ button {
 .background_off {
   background: transparent;
   color: #c0293d;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+
+  gap: 0.31rem;
+}
+
+.content > div {
+  margin-top: 2px;
 }

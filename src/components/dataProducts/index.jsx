@@ -5,7 +5,7 @@ import { CaretDown, CaretUp, Image, Trash } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
 import { validateFields } from "../../utils";
 
-import styles from "../../components/dataProducts/styles.module.css";
+import styles from "../../pages/registration/RegistrationScreen.module.css";
 import { Sidebar } from "../../components/sidebar";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button/Button";
@@ -132,6 +132,7 @@ export function DataProducts({
   return (
     <div className={styles["registration-container"]}>
       <Sidebar />
+
       <div className={styles["layout-registration"]}>
         <div className={styles["title-button"]}>
           <h1 className={styles["title-page"]}>Product</h1>
@@ -414,3 +415,5 @@ export function DataProducts({
     </div> //Essa aqui eu vou editar na branch das funções da pagina edition
   );
 }
+
+export default DataProducts;
